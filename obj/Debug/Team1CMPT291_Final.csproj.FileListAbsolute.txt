@@ -1,0 +1,10 @@
+C:\Uni_Macewan\CMPT 291\Final\Team1CMPT291_Final\bin\Debug\Team1CMPT291_Final.exe.config
+C:\Uni_Macewan\CMPT 291\Final\Team1CMPT291_Final\bin\Debug\Team1CMPT291_Final.exe
+C:\Uni_Macewan\CMPT 291\Final\Team1CMPT291_Final\bin\Debug\Team1CMPT291_Final.pdb
+C:\Uni_Macewan\CMPT 291\Final\Team1CMPT291_Final\obj\Debug\Team1CMPT291_Final.csproj.AssemblyReference.cache
+C:\Uni_Macewan\CMPT 291\Final\Team1CMPT291_Final\obj\Debug\Team1CMPT291_Final.Form1.resources
+C:\Uni_Macewan\CMPT 291\Final\Team1CMPT291_Final\obj\Debug\Team1CMPT291_Final.Properties.Resources.resources
+C:\Uni_Macewan\CMPT 291\Final\Team1CMPT291_Final\obj\Debug\Team1CMPT291_Final.csproj.GenerateResource.cache
+C:\Uni_Macewan\CMPT 291\Final\Team1CMPT291_Final\obj\Debug\Team1CMPT291_Final.csproj.CoreCompileInputs.cache
+C:\Uni_Macewan\CMPT 291\Final\Team1CMPT291_Final\obj\Debug\Team1CMPT291_Final.exe
+C:\Uni_Macewan\CMPT 291\Final\Team1CMPT291_Final\obj\Debug\Team1CMPT291_Final.pdb
