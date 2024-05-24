@@ -8,3 +8,14 @@ C:\Uni_Macewan\CMPT 291\Final\Team1CMPT291_Final\obj\Debug\Team1CMPT291_Final.cs
 C:\Uni_Macewan\CMPT 291\Final\Team1CMPT291_Final\obj\Debug\Team1CMPT291_Final.csproj.CoreCompileInputs.cache
 C:\Uni_Macewan\CMPT 291\Final\Team1CMPT291_Final\obj\Debug\Team1CMPT291_Final.exe
 C:\Uni_Macewan\CMPT 291\Final\Team1CMPT291_Final\obj\Debug\Team1CMPT291_Final.pdb
+C:\Users\aidan\Source\Repos\Fishington\CMPT291S2024_Team1\bin\Debug\Team1CMPT291_Final.exe.config
+C:\Users\aidan\Source\Repos\Fishington\CMPT291S2024_Team1\bin\Debug\Team1CMPT291_Final.exe
+C:\Users\aidan\Source\Repos\Fishington\CMPT291S2024_Team1\bin\Debug\Team1CMPT291_Final.pdb
+C:\Users\aidan\Source\Repos\Fishington\CMPT291S2024_Team1\obj\Debug\Team1CMPT291_Final.csproj.AssemblyReference.cache
+C:\Users\aidan\Source\Repos\Fishington\CMPT291S2024_Team1\obj\Debug\Team1CMPT291_Final.Properties.Resources.resources
+C:\Users\aidan\Source\Repos\Fishington\CMPT291S2024_Team1\obj\Debug\Team1CMPT291_Final.csproj.GenerateResource.cache
+C:\Users\aidan\Source\Repos\Fishington\CMPT291S2024_Team1\obj\Debug\Team1CMPT291_Final.csproj.CoreCompileInputs.cache
+C:\Users\aidan\Source\Repos\Fishington\CMPT291S2024_Team1\obj\Debug\Team1CMPT291_Final.exe
+C:\Users\aidan\Source\Repos\Fishington\CMPT291S2024_Team1\obj\Debug\Team1CMPT291_Final.pdb
+C:\Users\aidan\Source\Repos\Fishington\CMPT291S2024_Team1\obj\Debug\Team1CMPT291_Final.LoginForm.resources
+C:\Users\aidan\Source\Repos\Fishington\CMPT291S2024_Team1\obj\Debug\Team1CMPT291_Final.MainScreenForm.resources
