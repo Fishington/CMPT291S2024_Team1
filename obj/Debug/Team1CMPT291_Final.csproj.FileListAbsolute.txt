@@ -19,3 +19,6 @@ C:\Users\aidan\Source\Repos\Fishington\CMPT291S2024_Team1\obj\Debug\Team1CMPT291
 C:\Users\aidan\Source\Repos\Fishington\CMPT291S2024_Team1\obj\Debug\Team1CMPT291_Final.pdb
 C:\Users\aidan\Source\Repos\Fishington\CMPT291S2024_Team1\obj\Debug\Team1CMPT291_Final.LoginForm.resources
 C:\Users\aidan\Source\Repos\Fishington\CMPT291S2024_Team1\obj\Debug\Team1CMPT291_Final.MainScreenForm.resources
+C:\Users\aidan\Source\Repos\Fishington\CMPT291S2024_Team1\bin\Debug\aa\Team1CMPT291_Final.resources.dll
+C:\Users\aidan\Source\Repos\Fishington\CMPT291S2024_Team1\obj\Debug\Team1CMPT291_Final.LoginForm.aa.resources
+C:\Users\aidan\Source\Repos\Fishington\CMPT291S2024_Team1\obj\Debug\aa\Team1CMPT291_Final.resources.dll
