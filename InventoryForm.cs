@@ -17,7 +17,8 @@ namespace Team1CMPT291_Final
             InitializeComponent();
         }
 
-        private void button4_Click(object sender, EventArgs e)
+
+        private void button_back_Click(object sender, EventArgs e)
         {
             this.Close();
 
