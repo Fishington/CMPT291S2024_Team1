@@ -22,3 +22,6 @@ C:\Users\aidan\Source\Repos\Fishington\CMPT291S2024_Team1\obj\Debug\Team1CMPT291
 C:\Users\aidan\Source\Repos\Fishington\CMPT291S2024_Team1\bin\Debug\aa\Team1CMPT291_Final.resources.dll
 C:\Users\aidan\Source\Repos\Fishington\CMPT291S2024_Team1\obj\Debug\Team1CMPT291_Final.LoginForm.aa.resources
 C:\Users\aidan\Source\Repos\Fishington\CMPT291S2024_Team1\obj\Debug\aa\Team1CMPT291_Final.resources.dll
+C:\Users\aidan\Source\Repos\Fishington\CMPT291S2024_Team1\obj\Debug\Team1CMPT291_Final.InventoryForm.resources
+C:\Users\aidan\Source\Repos\Fishington\CMPT291S2024_Team1\obj\Debug\Team1CMPT291_Final.RentalTransactionForm.resources
+C:\Users\aidan\Source\Repos\Fishington\CMPT291S2024_Team1\obj\Debug\Team1CMPT291_Final.ReportForm.resources
