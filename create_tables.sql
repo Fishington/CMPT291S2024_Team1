@@ -7,9 +7,9 @@ ELSE
 BEGIN
     PRINT 'CarRental DB already exists.';
 END
-
+GO
 USE CarRental;
-
+GO
 CREATE TABLE Branches (
     Branch_ID   INT PRIMARY KEY IDENTITY(1, 1),
     Name        NVARCHAR(60) NOT NULL,
@@ -60,7 +60,7 @@ CREATE TABLE Cars (
     Model                   NVARCHAR(50) NOT NULL,
     Transmission            NVARCHAR(20) NOT NULL,
     Branch_ID               INT NOT NULL,
-    Type                    INT NOT NULL,
+    Type                    NVARCHAR(20) NOT NULL,
     FOREIGN KEY (Branch_ID) REFERENCES Branches(Branch_ID),
     FOREIGN KEY (Type)      REFERENCES CarType(Type)
 );
@@ -74,7 +74,7 @@ CREATE TABLE Reservations (
     Employee_ID                     INT NOT NULL,          -- Employee ID
     Branch_Pickup_ID                INT NOT NULL,          -- Pickup ID
     Branch_Dropoff_ID               INT NOT NULL,          -- Dropoff ID
-    VIN                             NVARCHAR(50) NOT NULL, -- Car ID
+    VIN                             NVARCHAR(17) NOT NULL, -- Car ID
     FOREIGN KEY (Customer_ID)       REFERENCES Customers(Customer_ID),
     FOREIGN KEY (Employee_ID)       REFERENCES Employees(Employee_ID),
     FOREIGN KEY (Branch_Pickup_ID)  REFERENCES Branches(Branch_ID),
