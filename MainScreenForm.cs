@@ -25,9 +25,6 @@ namespace Team1CMPT291_Final
             
             this.Close();
 
-            LoginForm loginForm = new LoginForm();
-            loginForm.Show();
-
         }
 
         private void button3_Click(object sender, EventArgs e)
