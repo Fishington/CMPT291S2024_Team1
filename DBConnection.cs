@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Data;
 using System.Data.SqlClient;
 using System.Windows.Forms;
 
@@ -6,40 +7,68 @@ namespace Team1CMPT291_Final
 {
     public class DBConnection
     {
-        internal SqlConnection connection;
-        internal SqlCommand command;
-        internal SqlDataReader reader;
         private const string connectionString = "Server=localhost;Database=CarRental;Trusted_Connection=yes;";
 
-        public DBConnection()
+        private SqlConnection OpenConnection()
         {
-            connection = new SqlConnection(connectionString);
-
+            SqlConnection connection = new SqlConnection(connectionString);
             try
             {
                 connection.Open();
-                command = new SqlCommand();
-                command.Connection = connection;
-                MessageBox.Show("Connected to the CarRental database!");
+                MessageBox.Show("Connected to CarRental DB.");
             }
             catch (SqlException sqlEx)
             {
                 MessageBox.Show($"SQL Error: {sqlEx.Message}", "Error");
-                Close();
+                connection = null;
             }
             catch (Exception ex)
             {
                 MessageBox.Show($"General Error: {ex.Message}", "Error");
-                Close();
+                connection = null;
             }
+
+            return connection;
         }
 
-        internal void Close()
+        private void CloseConnection(SqlConnection connection)
         {
-            if (connection != null && connection.State == System.Data.ConnectionState.Open)
+            if (connection != null && connection.State == ConnectionState.Open)
             {
                 connection.Close();
             }
+        }
+
+        public DataTable Query(string query)
+        {
+            DataTable results = new DataTable();
+
+            using (SqlConnection connection = OpenConnection())
+            {
+                if (connection != null)
+                {
+                    using (SqlCommand command = new SqlCommand(query, connection))
+                    {
+                        try
+                        {
+                            using (SqlDataReader reader = command.ExecuteReader())
+                            {
+                                results.Load(reader);
+                            }
+                        }
+                        catch (SqlException sqlEx)
+                        {
+                            MessageBox.Show($"SQL Error: {sqlEx.Message}", "Error");
+                        }
+                        catch (Exception ex)
+                        {
+                            MessageBox.Show($"General Error: {ex.Message}", "Error");
+                        }
+                    }
+                    CloseConnection(connection);
+                }
+            }
+            return results;
         }
     }
 }
