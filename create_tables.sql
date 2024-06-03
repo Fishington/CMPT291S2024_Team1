@@ -47,22 +47,22 @@ CREATE TABLE Employees (
 );
 
 CREATE TABLE CarType (
-    Type_ID      INT PRIMARY KEY IDENTITY(1, 1),
+    Type         NVARCHAR(20) PRIMARY KEY,
     DailyPrice   SMALLMONEY NOT NULL,
     WeeklyPrice  SMALLMONEY NOT NULL,
     MonthlyPrice SMALLMONEY NOT NULL
 );
 
 CREATE TABLE Cars (
-    VIN                     NVARCHAR(50) PRIMARY KEY,
+    VIN                     NVARCHAR(17) PRIMARY KEY,
     License_Plate           NVARCHAR(20) NOT NULL,
     Make                    NVARCHAR(50) NOT NULL,
     Model                   NVARCHAR(50) NOT NULL,
     Transmission            NVARCHAR(20) NOT NULL,
     Branch_ID               INT NOT NULL,
-    Type_ID                 INT NOT NULL,
+    Type                    INT NOT NULL,
     FOREIGN KEY (Branch_ID) REFERENCES Branches(Branch_ID),
-    FOREIGN KEY (Type_ID)   REFERENCES CarType(Type_ID)
+    FOREIGN KEY (Type)      REFERENCES CarType(Type)
 );
 
 CREATE TABLE Reservations (
