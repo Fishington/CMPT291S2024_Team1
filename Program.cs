@@ -16,7 +16,7 @@ namespace Team1CMPT291_Final
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new MainScreenForm());
+            Application.Run(new LoginScreen());
         }
     }
 }
