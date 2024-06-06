@@ -36,5 +36,18 @@ namespace Team1CMPT291_Final
                 }
             }
         }
+
+        static void EnsureDatabaseExists()
+        {
+            using (SqlConnection connection = new SqlConnection(serverConnectionString))
+            {
+                connection.Open();
+                using (SqlCommand command = new SqlCommand(
+                    $"IF DB_ID('{databaseName}') IS NULL CREATE DATABASE [{databaseName}]", connection))
+                {
+                    command.ExecuteNonQuery();
+                }
+            }
+        }
     }
 }
