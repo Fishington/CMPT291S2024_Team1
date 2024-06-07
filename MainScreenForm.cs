@@ -22,16 +22,22 @@ namespace Team1CMPT291_Final
 
         private void button4_Click_1(object sender, EventArgs e)
         {
+            this.Close();
+            LoginScreen loginScreen = new LoginScreen();
+            loginScreen.Show();
         }
 
         private void button3_Click(object sender, EventArgs e)
         {
+
+            this.Close();
             InventoryForm inventoryForm = new InventoryForm();  
             inventoryForm.Show();
         }
 
         private void button2_Click(object sender, EventArgs e)
         {
+            this.Close();
             RentalTransactionForm transactionForm = new RentalTransactionForm();   
             transactionForm.Show();
         }
@@ -39,7 +45,6 @@ namespace Team1CMPT291_Final
         private void button1_Click(object sender, EventArgs e)
         {
             this.Close();
-
             ReportForm reportForm = new ReportForm();
             reportForm.Show();
         }

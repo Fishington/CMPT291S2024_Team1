@@ -21,7 +21,42 @@ namespace Team1CMPT291_Final
             EnsureDatabaseExists();
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new MainScreenForm());
+            Application.Run(new LoginScreen());
+        }
+
+        static void EnsureDatabaseExists()
+        {
+            using (SqlConnection connection = new SqlConnection(serverConnectionString))
+            {
+                connection.Open();
+                using (SqlCommand command = new SqlCommand(
+                    $"IF DB_ID('{databaseName}') IS NULL CREATE DATABASE [{databaseName}]", connection))
+                {
+                    command.ExecuteNonQuery();
+                }
+            }
+        }
+        public int Insert(string query)
+        {
+            using (SqlConnection connection = OpenConnection())
+            {
+                try
+                {
+                    using (SqlCommand command = new SqlCommand(query, connection))
+                    {
+                        return command.ExecuteNonQuery();
+                    }
+                }
+                catch (SqlException sqlEx)
+                {
+                    MessageBox.Show($"SQL Error: {sqlEx.Message}", "Error");
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show($"General Error: {ex.Message}", "Error");
+                }
+            }
+            return 0;
         }
 
         static void EnsureDatabaseExists()

@@ -32,5 +32,14 @@ namespace Team1CMPT291_Final
 
 
         }
+
+        private void dateTimePickerPickup_ValueChanged_1(object sender, EventArgs e)
+        {
+            // This disables previous/impossible dates from showing up in the picker.
+            dateTimePickerDropoff.MinDate = dateTimePickerPickup.Value;
+
+            // This adjusts the dropoff date if the pickup date is changed to a later date.
+            if (dateTimePickerDropoff.Value < dateTimePickerPickup.Value) { dateTimePickerDropoff.Value = dateTimePickerPickup.Value; }
+        }
     }
 }
