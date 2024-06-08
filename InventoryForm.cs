@@ -25,5 +25,14 @@ namespace Team1CMPT291_Final
             MainScreenForm mainScreenForm = new MainScreenForm();
             mainScreenForm.Show();
         }
+
+        private void button_add_car_Click(object sender, EventArgs e)
+        {
+            this.Close();
+
+            AddCarForm addCarForm = new AddCarForm();
+            addCarForm.Show();
+
+        }
     }
 }
