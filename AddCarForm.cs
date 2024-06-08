@@ -11,34 +11,22 @@ using System.Windows.Forms;
 using static System.Windows.Forms.VisualStyles.VisualStyleElement.ListView;
 using System.Xml.Linq;
 using System.Data.Common;
+using System.Collections;
+using System.Data.Odbc;
 
 namespace Team1CMPT291_Final
 {
     public partial class AddCarForm : Form
     {
-        public SqlConnection myConnection;
-        public SqlCommand myCommand;
-        public SqlDataReader myReader;
+        public string PublicQuery { get; set; }
+        private DBConnection DBConnectionInstance;
 
-            public AddCarForm()
+        public AddCarForm()
         {
             InitializeComponent();
 
-            String connectionString = "Server=localhost;Database=CarRental;Trusted_Connection=yes;";
+            DBConnectionInstance = new DBConnection();
 
-            SqlConnection myConnection = new SqlConnection(connectionString);
-
-            try
-            {
-                myConnection.Open();
-                myCommand = new SqlCommand();
-                myCommand.Connection = myConnection;
-            }
-            catch (Exception e)
-            {
-                MessageBox.Show(e.ToString(), "Error");
-                this.Close();
-            }
         }
 
         private void textBox1_TextChanged(object sender, EventArgs e)
@@ -66,18 +54,10 @@ namespace Team1CMPT291_Final
 
         private void Save_Button_Click(object sender, EventArgs e)
         {
-            try
-            {
-                myCommand.CommandText = "insert into car database (" + VIN_Box.Text + "," + Plate_Box.Text + ',' + Make_Box.Text + ',' 
-                    + Model_Box.Text + ',' + Transmission_Box.Text + ',' + Branch_ID_Box.Text + ',' + Type_Box.Text + ')';
-                MessageBox.Show(myCommand.CommandText);
+            string insertQuery = $"INSERT INTO Cars VALUES ({VIN_Box.Text}, {Plate_Box.Text}, {Make_Box.Text}, {Model_Box.Text}, {Transmission_Box.Text}, {Branch_ID_Box.Text}, {Type_Box.Text})";
 
-                myCommand.ExecuteNonQuery();
-            }
-            catch(Exception e2)
-            {
-                MessageBox.Show(e2.ToString(), "Error");
-            }
+               int toss = DBConnectionInstance.Insert(insertQuery);
+
 
 
             this.Close();
