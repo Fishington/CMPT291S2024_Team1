@@ -93,6 +93,37 @@ namespace Team1CMPT291_Final
             return 0;
         }
 
-        
+        // Use deleteQuery string : $"DELETE FROM Cars WHERE VIN = '{selectedVIN}';";
+        public int Delete(string query) // Takes DELETE query String as Input
+        {
+            int rowsAffected = 0;
+
+            using (SqlConnection connection = OpenConnection())
+            {
+                if (connection != null)
+                {
+                    try
+                    {
+                        using (SqlCommand command = new SqlCommand(query, connection))
+                        {
+                            rowsAffected = command.ExecuteNonQuery();
+                        }
+                    }
+                    catch (SqlException sqlEx)
+                    {
+                        MessageBox.Show($"SQL Error: {sqlEx.Message}", "Error");
+                    }
+                    catch (Exception ex)
+                    {
+                        MessageBox.Show($"General Error: {ex.Message}", "Error");
+                    }
+                    CloseConnection(connection);
+                }
+            }
+
+            return rowsAffected;
+        }
+
+
     }
 }

@@ -33,9 +33,7 @@
             this.button_delete_car = new System.Windows.Forms.Button();
             this.button_back = new System.Windows.Forms.Button();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.comboBox1 = new System.Windows.Forms.ComboBox();
-            this.label1 = new System.Windows.Forms.Label();
-            this.button1 = new System.Windows.Forms.Button();
+            this.TestLabel = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -65,6 +63,7 @@
             this.button_delete_car.TabIndex = 2;
             this.button_delete_car.Text = "Delete Car";
             this.button_delete_car.UseVisualStyleBackColor = true;
+            this.button_delete_car.Click += new System.EventHandler(this.button_delete_car_Click);
             // 
             // button_back
             // 
@@ -78,51 +77,35 @@
             // 
             // dataGridView1
             // 
+            this.dataGridView1.AllowUserToAddRows = false;
+            this.dataGridView1.AllowUserToDeleteRows = false;
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridView1.EditMode = System.Windows.Forms.DataGridViewEditMode.EditProgrammatically;
             this.dataGridView1.Location = new System.Drawing.Point(352, 12);
             this.dataGridView1.Name = "dataGridView1";
+            this.dataGridView1.ReadOnly = true;
             this.dataGridView1.RowHeadersWidth = 72;
             this.dataGridView1.RowTemplate.Height = 31;
-            this.dataGridView1.Size = new System.Drawing.Size(868, 592);
+            this.dataGridView1.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.dataGridView1.Size = new System.Drawing.Size(1450, 592);
             this.dataGridView1.TabIndex = 4;
             this.dataGridView1.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick);
             // 
-            // comboBox1
+            // TestLabel
             // 
-            this.comboBox1.Font = new System.Drawing.Font("Inter", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Location = new System.Drawing.Point(352, 672);
-            this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(382, 42);
-            this.comboBox1.TabIndex = 5;
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Inter Medium", 11.14286F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(346, 636);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(201, 33);
-            this.label1.TabIndex = 6;
-            this.label1.Text = "Select Branch:";
-            // 
-            // button1
-            // 
-            this.button1.Location = new System.Drawing.Point(758, 672);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(137, 42);
-            this.button1.TabIndex = 7;
-            this.button1.Text = "Refresh";
-            this.button1.UseVisualStyleBackColor = true;
+            this.TestLabel.AutoSize = true;
+            this.TestLabel.Location = new System.Drawing.Point(347, 742);
+            this.TestLabel.Name = "TestLabel";
+            this.TestLabel.Size = new System.Drawing.Size(209, 25);
+            this.TestLabel.TabIndex = 8;
+            this.TestLabel.Text = "Testing (Click on data)";
             // 
             // InventoryForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(11F, 24F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1232, 824);
-            this.Controls.Add(this.button1);
-            this.Controls.Add(this.label1);
-            this.Controls.Add(this.comboBox1);
+            this.ClientSize = new System.Drawing.Size(1871, 824);
+            this.Controls.Add(this.TestLabel);
             this.Controls.Add(this.dataGridView1);
             this.Controls.Add(this.button_back);
             this.Controls.Add(this.button_delete_car);
@@ -145,8 +128,6 @@
         private System.Windows.Forms.Button button_delete_car;
         private System.Windows.Forms.Button button_back;
         private System.Windows.Forms.DataGridView dataGridView1;
-        private System.Windows.Forms.ComboBox comboBox1;
-        private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Label TestLabel;
     }
 }
