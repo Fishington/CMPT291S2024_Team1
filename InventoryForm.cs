@@ -12,9 +12,16 @@ namespace Team1CMPT291_Final
 {
     public partial class InventoryForm : Form
     {
+
+        private DBConnection DBConnectionInstance;
         public InventoryForm()
         {
             InitializeComponent();
+            DBConnectionInstance = new DBConnection();
+
+            string query = "SELECT * FROM Cars";
+            DataTable results = DBConnectionInstance.Query(query);
+            dataGridView1.DataSource = results;
         }
 
 
@@ -24,6 +31,11 @@ namespace Team1CMPT291_Final
 
             MainScreenForm mainScreenForm = new MainScreenForm();
             mainScreenForm.Show();
+        }
+
+        private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
         }
     }
 }
