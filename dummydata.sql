@@ -33,9 +33,9 @@ insert into Cars(VIN, License_Plate, Make, Model, Transmission, Branch_ID, Type)
 insert into Cars(VIN, License_Plate, Make, Model, Transmission, Branch_ID, Type) VALUES ('QM7NQREKOUI6HRD6T', 'V2D1I68', 'Hyundai', 'Forester', 'Automatic', 2, 'SMALL');
 insert into Cars(VIN, License_Plate, Make, Model, Transmission, Branch_ID, Type) VALUES ('XS0EO3HS2TFG682FF', 'PTGSV82', 'Subaru', 'Golf', 'Manual', 5, 'SMALL');
 insert into Cars(VIN, License_Plate, Make, Model, Transmission, Branch_ID, Type) VALUES ('2SLNH3JH9YJDWLVW6', 'EOMP1B9', 'Chevrolet', 'Accord', 'Automatic', 4, 'TRUCK');
-insert into Cars(VIN, License_Plate, Make, Model, Transmission, Branch_ID, Type) VALUES ('B98YAL25SDE6UNM1E', '9XD6H7B', 'Hyundai', 'Sonata', 'Automatic', 9, 'SPORT');
-insert into Cars(VIN, License_Plate, Make, Model, Transmission, Branch_ID, Type) VALUES ('1R3HFATOMDG9E9QT5', 'FTQ70R4', 'Kia', 'Silverado', 'Automatic', 8, 'SUV');
-insert into Cars(VIN, License_Plate, Make, Model, Transmission, Branch_ID, Type) VALUES ('2L9QYF3T9C3605J0E', 'D52BZ2L', 'Ford', 'Camry', 'Manual', 8, 'LUXURY');
+insert into Cars(VIN, License_Plate, Make, Model, Transmission, Branch_ID, Type) VALUES ('B98YAL25SDE6UNM1E', '9XD6H7B', 'Hyundai', 'Sonata', 'Automatic', 1, 'SPORT');
+insert into Cars(VIN, License_Plate, Make, Model, Transmission, Branch_ID, Type) VALUES ('1R3HFATOMDG9E9QT5', 'FTQ70R4', 'Kia', 'Silverado', 'Automatic', 2, 'SUV');
+insert into Cars(VIN, License_Plate, Make, Model, Transmission, Branch_ID, Type) VALUES ('2L9QYF3T9C3605J0E', 'D52BZ2L', 'Ford', 'Camry', 'Manual', 2, 'LUXURY');
 
 -- Sample Customer 
 INSERT INTO Customers (FirstName, LastName, Street, City, Postal_Code, Province, Country, PhoneNumber)
