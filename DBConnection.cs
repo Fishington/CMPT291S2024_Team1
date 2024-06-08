@@ -70,5 +70,27 @@ namespace Team1CMPT291_Final
             }
             return results;
         }
+        public int Insert(string query)
+        {
+            using (SqlConnection connection = OpenConnection())
+            {
+                try
+                {
+                    using (SqlCommand command = new SqlCommand(query, connection))
+                    {
+                        return command.ExecuteNonQuery();
+                    }
+                }
+                catch (SqlException sqlEx)
+                {
+                    MessageBox.Show($"SQL Error: {sqlEx.Message}", "Error");
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show($"General Error: {ex.Message}", "Error");
+                }
+            }
+            return 0;
+        }
     }
 }
