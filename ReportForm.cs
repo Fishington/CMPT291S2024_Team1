@@ -20,6 +20,8 @@ namespace Team1CMPT291_Final
         {
             InitializeComponent();
             DBConnectionInstance = new DBConnection();
+
+
         }
 
         private void button1_Click(object sender, EventArgs e)
