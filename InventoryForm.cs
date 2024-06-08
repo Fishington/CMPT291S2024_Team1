@@ -111,5 +111,13 @@ namespace Team1CMPT291_Final
 
 
 
+        private void button_add_car_Click(object sender, EventArgs e)
+        {
+            this.Close();
+
+            AddCarForm addCarForm = new AddCarForm();
+            addCarForm.Show();
+
+        }
     }
 }

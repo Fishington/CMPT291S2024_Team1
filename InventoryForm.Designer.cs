@@ -45,6 +45,7 @@
             this.button_add_car.TabIndex = 0;
             this.button_add_car.Text = "Add Car";
             this.button_add_car.UseVisualStyleBackColor = true;
+            this.button_add_car.Click += new System.EventHandler(this.button_add_car_Click);
             // 
             // button_modify_car
             // 
