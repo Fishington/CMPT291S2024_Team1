@@ -22,7 +22,8 @@ namespace Team1CMPT291_Final
         
         public void UpdateDataGrid()
         {
-            DataTable results = new DBConnection().Query("SELECT * FROM Cars");
+            DBConnectionInstance = new DBConnection();
+            DataTable results = DBConnectionInstance.Query("SELECT * FROM Cars");
             dataGridView1.DataSource = results;
         }
         public InventoryForm()
@@ -89,13 +90,7 @@ namespace Team1CMPT291_Final
                     if (rowsAffected > 0)
                     {
                         MessageBox.Show("Car deleted successfully.");
-                        // Refresh DataGridView (Optional)
-
-                        dataGridView1.DataSource = null;
-
-                        // Reload data from database
-                        DataTable data = DBConnectionInstance.Query(PublicQuery);
-                        dataGridView1.DataSource = data;
+                        UpdateDataGrid();
                     }
                     else
                     {
@@ -137,6 +132,7 @@ namespace Team1CMPT291_Final
 
             AddCarForm addCarForm = new AddCarForm();
             addCarForm.Show();
+            UpdateDataGrid();
 
 
         }
