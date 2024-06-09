@@ -17,15 +17,22 @@ namespace Team1CMPT291_Final
     {
         public string PublicQuery { get; set; }
         private DBConnection DBConnectionInstance;
+        
+        public void UpdateDataGrid()
 
+        {
+            DBConnectionInstance = new DBConnection();
+            DataTable results = DBConnectionInstance.Query("SELECT * FROM Cars");
+            dataGridView1.DataSource = results;
+        }
         public InventoryForm()
         {
             InitializeComponent();
-            DBConnectionInstance = new DBConnection();
-            PublicQuery = "SELECT * FROM Cars"; //              ====== Important Query ======
-            DataTable results = DBConnectionInstance.Query(PublicQuery);
-            dataGridView1.DataSource = results;
+            UpdateDataGrid();
         }
+        
+        
+
 
         private void button_back_Click(object sender, EventArgs e)
         {
@@ -81,14 +88,8 @@ namespace Team1CMPT291_Final
                     if (rowsAffected > 0)
                     {
                         MessageBox.Show("Car deleted successfully.");
-                        // Refresh DataGridView (Optional)
-
-                        dataGridView1.DataSource = null;
-
-                        // Reload data from database
-                        var data = DBConnectionInstance.Query(PublicQuery);
-                        dataGridView1.DataSource = data;
-                    }
+                        UpdateDataGrid();
+    }
                     else
                     {
                         MessageBox.Show("No car was deleted.");
@@ -114,6 +115,7 @@ namespace Team1CMPT291_Final
                 // Create ModifyCarForm instance and pass selectedVIN
                 var modifyForm = new ModifyCarForm(selectedVIN);
                 modifyForm.ShowDialog(); // Show the popup form modally
+                UpdateDataGrid(); // Refresh the DataGridView after the form is closed
             }
             else
             {
@@ -126,6 +128,8 @@ namespace Team1CMPT291_Final
             Close();
             var addCarForm = new AddCarForm();
             addCarForm.Show();
+
+            UpdateDataGrid();
         }
     }
 }
