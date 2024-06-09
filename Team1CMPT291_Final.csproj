@@ -65,6 +65,12 @@
     <Compile Include="MainScreenForm.Designer.cs">
       <DependentUpon>MainScreenForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="ModifyCarForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ModifyCarForm.Designer.cs">
+      <DependentUpon>ModifyCarForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="RentalTransactionForm.cs">
@@ -87,6 +93,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="MainScreenForm.resx">
       <DependentUpon>MainScreenForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ModifyCarForm.resx">
+      <DependentUpon>ModifyCarForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
