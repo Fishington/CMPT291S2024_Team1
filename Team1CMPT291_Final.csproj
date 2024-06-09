@@ -46,6 +46,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="AddCarForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AddCarForm.Designer.cs">
+      <DependentUpon>AddCarForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="DBConnection.cs" />
     <Compile Include="InventoryForm.cs">
       <SubType>Form</SubType>
@@ -85,6 +91,9 @@
     <Compile Include="ReportForm.Designer.cs">
       <DependentUpon>ReportForm.cs</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="AddCarForm.resx">
+      <DependentUpon>AddCarForm.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="InventoryForm.resx">
       <DependentUpon>InventoryForm.cs</DependentUpon>
     </EmbeddedResource>

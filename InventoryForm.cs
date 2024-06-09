@@ -115,6 +115,7 @@ namespace Team1CMPT291_Final
                 var selectedRow = dataGridView1.SelectedRows[0];
                 string selectedVIN = selectedRow.Cells[0].Value?.ToString(); // Assuming VIN is in the first column
 
+
                 // Create ModifyCarForm instance and pass selectedVIN
                 ModifyCarForm modifyForm = new ModifyCarForm(selectedVIN);
                 modifyForm.ShowDialog(); // Show the popup form modally
@@ -123,6 +124,17 @@ namespace Team1CMPT291_Final
             {
                 MessageBox.Show("No row selected.");
             }
+
+
+
+        private void button_add_car_Click(object sender, EventArgs e)
+        {
+            this.Close();
+
+            AddCarForm addCarForm = new AddCarForm();
+            addCarForm.Show();
+
+
         }
     }
 }
