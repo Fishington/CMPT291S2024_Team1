@@ -54,9 +54,11 @@ namespace Team1CMPT291_Final
 
         private void Save_Button_Click(object sender, EventArgs e)
         {
-            string insertQuery = $"INSERT INTO Cars VALUES ({VIN_Box.Text}, {Plate_Box.Text}, {Make_Box.Text}, {Model_Box.Text}, {Transmission_Box.Text}, {Branch_ID_Box.Text}, {Type_Box.Text})";
+            string insertQuery = $"INSERT INTO Cars (VIN, License_Plate, Make, Model, Transmission, Branch_ID, Type) VALUES" +
+                $" ('{VIN_Box.Text}', '{Plate_Box.Text}', '{Make_Box.Text}', '{Model_Box.Text}', '{Transmission_Box.Text}', {Branch_ID_Box.Text}, '{Type_Box.Text}')";
 
-               int toss = DBConnectionInstance.Insert(insertQuery);
+
+            int toss = DBConnectionInstance.Insert(insertQuery);
 
 
 
