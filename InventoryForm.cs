@@ -17,41 +17,36 @@ namespace Team1CMPT291_Final
     {
 
         public string PublicQuery { get; set; }
-        
-        private DBConnection DBConnectionInstance;
+
         public InventoryForm()
         {
             InitializeComponent();
-            DBConnectionInstance = new DBConnection();
-
-            PublicQuery = "SELECT * FROM Cars"; //              ====== Important Query ======    
-            DataTable results = DBConnectionInstance.Query(PublicQuery);
+            PublicQuery = "SELECT * FROM Cars"; //              ====== Important Query ======
+            DataTable results = DBConnection.Query(PublicQuery);
             dataGridView1.DataSource = results;
         }
 
 
         private void button_back_Click(object sender, EventArgs e)
         {
-            this.Close();
-
+            Close();
             MainScreenForm mainScreenForm = new MainScreenForm();
             mainScreenForm.Show();
         }
 
         private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
-
             if (dataGridView1.SelectionMode == DataGridViewSelectionMode.FullRowSelect && dataGridView1.SelectedRows.Count > 0)
             {
                 var selectedRow = dataGridView1.SelectedRows[0];
                 // Access data from the selected row cells
-                string cellValue1_VIN   = selectedRow.Cells[0].Value?.ToString();
-                string cellValue2_LP    = selectedRow.Cells[1].Value?.ToString();
-                string cellValue3_Make  = selectedRow.Cells[2].Value?.ToString();
+                string cellValue1_VIN = selectedRow.Cells[0].Value?.ToString();
+                string cellValue2_LP = selectedRow.Cells[1].Value?.ToString();
+                string cellValue3_Make = selectedRow.Cells[2].Value?.ToString();
                 string cellValue4_Model = selectedRow.Cells[3].Value?.ToString();
                 string cellValue5_Trans = selectedRow.Cells[4].Value?.ToString();
-                string cellValue6_BID   = selectedRow.Cells[5].Value?.ToString();
-                string cellValue7_Type  = selectedRow.Cells[6].Value?.ToString();
+                string cellValue6_BID = selectedRow.Cells[5].Value?.ToString();
+                string cellValue7_Type = selectedRow.Cells[6].Value?.ToString();
 
                 // OR (if your DataGridView is data-bound)
                 var dataItem = dataGridView1.SelectedRows[0].DataBoundItem;
@@ -75,13 +70,13 @@ namespace Team1CMPT291_Final
                 var selectedRow = dataGridView1.SelectedRows[0];
                 string selectedVIN = selectedRow.Cells[0].Value?.ToString(); // Assuming VIN will stay in first collumn
 
-                
+
                 DialogResult confirmation = MessageBox.Show("Are you sure you want to delete this car?", "Delete Confirmation", MessageBoxButtons.YesNo);
                 if (confirmation == DialogResult.Yes)
                 {
                     string deleteQuery = $"DELETE FROM Cars WHERE VIN = '{selectedVIN}';";
 
-                    int rowsAffected = DBConnectionInstance.Delete(deleteQuery);
+                    int rowsAffected = DBConnection.Delete(deleteQuery);
 
                     if (rowsAffected > 0)
                     {
@@ -91,7 +86,7 @@ namespace Team1CMPT291_Final
                         dataGridView1.DataSource = null;
 
                         // Reload data from database
-                        DataTable data = DBConnectionInstance.Query(PublicQuery);
+                        DataTable data = DBConnection.Query(PublicQuery);
                         dataGridView1.DataSource = data;
                     }
                     else
@@ -124,8 +119,7 @@ namespace Team1CMPT291_Final
             {
                 MessageBox.Show("No row selected.");
             }
-
-
+        }
 
         private void button_add_car_Click(object sender, EventArgs e)
         {
