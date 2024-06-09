@@ -19,16 +19,19 @@ namespace Team1CMPT291_Final
         public string PublicQuery { get; set; }
         
         private DBConnection DBConnectionInstance;
+        
+        public void UpdateDataGrid()
+        {
+            DataTable results = new DBConnection().Query("SELECT * FROM Cars");
+            dataGridView1.DataSource = results;
+        }
         public InventoryForm()
         {
             InitializeComponent();
-            DBConnectionInstance = new DBConnection();
-
-            PublicQuery = "SELECT * FROM Cars"; //              ====== Important Query ======    
-            DataTable results = DBConnectionInstance.Query(PublicQuery);
-            dataGridView1.DataSource = results;
+            UpdateDataGrid();
         }
-
+        
+        
 
         private void button_back_Click(object sender, EventArgs e)
         {
@@ -119,6 +122,7 @@ namespace Team1CMPT291_Final
                 // Create ModifyCarForm instance and pass selectedVIN
                 ModifyCarForm modifyForm = new ModifyCarForm(selectedVIN);
                 modifyForm.ShowDialog(); // Show the popup form modally
+                UpdateDataGrid(); // Refresh the DataGridView after the form is closed
             }
             else
             {
