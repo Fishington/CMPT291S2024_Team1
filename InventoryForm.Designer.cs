@@ -55,6 +55,7 @@
             this.button_modify_car.TabIndex = 1;
             this.button_modify_car.Text = "Modify Car";
             this.button_modify_car.UseVisualStyleBackColor = true;
+            this.button_modify_car.Click += new System.EventHandler(this.button_modify_car_Click);
             // 
             // button_delete_car
             // 
