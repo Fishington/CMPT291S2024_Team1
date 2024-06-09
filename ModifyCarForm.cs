@@ -23,6 +23,10 @@ namespace Team1CMPT291_Final
             ComboBox_Type.DataSource = carTypes;
             ComboBox_Type.DisplayMember = "Type";
             ComboBox_Type.ValueMember = "Type";
+            DataTable branches = dbConnection.Query("SELECT Branch_ID, Name FROM Branches");
+            ComboBox_Branch.DataSource = branches;
+            ComboBox_Branch.DisplayMember = "Name";
+            ComboBox_Branch.ValueMember = "Branch_ID";
 
             textbox_VIN.Text = selectedVIN;
             DataTable results = dbConnection.Query("SELECT * FROM Cars WHERE VIN = '" + selectedVIN + "'");
@@ -32,7 +36,7 @@ namespace Team1CMPT291_Final
             textBox_Make.Text = row["Make"].ToString();
             textBox_Model.Text = row["Model"].ToString();
             textBox_Transmission.Text = row["Transmission"].ToString();
-            textBox_BranchID.Text = row["Branch_ID"].ToString();
+            ComboBox_Branch.SelectedValue = row["Branch_ID"].ToString();
             ComboBox_Type.SelectedIndex = ComboBox_Type.FindStringExact(row["Type"].ToString());
                 
 
@@ -46,7 +50,7 @@ namespace Team1CMPT291_Final
         private void SaveButton_Click(object sender, EventArgs e)
         {
             //display message box with currently selected type
-            String UpdateQuery = "UPDATE Cars SET License_Plate = '" + textBox_LicensePlate.Text + "', Make = '" + textBox_Make.Text + "', Model = '" + textBox_Model.Text + "', Transmission = '" + textBox_Transmission.Text + "', Branch_ID = '" + textBox_BranchID.Text + "', Type = '" + ComboBox_Type.SelectedValue.ToString() + "' WHERE VIN = '" + textbox_VIN.Text + "'";
+            String UpdateQuery = "UPDATE Cars SET License_Plate = '" + textBox_LicensePlate.Text + "', Make = '" + textBox_Make.Text + "', Model = '" + textBox_Model.Text + "', Transmission = '" + textBox_Transmission.Text + "', Branch_ID = '" + ComboBox_Branch.SelectedValue.ToString() + "', Type = '" + ComboBox_Type.SelectedValue.ToString() + "' WHERE VIN = '" + textbox_VIN.Text + "'";
             new DBConnection().Query(UpdateQuery);
             this.Close();
         }

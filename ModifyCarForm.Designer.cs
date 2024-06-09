@@ -40,11 +40,11 @@
             this.textBox_Make = new System.Windows.Forms.TextBox();
             this.textBox_Model = new System.Windows.Forms.TextBox();
             this.textBox_Transmission = new System.Windows.Forms.TextBox();
-            this.textBox_BranchID = new System.Windows.Forms.TextBox();
             this.textbox_VIN = new System.Windows.Forms.Label();
             this.SaveButton = new System.Windows.Forms.Button();
             this.BackBTN = new System.Windows.Forms.Button();
             this.ComboBox_Type = new System.Windows.Forms.ComboBox();
+            this.ComboBox_Branch = new System.Windows.Forms.ComboBox();
             this.SuspendLayout();
             // 
             // label_VIN
@@ -170,15 +170,6 @@
             this.textBox_Transmission.Size = new System.Drawing.Size(125, 26);
             this.textBox_Transmission.TabIndex = 11;
             // 
-            // textBox_BranchID
-            // 
-            this.textBox_BranchID.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox_BranchID.Location = new System.Drawing.Point(249, 87);
-            this.textBox_BranchID.Margin = new System.Windows.Forms.Padding(2);
-            this.textBox_BranchID.Name = "textBox_BranchID";
-            this.textBox_BranchID.Size = new System.Drawing.Size(125, 26);
-            this.textBox_BranchID.TabIndex = 12;
-            // 
             // textbox_VIN
             // 
             this.textbox_VIN.AutoSize = true;
@@ -221,16 +212,24 @@
             this.ComboBox_Type.Size = new System.Drawing.Size(121, 21);
             this.ComboBox_Type.TabIndex = 17;
             // 
+            // ComboBox_Branch
+            // 
+            this.ComboBox_Branch.FormattingEnabled = true;
+            this.ComboBox_Branch.Location = new System.Drawing.Point(249, 87);
+            this.ComboBox_Branch.Name = "ComboBox_Branch";
+            this.ComboBox_Branch.Size = new System.Drawing.Size(121, 21);
+            this.ComboBox_Branch.TabIndex = 18;
+            // 
             // ModifyCarForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(564, 314);
+            this.Controls.Add(this.ComboBox_Branch);
             this.Controls.Add(this.ComboBox_Type);
             this.Controls.Add(this.BackBTN);
             this.Controls.Add(this.SaveButton);
             this.Controls.Add(this.textbox_VIN);
-            this.Controls.Add(this.textBox_BranchID);
             this.Controls.Add(this.textBox_Transmission);
             this.Controls.Add(this.textBox_Model);
             this.Controls.Add(this.textBox_Make);
@@ -266,10 +265,10 @@
         private System.Windows.Forms.TextBox textBox_Make;
         private System.Windows.Forms.TextBox textBox_Model;
         private System.Windows.Forms.TextBox textBox_Transmission;
-        private System.Windows.Forms.TextBox textBox_BranchID;
         private System.Windows.Forms.Label textbox_VIN;
         private System.Windows.Forms.Button SaveButton;
         private System.Windows.Forms.Button BackBTN;
         private System.Windows.Forms.ComboBox ComboBox_Type;
+        private System.Windows.Forms.ComboBox ComboBox_Branch;
     }
 }
