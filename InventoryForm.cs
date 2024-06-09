@@ -16,7 +16,7 @@ namespace Team1CMPT291_Final
     public partial class InventoryForm : Form
     {
         public string PublicQuery { get; set; }
-        public DBConnection DBConnectionInstance;
+        private DBConnection DBConnectionInstance;
 
         public InventoryForm()
         {
