@@ -16,12 +16,14 @@ namespace Team1CMPT291_Final
     public partial class InventoryForm : Form
     {
         public string PublicQuery { get; set; }
+        public DBConnection DBConnectionInstance;
 
         public InventoryForm()
         {
             InitializeComponent();
+            DBConnectionInstance = new DBConnection();
             PublicQuery = "SELECT * FROM Cars"; //              ====== Important Query ======
-            DataTable results = DBConnection.Query(PublicQuery);
+            DataTable results = DBConnectionInstance.Query(PublicQuery);
             dataGridView1.DataSource = results;
         }
 
@@ -74,7 +76,7 @@ namespace Team1CMPT291_Final
                 {
                     var deleteQuery = $"DELETE FROM Cars WHERE VIN = '{selectedVIN}';";
 
-                    var rowsAffected = DBConnection.Delete(deleteQuery);
+                    var rowsAffected = DBConnectionInstance.Delete(deleteQuery);
 
                     if (rowsAffected > 0)
                     {
@@ -84,7 +86,7 @@ namespace Team1CMPT291_Final
                         dataGridView1.DataSource = null;
 
                         // Reload data from database
-                        var data = DBConnection.Query(PublicQuery);
+                        var data = DBConnectionInstance.Query(PublicQuery);
                         dataGridView1.DataSource = data;
                     }
                     else

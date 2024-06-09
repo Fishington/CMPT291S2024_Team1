@@ -18,7 +18,8 @@ namespace Team1CMPT291_Final
             InitializeComponent();
 
             textbox_VIN.Text = selectedVIN;
-            DataTable results = new DBConnection().Query("SELECT * FROM Cars WHERE VIN = '" + selectedVIN + "'");
+            DBConnection dBConnection = new DBConnection();
+            DataTable results = dBConnection.Query("SELECT * FROM Cars WHERE VIN = '" + selectedVIN + "'");
             // Show result in message box
             DataRow row = results.Rows[0];
             textBox_LicensePlate.Text = row["License_Plate"].ToString();

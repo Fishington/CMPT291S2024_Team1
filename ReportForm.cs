@@ -41,7 +41,7 @@ namespace Team1CMPT291_Final
         private void button2_Click(object sender, EventArgs e)
         {
             string query = "SELECT * FROM CarType WHERE Type = 'SMALL'";
-            DataTable results = DBConnection.Query(query);
+            DataTable results = DBConnectionInstance.Query(query);
             dataGridView1.DataSource = results;
         }
     }
