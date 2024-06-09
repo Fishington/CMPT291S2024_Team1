@@ -108,6 +108,22 @@ namespace Team1CMPT291_Final
             }
         }
 
+        private void button_modify_car_Click(object sender, EventArgs e)
+        {
+            if (dataGridView1.SelectionMode == DataGridViewSelectionMode.FullRowSelect && dataGridView1.SelectedRows.Count > 0)
+            {
+                var selectedRow = dataGridView1.SelectedRows[0];
+                string selectedVIN = selectedRow.Cells[0].Value?.ToString(); // Assuming VIN is in the first column
+
+
+                // Create ModifyCarForm instance and pass selectedVIN
+                ModifyCarForm modifyForm = new ModifyCarForm(selectedVIN);
+                modifyForm.ShowDialog(); // Show the popup form modally
+            }
+            else
+            {
+                MessageBox.Show("No row selected.");
+            }
 
 
 
@@ -117,6 +133,7 @@ namespace Team1CMPT291_Final
 
             AddCarForm addCarForm = new AddCarForm();
             addCarForm.Show();
+
 
         }
     }
