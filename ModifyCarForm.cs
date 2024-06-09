@@ -48,6 +48,7 @@ namespace Team1CMPT291_Final
             //display message box with currently selected type
             String UpdateQuery = "UPDATE Cars SET License_Plate = '" + textBox_LicensePlate.Text + "', Make = '" + textBox_Make.Text + "', Model = '" + textBox_Model.Text + "', Transmission = '" + textBox_Transmission.Text + "', Branch_ID = '" + textBox_BranchID.Text + "', Type = '" + ComboBox_Type.SelectedValue.ToString() + "' WHERE VIN = '" + textbox_VIN.Text + "'";
             new DBConnection().Query(UpdateQuery);
+            this.Close();
         }
     }
 }
