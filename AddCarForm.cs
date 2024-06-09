@@ -41,9 +41,8 @@ namespace Team1CMPT291_Final
 
         private void Cancel_Button_Click(object sender, EventArgs e)
         {
-            this.Close();
-
-            InventoryForm inventoryForm = new InventoryForm();
+            Close();
+            var inventoryForm = new InventoryForm();
             inventoryForm.Show();
         }
 
@@ -54,18 +53,20 @@ namespace Team1CMPT291_Final
 
         private void Save_Button_Click(object sender, EventArgs e)
         {
-            string insertQuery = $"INSERT INTO Cars (VIN, License_Plate, Make, Model, Transmission, Branch_ID, Type) VALUES" +
+            var insertQuery = $"INSERT INTO Cars (VIN, License_Plate, Make, Model, Transmission, Branch_ID, Type) VALUES" +
                 $" ('{VIN_Box.Text}', '{Plate_Box.Text}', '{Make_Box.Text}', '{Model_Box.Text}', '{Transmission_Box.Text}', {Branch_ID_Box.Text}, '{Type_Box.Text}')";
-
-
-            int toss = DBConnectionInstance.Insert(insertQuery);
-
-
-
-            this.Close();
-
-            InventoryForm inventoryForm = new InventoryForm();
-            inventoryForm.Show();
+            var rowsAffected = DBConnectionInstance.Insert(insertQuery);
+            if (rowsAffected > 0)
+            {
+                MessageBox.Show("Car added successfully!");
+                DialogResult = DialogResult.OK;
+                Close();
+            }
+            else
+            {
+                MessageBox.Show("Failed to add car.");
+                DialogResult = DialogResult.None;
+            }
         }
     }
 }

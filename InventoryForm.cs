@@ -22,8 +22,13 @@ namespace Team1CMPT291_Final
         {
             InitializeComponent();
             DBConnectionInstance = new DBConnection();
+            LoadData();
+        }
+
+        private void LoadData()
+        {
             PublicQuery = "SELECT * FROM Cars"; //              ====== Important Query ======
-            DataTable results = DBConnectionInstance.Query(PublicQuery);
+            var results = DBConnectionInstance.Query(PublicQuery);
             dataGridView1.DataSource = results;
         }
 
@@ -70,8 +75,7 @@ namespace Team1CMPT291_Final
                 var selectedRow = dataGridView1.SelectedRows[0];
                 var selectedVIN = selectedRow.Cells[0].Value?.ToString(); // Assuming VIN will stay in first collumn
 
-
-                DialogResult confirmation = MessageBox.Show("Are you sure you want to delete this car?", "Delete Confirmation", MessageBoxButtons.YesNo);
+                var confirmation = MessageBox.Show("Are you sure you want to delete this car?", "Delete Confirmation", MessageBoxButtons.YesNo);
                 if (confirmation == DialogResult.Yes)
                 {
                     var deleteQuery = $"DELETE FROM Cars WHERE VIN = '{selectedVIN}';";
@@ -81,13 +85,8 @@ namespace Team1CMPT291_Final
                     if (rowsAffected > 0)
                     {
                         MessageBox.Show("Car deleted successfully.");
-                        // Refresh DataGridView (Optional)
-
                         dataGridView1.DataSource = null;
-
-                        // Reload data from database
-                        var data = DBConnectionInstance.Query(PublicQuery);
-                        dataGridView1.DataSource = data;
+                        LoadData();
                     }
                     else
                     {
@@ -110,10 +109,11 @@ namespace Team1CMPT291_Final
                 var selectedRow = dataGridView1.SelectedRows[0];
                 var selectedVIN = selectedRow.Cells[0].Value?.ToString(); // Assuming VIN is in the first column
 
-
                 // Create ModifyCarForm instance and pass selectedVIN
                 var modifyForm = new ModifyCarForm(selectedVIN);
-                modifyForm.ShowDialog(); // Show the popup form modally
+
+                // Check the modify form's dialog result to see if modification was saved (load data in that case!)
+                if (modifyForm.ShowDialog() == DialogResult.OK) { LoadData(); }
             }
             else
             {
@@ -123,9 +123,13 @@ namespace Team1CMPT291_Final
 
         private void button_add_car_Click(object sender, EventArgs e)
         {
-            Close();
             var addCarForm = new AddCarForm();
-            addCarForm.Show();
+
+            // Check the add form's dialog result to see if addition was saved (load data in that case!)
+            if (addCarForm.ShowDialog() == DialogResult.OK)
+            {
+                LoadData();
+            }
         }
     }
 }

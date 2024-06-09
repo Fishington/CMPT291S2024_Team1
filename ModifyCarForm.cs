@@ -18,8 +18,8 @@ namespace Team1CMPT291_Final
             InitializeComponent();
 
             textbox_VIN.Text = selectedVIN;
-            DBConnection dBConnection = new DBConnection();
-            DataTable results = dBConnection.Query("SELECT * FROM Cars WHERE VIN = '" + selectedVIN + "'");
+            var dBConnection = new DBConnection();
+            var results = dBConnection.Query("SELECT * FROM Cars WHERE VIN = '" + selectedVIN + "'");
             // Show result in message box
             DataRow row = results.Rows[0];
             textBox_LicensePlate.Text = row["License_Plate"].ToString();
@@ -33,13 +33,28 @@ namespace Team1CMPT291_Final
 
         private void BackBTN_Click(object sender, EventArgs e)
         {
-            this.Close();
+            Close();
         }
 
-        private void SaveButton_Click(object sender, EventArgs e)
+        private void SaveButton_Click_1(object sender, EventArgs e)
         {
-            String UpdateQuery = "UPDATE Cars SET License_Plate = '" + textBox_LicensePlate.Text + "', Make = '" + textBox_Make.Text + "', Model = '" + textBox_Model.Text + "', Transmission = '" + textBox_Transmission.Text + "', Branch_ID = '" + textBox_BranchID.Text + "', Type = '" + textBox_Type.Text + "' WHERE VIN = '" + textbox_VIN.Text + "'";
-            new DBConnection().Query(UpdateQuery);
+            var UpdateQuery = "UPDATE Cars SET License_Plate = '" + textBox_LicensePlate.Text + "', Make = '" + textBox_Make.Text + "', Model = '" + textBox_Model.Text + "', Transmission = '" + textBox_Transmission.Text + "', Branch_ID = '" + textBox_BranchID.Text + "', Type = '" + textBox_Type.Text + "' WHERE VIN = '" + textbox_VIN.Text + "'";
+            var rowsAffected = new DBConnection().Update(UpdateQuery);
+
+            if (rowsAffected > 0)
+            {
+                MessageBox.Show("Car updated successfully!");
+                DialogResult = DialogResult.OK;
+                Close();
+            }
+            else
+            {
+                MessageBox.Show("No changes were made. Please check your data.");
+                DialogResult = DialogResult.None; // Stays on the form.
+            }
+
+            DialogResult = DialogResult.OK;
+            Close();
         }
     }
 }

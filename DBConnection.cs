@@ -70,6 +70,18 @@ namespace Team1CMPT291_Final
             return results;
         }
 
+        public int Update(string query)
+        {
+            using (var connection = new SqlConnection(connectionString))
+            {
+                connection.Open();
+                using (var command = new SqlCommand(query, connection))
+                {
+                    return command.ExecuteNonQuery();
+                }
+            }
+        }
+
         public int Insert(string query)
         {
             using (var connection = OpenConnection())
