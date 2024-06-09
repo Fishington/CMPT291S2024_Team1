@@ -1,7 +1,6 @@
 ﻿using System;
 using System.Data;
 using System.Data.SqlClient;
-using System.Windows.Forms;
 
 namespace Team1CMPT291_Final
 {
@@ -11,19 +10,19 @@ namespace Team1CMPT291_Final
 
         private SqlConnection OpenConnection()
         {
-            SqlConnection connection = new SqlConnection(connectionString);
+            var connection = new SqlConnection(connectionString);
             try
             {
                 connection.Open();
             }
             catch (SqlException sqlEx)
             {
-                MessageBox.Show($"SQL Error: {sqlEx.Message}", "Error");
+                Console.WriteLine($"SQL Error: {sqlEx.Message}");
                 connection = null;
             }
             catch (Exception ex)
             {
-                MessageBox.Show($"General Error: {ex.Message}", "Error");
+                Console.WriteLine($"General Error: {ex.Message}");
                 connection = null;
             }
 
@@ -40,28 +39,28 @@ namespace Team1CMPT291_Final
 
         public DataTable Query(string query)
         {
-            DataTable results = new DataTable();
+            var results = new DataTable();
 
-            using (SqlConnection connection = OpenConnection())
+            using (var connection = OpenConnection())
             {
                 if (connection != null)
                 {
-                    using (SqlCommand command = new SqlCommand(query, connection))
+                    using (var command = new SqlCommand(query, connection))
                     {
                         try
                         {
-                            using (SqlDataReader reader = command.ExecuteReader())
+                            using (var reader = command.ExecuteReader())
                             {
                                 results.Load(reader);
                             }
                         }
                         catch (SqlException sqlEx)
                         {
-                            MessageBox.Show($"SQL Error: {sqlEx.Message}", "Error");
+                            Console.WriteLine($"SQL Error: {sqlEx.Message}");
                         }
                         catch (Exception ex)
                         {
-                            MessageBox.Show($"General Error: {ex.Message}", "Error");
+                            Console.WriteLine($"General Error: {ex.Message}");
                         }
                     }
                     CloseConnection(connection);
@@ -69,33 +68,33 @@ namespace Team1CMPT291_Final
             }
             return results;
         }
+
         public int Insert(string query)
         {
-            using (SqlConnection connection = OpenConnection())
+            using (var connection = OpenConnection())
             {
                 try
                 {
-                    using (SqlCommand command = new SqlCommand(query, connection))
+                    using (var command = new SqlCommand(query, connection))
                     {
                         return command.ExecuteNonQuery();
                     }
                 }
                 catch (SqlException sqlEx)
                 {
-                    MessageBox.Show($"SQL Error: {sqlEx.Message}", "Error");
+                    Console.WriteLine($"SQL Error: {sqlEx.Message}");
                 }
                 catch (Exception ex)
                 {
-                    MessageBox.Show($"General Error: {ex.Message}", "Error");
+                    Console.WriteLine($"General Error: {ex.Message}");
                 }
             }
             return 0;
         }
 
-        // Use deleteQuery string : $"DELETE FROM Cars WHERE VIN = '{selectedVIN}';";
-        public int Delete(string query) // Takes DELETE query String as Input
+        public int Delete(string query)
         {
-            int rowsAffected = 0;
+            var rowsAffected = 0;
 
             using (SqlConnection connection = OpenConnection())
             {
@@ -103,18 +102,18 @@ namespace Team1CMPT291_Final
                 {
                     try
                     {
-                        using (SqlCommand command = new SqlCommand(query, connection))
+                        using (var command = new SqlCommand(query, connection))
                         {
                             rowsAffected = command.ExecuteNonQuery();
                         }
                     }
                     catch (SqlException sqlEx)
                     {
-                        MessageBox.Show($"SQL Error: {sqlEx.Message}", "Error");
+                        Console.WriteLine($"SQL Error: {sqlEx.Message}");
                     }
                     catch (Exception ex)
                     {
-                        MessageBox.Show($"General Error: {ex.Message}", "Error");
+                        Console.WriteLine($"General Error: {ex.Message}");
                     }
                     CloseConnection(connection);
                 }
@@ -122,7 +121,5 @@ namespace Team1CMPT291_Final
 
             return rowsAffected;
         }
-
-
     }
 }
