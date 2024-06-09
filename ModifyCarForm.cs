@@ -17,8 +17,15 @@ namespace Team1CMPT291_Final
         {
             InitializeComponent();
 
+            DBConnection dbConnection = new DBConnection();
+            // Get all the different types of cars from the database
+            DataTable carTypes = dbConnection.Query("SELECT Type FROM CarType");
+            ComboBox_Type.DataSource = carTypes;
+            ComboBox_Type.DisplayMember = "Type";
+            ComboBox_Type.ValueMember = "Type";
+
             textbox_VIN.Text = selectedVIN;
-            DataTable results = new DBConnection().Query("SELECT * FROM Cars WHERE VIN = '" + selectedVIN + "'");
+            DataTable results = dbConnection.Query("SELECT * FROM Cars WHERE VIN = '" + selectedVIN + "'");
             // Show result in message box
             DataRow row = results.Rows[0];
             textBox_LicensePlate.Text = row["License_Plate"].ToString();
@@ -26,7 +33,8 @@ namespace Team1CMPT291_Final
             textBox_Model.Text = row["Model"].ToString();
             textBox_Transmission.Text = row["Transmission"].ToString();
             textBox_BranchID.Text = row["Branch_ID"].ToString();
-            textBox_Type.Text = row["Type"].ToString();
+            ComboBox_Type.SelectedIndex = ComboBox_Type.FindStringExact(row["Type"].ToString());
+                
 
         }
 
@@ -37,7 +45,8 @@ namespace Team1CMPT291_Final
 
         private void SaveButton_Click(object sender, EventArgs e)
         {
-            String UpdateQuery = "UPDATE Cars SET License_Plate = '" + textBox_LicensePlate.Text + "', Make = '" + textBox_Make.Text + "', Model = '" + textBox_Model.Text + "', Transmission = '" + textBox_Transmission.Text + "', Branch_ID = '" + textBox_BranchID.Text + "', Type = '" + textBox_Type.Text + "' WHERE VIN = '" + textbox_VIN.Text + "'";
+            //display message box with currently selected type
+            String UpdateQuery = "UPDATE Cars SET License_Plate = '" + textBox_LicensePlate.Text + "', Make = '" + textBox_Make.Text + "', Model = '" + textBox_Model.Text + "', Transmission = '" + textBox_Transmission.Text + "', Branch_ID = '" + textBox_BranchID.Text + "', Type = '" + ComboBox_Type.SelectedValue.ToString() + "' WHERE VIN = '" + textbox_VIN.Text + "'";
             new DBConnection().Query(UpdateQuery);
         }
     }
