@@ -15,7 +15,6 @@ namespace Team1CMPT291_Final
             try
             {
                 connection.Open();
-                MessageBox.Show("Connected to CarRental DB.");
             }
             catch (SqlException sqlEx)
             {
