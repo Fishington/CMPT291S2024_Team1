@@ -15,7 +15,6 @@ namespace Team1CMPT291_Final
 {
     public partial class InventoryForm : Form
     {
-
         public string PublicQuery { get; set; }
 
         public InventoryForm()
@@ -26,11 +25,10 @@ namespace Team1CMPT291_Final
             dataGridView1.DataSource = results;
         }
 
-
         private void button_back_Click(object sender, EventArgs e)
         {
             Close();
-            MainScreenForm mainScreenForm = new MainScreenForm();
+            var mainScreenForm = new MainScreenForm();
             mainScreenForm.Show();
         }
 
@@ -40,13 +38,13 @@ namespace Team1CMPT291_Final
             {
                 var selectedRow = dataGridView1.SelectedRows[0];
                 // Access data from the selected row cells
-                string cellValue1_VIN = selectedRow.Cells[0].Value?.ToString();
-                string cellValue2_LP = selectedRow.Cells[1].Value?.ToString();
-                string cellValue3_Make = selectedRow.Cells[2].Value?.ToString();
-                string cellValue4_Model = selectedRow.Cells[3].Value?.ToString();
-                string cellValue5_Trans = selectedRow.Cells[4].Value?.ToString();
-                string cellValue6_BID = selectedRow.Cells[5].Value?.ToString();
-                string cellValue7_Type = selectedRow.Cells[6].Value?.ToString();
+                var cellValue1_VIN = selectedRow.Cells[0].Value?.ToString();
+                var cellValue2_LP = selectedRow.Cells[1].Value?.ToString();
+                var cellValue3_Make = selectedRow.Cells[2].Value?.ToString();
+                var cellValue4_Model = selectedRow.Cells[3].Value?.ToString();
+                var cellValue5_Trans = selectedRow.Cells[4].Value?.ToString();
+                var cellValue6_BID = selectedRow.Cells[5].Value?.ToString();
+                var cellValue7_Type = selectedRow.Cells[6].Value?.ToString();
 
                 // OR (if your DataGridView is data-bound)
                 var dataItem = dataGridView1.SelectedRows[0].DataBoundItem;
@@ -68,15 +66,15 @@ namespace Team1CMPT291_Final
             if (dataGridView1.SelectionMode == DataGridViewSelectionMode.FullRowSelect && dataGridView1.SelectedRows.Count > 0)
             {
                 var selectedRow = dataGridView1.SelectedRows[0];
-                string selectedVIN = selectedRow.Cells[0].Value?.ToString(); // Assuming VIN will stay in first collumn
+                var selectedVIN = selectedRow.Cells[0].Value?.ToString(); // Assuming VIN will stay in first collumn
 
 
                 DialogResult confirmation = MessageBox.Show("Are you sure you want to delete this car?", "Delete Confirmation", MessageBoxButtons.YesNo);
                 if (confirmation == DialogResult.Yes)
                 {
-                    string deleteQuery = $"DELETE FROM Cars WHERE VIN = '{selectedVIN}';";
+                    var deleteQuery = $"DELETE FROM Cars WHERE VIN = '{selectedVIN}';";
 
-                    int rowsAffected = DBConnection.Delete(deleteQuery);
+                    var rowsAffected = DBConnection.Delete(deleteQuery);
 
                     if (rowsAffected > 0)
                     {
@@ -86,7 +84,7 @@ namespace Team1CMPT291_Final
                         dataGridView1.DataSource = null;
 
                         // Reload data from database
-                        DataTable data = DBConnection.Query(PublicQuery);
+                        var data = DBConnection.Query(PublicQuery);
                         dataGridView1.DataSource = data;
                     }
                     else
@@ -108,11 +106,11 @@ namespace Team1CMPT291_Final
             if (dataGridView1.SelectionMode == DataGridViewSelectionMode.FullRowSelect && dataGridView1.SelectedRows.Count > 0)
             {
                 var selectedRow = dataGridView1.SelectedRows[0];
-                string selectedVIN = selectedRow.Cells[0].Value?.ToString(); // Assuming VIN is in the first column
+                var selectedVIN = selectedRow.Cells[0].Value?.ToString(); // Assuming VIN is in the first column
 
 
                 // Create ModifyCarForm instance and pass selectedVIN
-                ModifyCarForm modifyForm = new ModifyCarForm(selectedVIN);
+                var modifyForm = new ModifyCarForm(selectedVIN);
                 modifyForm.ShowDialog(); // Show the popup form modally
             }
             else
@@ -123,12 +121,9 @@ namespace Team1CMPT291_Final
 
         private void button_add_car_Click(object sender, EventArgs e)
         {
-            this.Close();
-
-            AddCarForm addCarForm = new AddCarForm();
+            Close();
+            var addCarForm = new AddCarForm();
             addCarForm.Show();
-
-
         }
     }
 }
