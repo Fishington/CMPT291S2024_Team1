@@ -34,6 +34,16 @@
             this.button_back = new System.Windows.Forms.Button();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.TestLabel = new System.Windows.Forms.Label();
+            this.ComboBox_Branch = new System.Windows.Forms.ComboBox();
+            this.label5 = new System.Windows.Forms.Label();
+            this.label6 = new System.Windows.Forms.Label();
+            this.ComboBox_Type = new System.Windows.Forms.ComboBox();
+            this.Combo_Transmission = new System.Windows.Forms.ComboBox();
+            this.label4 = new System.Windows.Forms.Label();
+            this.label2 = new System.Windows.Forms.Label();
+            this.Combo_Make = new System.Windows.Forms.ComboBox();
+            this.Combo_Model = new System.Windows.Forms.ComboBox();
+            this.label3 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -96,17 +106,132 @@
             // TestLabel
             // 
             this.TestLabel.AutoSize = true;
-            this.TestLabel.Location = new System.Drawing.Point(347, 742);
+            this.TestLabel.Location = new System.Drawing.Point(347, 774);
             this.TestLabel.Name = "TestLabel";
             this.TestLabel.Size = new System.Drawing.Size(209, 25);
             this.TestLabel.TabIndex = 8;
             this.TestLabel.Text = "Testing (Click on data)";
+            // 
+            // ComboBox_Branch
+            // 
+            this.ComboBox_Branch.Font = new System.Drawing.Font("Inter Medium", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.ComboBox_Branch.FormattingEnabled = true;
+            this.ComboBox_Branch.Location = new System.Drawing.Point(1322, 619);
+            this.ComboBox_Branch.Margin = new System.Windows.Forms.Padding(6);
+            this.ComboBox_Branch.Name = "ComboBox_Branch";
+            this.ComboBox_Branch.Size = new System.Drawing.Size(288, 42);
+            this.ComboBox_Branch.TabIndex = 19;
+            // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.14286F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label5.Location = new System.Drawing.Point(1197, 625);
+            this.label5.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(115, 31);
+            this.label5.TabIndex = 20;
+            this.label5.Text = "Branch: ";
+            // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.14286F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label6.Location = new System.Drawing.Point(864, 684);
+            this.label6.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(83, 31);
+            this.label6.TabIndex = 21;
+            this.label6.Text = "Type:";
+            // 
+            // ComboBox_Type
+            // 
+            this.ComboBox_Type.Font = new System.Drawing.Font("Inter Medium", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.ComboBox_Type.FormattingEnabled = true;
+            this.ComboBox_Type.Location = new System.Drawing.Point(957, 679);
+            this.ComboBox_Type.Margin = new System.Windows.Forms.Padding(6);
+            this.ComboBox_Type.Name = "ComboBox_Type";
+            this.ComboBox_Type.Size = new System.Drawing.Size(218, 42);
+            this.ComboBox_Type.TabIndex = 22;
+            // 
+            // Combo_Transmission
+            // 
+            this.Combo_Transmission.Font = new System.Drawing.Font("Inter Medium", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Combo_Transmission.FormattingEnabled = true;
+            this.Combo_Transmission.Location = new System.Drawing.Point(957, 620);
+            this.Combo_Transmission.Margin = new System.Windows.Forms.Padding(6);
+            this.Combo_Transmission.Name = "Combo_Transmission";
+            this.Combo_Transmission.Size = new System.Drawing.Size(218, 42);
+            this.Combo_Transmission.TabIndex = 23;
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.14286F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label4.Location = new System.Drawing.Point(763, 630);
+            this.label4.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(184, 31);
+            this.label4.TabIndex = 24;
+            this.label4.Text = "Transmission:";
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.14286F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.Location = new System.Drawing.Point(367, 631);
+            this.label2.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(88, 31);
+            this.label2.TabIndex = 25;
+            this.label2.Text = "Make:";
+            // 
+            // Combo_Make
+            // 
+            this.Combo_Make.Font = new System.Drawing.Font("Inter Medium", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Combo_Make.FormattingEnabled = true;
+            this.Combo_Make.Location = new System.Drawing.Point(465, 625);
+            this.Combo_Make.Margin = new System.Windows.Forms.Padding(6);
+            this.Combo_Make.Name = "Combo_Make";
+            this.Combo_Make.Size = new System.Drawing.Size(288, 42);
+            this.Combo_Make.TabIndex = 26;
+            // 
+            // Combo_Model
+            // 
+            this.Combo_Model.Font = new System.Drawing.Font("Inter Medium", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Combo_Model.FormattingEnabled = true;
+            this.Combo_Model.Location = new System.Drawing.Point(465, 679);
+            this.Combo_Model.Margin = new System.Windows.Forms.Padding(6);
+            this.Combo_Model.Name = "Combo_Model";
+            this.Combo_Model.Size = new System.Drawing.Size(288, 42);
+            this.Combo_Model.TabIndex = 27;
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.14286F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label3.Location = new System.Drawing.Point(367, 684);
+            this.label3.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(95, 31);
+            this.label3.TabIndex = 28;
+            this.label3.Text = "Model:";
             // 
             // InventoryForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(11F, 24F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1871, 824);
+            this.Controls.Add(this.label3);
+            this.Controls.Add(this.Combo_Model);
+            this.Controls.Add(this.Combo_Make);
+            this.Controls.Add(this.label2);
+            this.Controls.Add(this.label4);
+            this.Controls.Add(this.Combo_Transmission);
+            this.Controls.Add(this.ComboBox_Type);
+            this.Controls.Add(this.label6);
+            this.Controls.Add(this.label5);
+            this.Controls.Add(this.ComboBox_Branch);
             this.Controls.Add(this.TestLabel);
             this.Controls.Add(this.dataGridView1);
             this.Controls.Add(this.button_back);
@@ -131,5 +256,15 @@
         private System.Windows.Forms.Button button_back;
         private System.Windows.Forms.DataGridView dataGridView1;
         private System.Windows.Forms.Label TestLabel;
+        private System.Windows.Forms.ComboBox ComboBox_Branch;
+        private System.Windows.Forms.Label label5;
+        private System.Windows.Forms.Label label6;
+        private System.Windows.Forms.ComboBox ComboBox_Type;
+        private System.Windows.Forms.ComboBox Combo_Transmission;
+        private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.ComboBox Combo_Make;
+        private System.Windows.Forms.ComboBox Combo_Model;
+        private System.Windows.Forms.Label label3;
     }
 }
