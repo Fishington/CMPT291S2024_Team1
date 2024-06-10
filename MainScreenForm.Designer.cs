@@ -33,6 +33,7 @@
             this.button2 = new System.Windows.Forms.Button();
             this.button3 = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
+            this.DateLabel = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // button4
@@ -80,11 +81,22 @@
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Inter SemiBold", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(43, 251);
+            this.label1.Location = new System.Drawing.Point(417, 243);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(529, 51);
             this.label1.TabIndex = 9;
             this.label1.Text = "Welcome to Car Program";
+            // 
+            // DateLabel
+            // 
+            this.DateLabel.AutoSize = true;
+            this.DateLabel.Font = new System.Drawing.Font("Inter SemiBold", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.DateLabel.Location = new System.Drawing.Point(88, 192);
+            this.DateLabel.Name = "DateLabel";
+            this.DateLabel.Size = new System.Drawing.Size(263, 153);
+            this.DateLabel.TabIndex = 11;
+            this.DateLabel.Text = "Date Holder\r\nLets Go\r\n\r\n";
+            this.DateLabel.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // MainScreenForm
             // 
@@ -92,6 +104,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1013, 652);
             this.ControlBox = false;
+            this.Controls.Add(this.DateLabel);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.button3);
             this.Controls.Add(this.button2);
@@ -112,5 +125,6 @@
         private System.Windows.Forms.Button button2;
         private System.Windows.Forms.Button button3;
         private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Label DateLabel;
     }
 }

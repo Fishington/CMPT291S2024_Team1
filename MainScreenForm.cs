@@ -15,6 +15,9 @@ namespace Team1CMPT291_Final
         public MainScreenForm()
         {
             InitializeComponent();
+
+            DateLabel.Text = $"Today is \n"+DateTime.Today.ToString("MM/dd/yyyy");
+
         }
 
         private void button4_Click(object sender, EventArgs e)
