@@ -15,23 +15,13 @@ namespace Team1CMPT291_Final
         public RentalTransactionForm()
         {
             InitializeComponent();
+            DataTable branches = new DBConnection().Query("SELECT Branch_ID, Name FROM Branches");
+            comboBox_Branch.DataSource = branches;
+            comboBox_Branch.DisplayMember = "Name";
+            comboBox_Branch.ValueMember = "Branch_ID";
         }
 
-        private void label3_Click(object sender, EventArgs e)
-        {
 
-        }
-
-        private void button1_Click(object sender, EventArgs e)
-        {
-
-            this.Close();
-
-            MainScreenForm mainScreenForm = new MainScreenForm();  
-            mainScreenForm.Show();
-
-
-        }
 
         private void dateTimePickerPickup_ValueChanged_1(object sender, EventArgs e)
         {
@@ -40,6 +30,14 @@ namespace Team1CMPT291_Final
 
             // This adjusts the dropoff date if the pickup date is changed to a later date.
             if (dateTimePickerDropoff.Value < dateTimePickerPickup.Value) { dateTimePickerDropoff.Value = dateTimePickerPickup.Value; }
+        }
+
+        private void button_Back_Click(object sender, EventArgs e)
+        {
+            this.Close();
+
+            MainScreenForm mainScreenForm = new MainScreenForm();
+            mainScreenForm.Show();
         }
     }
 }
