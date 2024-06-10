@@ -29,15 +29,6 @@ namespace Team1CMPT291_Final
 
         }
 
-        private void textBox1_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void VIN_Label_TextChanged(object sender, EventArgs e)
-        {
-
-        }
 
         private void Cancel_Button_Click(object sender, EventArgs e)
         {
