@@ -5,6 +5,7 @@ using System.Data;
 using System.Data.Common;
 using System.Data.Odbc;
 using System.Data.SqlClient;
+using System.Diagnostics;
 using System.Drawing;
 using System.Linq;
 using System.Text;
@@ -17,21 +18,101 @@ namespace Team1CMPT291_Final
     {
         public string PublicQuery { get; set; }
         private DBConnection DBConnectionInstance;
-        
-        public void UpdateDataGrid()
+
+        public void UpdateDataGrid(string query)
 
         {
             DBConnectionInstance = new DBConnection();
-            DataTable results = DBConnectionInstance.Query("SELECT * FROM Cars");
+            DataTable results = DBConnectionInstance.Query(query);
             dataGridView1.DataSource = results;
         }
         public InventoryForm()
         {
             InitializeComponent();
-            UpdateDataGrid();
+            UpdateDataGrid("SELECT * FROM Cars");
+            populate_combo_boxes();
         }
-        
-        
+
+        private void populate_combo_boxes()
+        {
+            DBConnection dbConnection = new DBConnection();
+            DataTable carTypes = dbConnection.Query("SELECT Distinct Type FROM CarType");
+            DataRow carTypesRow = carTypes.NewRow();
+            carTypesRow["Type"] = "";
+            carTypes.Rows.InsertAt(carTypesRow, 0);
+            ComboBox_Type.DataSource = carTypes;
+            ComboBox_Type.DisplayMember = "Type";
+            ComboBox_Type.ValueMember = "Type";
+            ComboBox_Type.SelectedIndex = 0;
+
+            DataTable carMakes = dbConnection.Query("SELECT Distinct Make FROM Cars");
+            DataRow carMakesRow = carMakes.NewRow();
+            carMakesRow["Make"] = "";
+            carMakes.Rows.InsertAt(carMakesRow, 0);
+            Combo_Make.DataSource = carMakes;
+            Combo_Make.DisplayMember = "Make";
+            Combo_Make.ValueMember = "Make";
+            Combo_Make.SelectedIndex = 0;
+
+            DataTable carTransmissions = dbConnection.Query("SELECT Distinct Transmission FROM Cars");
+            DataRow carTransmissionsRow = carTransmissions.NewRow();
+            carTransmissionsRow["Transmission"] = "";
+            carTransmissions.Rows.InsertAt(carTransmissionsRow, 0);
+            Combo_Transmission.DataSource = carTransmissions;
+            Combo_Transmission.DisplayMember = "Transmission";
+            Combo_Transmission.ValueMember = "Transmission";
+            Combo_Transmission.SelectedIndex = 0;
+
+            DataTable carModel = dbConnection.Query("SELECT Distinct Model FROM Cars");
+            DataRow carModelRow = carModel.NewRow();
+            carModelRow["Model"] = "";
+            carModel.Rows.InsertAt(carModelRow, 0);
+            Combo_Model.DataSource = carModel;
+            Combo_Model.DisplayMember = "Model";
+            Combo_Model.ValueMember = "Model";
+            Combo_Model.SelectedIndex = 0;
+
+            DataTable carBranch = dbConnection.Query("SELECT Distinct Branch_ID, Name FROM Branches");
+            DataRow carBranchRow = carBranch.NewRow();
+            carBranchRow["Name"] = "";
+            carBranch.Rows.InsertAt(carBranchRow, 0);
+            ComboBox_Branch.DataSource = carBranch;
+            ComboBox_Branch.DisplayMember = "Name";
+            ComboBox_Branch.ValueMember = "Branch_ID";
+            ComboBox_Branch.SelectedIndex = 0;
+        }
+
+        private string build_search_query()
+        {
+            StringBuilder query = new StringBuilder("SELECT * FROM Cars WHERE 1=1");
+
+            if (!string.IsNullOrEmpty(ComboBox_Type.Text))
+            {
+                query.Append($" AND Type = '{ComboBox_Type.Text}'");
+            }
+
+            if (!string.IsNullOrEmpty(Combo_Make.Text))
+            {
+                query.Append($" AND Make = '{Combo_Make.Text}'");
+            }
+
+            if (!string.IsNullOrEmpty(Combo_Transmission.Text))
+            {
+                query.Append($" AND Transmission = '{Combo_Transmission.Text}'");
+            }
+
+            if (!string.IsNullOrEmpty(Combo_Model.Text))
+            {
+                query.Append($" AND Model = '{Combo_Model.Text}'");
+            }
+
+            if (!string.IsNullOrEmpty(ComboBox_Branch.Text))
+            {
+                query.Append($" AND Branch_ID = '{ComboBox_Branch.SelectedValue}'");
+            }
+            Debug.WriteLine(query.ToString());
+            return query.ToString();
+        }
 
 
         private void button_back_Click(object sender, EventArgs e)
@@ -88,14 +169,12 @@ namespace Team1CMPT291_Final
                     if (rowsAffected > 0)
                     {
                         MessageBox.Show("Car deleted successfully.");
-                        UpdateDataGrid();
-    }
+                        UpdateDataGrid("SELECT * FROM Cars");
+                    }
                     else
                     {
                         MessageBox.Show("No car was deleted.");
                     }
-
-
                 }
             }
             else
@@ -115,7 +194,7 @@ namespace Team1CMPT291_Final
                 // Create ModifyCarForm instance and pass selectedVIN
                 var modifyForm = new ModifyCarForm(selectedVIN);
                 modifyForm.ShowDialog(); // Show the popup form modally
-                UpdateDataGrid(); // Refresh the DataGridView after the form is closed
+                UpdateDataGrid("SELECT * FROM Cars"); // Refresh the DataGridView after the form is closed
             }
             else
             {
@@ -129,7 +208,15 @@ namespace Team1CMPT291_Final
             var addCarForm = new AddCarForm();
             addCarForm.Show();
 
-            UpdateDataGrid();
+            UpdateDataGrid("SELECT * FROM Cars");
         }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            string query = build_search_query();
+            UpdateDataGrid(query);
+        }
+
+
     }
 }
