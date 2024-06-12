@@ -48,7 +48,7 @@ namespace Team1CMPT291_Final
         private void button1_Click(object sender, EventArgs e)
         {
             this.Close();
-            ReportForm reportForm = new ReportForm();
+            ReportFormNew reportForm = new ReportFormNew();
             reportForm.Show();
         }
     }
