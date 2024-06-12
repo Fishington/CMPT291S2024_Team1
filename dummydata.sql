@@ -1,13 +1,11 @@
 -- Put this in so that we could start fresh if needed.
+USE CarRental
 DELETE FROM Employees;
 DELETE FROM Cars;
 DELETE FROM Branches;
 DELETE FROM CarType;
 DELETE FROM Customers;
 
-SELECT * FROM Customers
-
-USE CarRental
 INSERT INTO CarType (Type, DailyPrice, WeeklyPrice, MonthlyPrice) VALUES ('SMALL', 30, 175, 500)
 INSERT INTO CarType (Type, DailyPrice, WeeklyPrice, MonthlyPrice) VALUES ('SUV', 40, 200, 600)
 INSERT INTO CarType (Type, DailyPrice, WeeklyPrice, MonthlyPrice) VALUES ('SPORT', 55, 300, 900)

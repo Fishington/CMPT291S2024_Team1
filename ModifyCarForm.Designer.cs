@@ -62,9 +62,9 @@
             // 
             this.textBox_LicensePlate.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.textBox_LicensePlate.Location = new System.Drawing.Point(25, 87);
-            this.textBox_LicensePlate.Margin = new System.Windows.Forms.Padding(2);
+            this.textBox_LicensePlate.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.textBox_LicensePlate.Name = "textBox_LicensePlate";
-            this.textBox_LicensePlate.Size = new System.Drawing.Size(125, 26);
+            this.textBox_LicensePlate.Size = new System.Drawing.Size(157, 26);
             this.textBox_LicensePlate.TabIndex = 1;
             // 
             // label1
@@ -146,28 +146,28 @@
             // textBox_Make
             // 
             this.textBox_Make.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox_Make.Location = new System.Drawing.Point(25, 142);
-            this.textBox_Make.Margin = new System.Windows.Forms.Padding(2);
+            this.textBox_Make.Location = new System.Drawing.Point(24, 142);
+            this.textBox_Make.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.textBox_Make.Name = "textBox_Make";
-            this.textBox_Make.Size = new System.Drawing.Size(125, 26);
+            this.textBox_Make.Size = new System.Drawing.Size(158, 26);
             this.textBox_Make.TabIndex = 9;
             // 
             // textBox_Model
             // 
             this.textBox_Model.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.textBox_Model.Location = new System.Drawing.Point(25, 196);
-            this.textBox_Model.Margin = new System.Windows.Forms.Padding(2);
+            this.textBox_Model.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.textBox_Model.Name = "textBox_Model";
-            this.textBox_Model.Size = new System.Drawing.Size(125, 26);
+            this.textBox_Model.Size = new System.Drawing.Size(157, 26);
             this.textBox_Model.TabIndex = 10;
             // 
             // textBox_Transmission
             // 
             this.textBox_Transmission.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.textBox_Transmission.Location = new System.Drawing.Point(249, 36);
-            this.textBox_Transmission.Margin = new System.Windows.Forms.Padding(2);
+            this.textBox_Transmission.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.textBox_Transmission.Name = "textBox_Transmission";
-            this.textBox_Transmission.Size = new System.Drawing.Size(125, 26);
+            this.textBox_Transmission.Size = new System.Drawing.Size(159, 26);
             this.textBox_Transmission.TabIndex = 11;
             // 
             // textbox_VIN
@@ -185,7 +185,7 @@
             // 
             this.SaveButton.BackColor = System.Drawing.Color.LightGreen;
             this.SaveButton.Location = new System.Drawing.Point(25, 246);
-            this.SaveButton.Margin = new System.Windows.Forms.Padding(2);
+            this.SaveButton.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.SaveButton.Name = "SaveButton";
             this.SaveButton.Size = new System.Drawing.Size(198, 51);
             this.SaveButton.TabIndex = 15;
@@ -196,7 +196,7 @@
             // BackBTN
             // 
             this.BackBTN.Location = new System.Drawing.Point(446, 255);
-            this.BackBTN.Margin = new System.Windows.Forms.Padding(2);
+            this.BackBTN.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.BackBTN.Name = "BackBTN";
             this.BackBTN.Size = new System.Drawing.Size(107, 42);
             this.BackBTN.TabIndex = 16;
@@ -206,18 +206,20 @@
             // 
             // ComboBox_Type
             // 
+            this.ComboBox_Type.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.ComboBox_Type.FormattingEnabled = true;
             this.ComboBox_Type.Location = new System.Drawing.Point(249, 142);
             this.ComboBox_Type.Name = "ComboBox_Type";
-            this.ComboBox_Type.Size = new System.Drawing.Size(121, 21);
+            this.ComboBox_Type.Size = new System.Drawing.Size(159, 28);
             this.ComboBox_Type.TabIndex = 17;
             // 
             // ComboBox_Branch
             // 
+            this.ComboBox_Branch.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.ComboBox_Branch.FormattingEnabled = true;
             this.ComboBox_Branch.Location = new System.Drawing.Point(249, 87);
             this.ComboBox_Branch.Name = "ComboBox_Branch";
-            this.ComboBox_Branch.Size = new System.Drawing.Size(121, 21);
+            this.ComboBox_Branch.Size = new System.Drawing.Size(159, 28);
             this.ComboBox_Branch.TabIndex = 18;
             // 
             // ModifyCarForm
@@ -243,8 +245,9 @@
             this.Controls.Add(this.textBox_LicensePlate);
             this.Controls.Add(this.label_VIN);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow;
-            this.Margin = new System.Windows.Forms.Padding(2);
+            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.Name = "ModifyCarForm";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "ModifyCarForm";
             this.ResumeLayout(false);
             this.PerformLayout();
