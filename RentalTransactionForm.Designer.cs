@@ -43,6 +43,8 @@ namespace Team1CMPT291_Final
             this.label4 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
             this.comboBox_Customer = new System.Windows.Forms.ComboBox();
+            this.label6 = new System.Windows.Forms.Label();
+            this.comboBox_Dropoff = new System.Windows.Forms.ComboBox();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -177,11 +179,34 @@ namespace Team1CMPT291_Final
             this.comboBox_Customer.Size = new System.Drawing.Size(168, 21);
             this.comboBox_Customer.TabIndex = 17;
             // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.85714F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label6.Location = new System.Drawing.Point(20, 242);
+            this.label6.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(97, 26);
+            this.label6.TabIndex = 18;
+            this.label6.Text = "Dropoff:";
+            // 
+            // comboBox_Dropoff
+            // 
+            this.comboBox_Dropoff.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.85714F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.comboBox_Dropoff.FormattingEnabled = true;
+            this.comboBox_Dropoff.Location = new System.Drawing.Point(25, 280);
+            this.comboBox_Dropoff.Margin = new System.Windows.Forms.Padding(2);
+            this.comboBox_Dropoff.Name = "comboBox_Dropoff";
+            this.comboBox_Dropoff.Size = new System.Drawing.Size(195, 33);
+            this.comboBox_Dropoff.TabIndex = 19;
+            // 
             // RentalTransactionForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(803, 555);
+            this.Controls.Add(this.comboBox_Dropoff);
+            this.Controls.Add(this.label6);
             this.Controls.Add(this.comboBox_Customer);
             this.Controls.Add(this.label5);
             this.Controls.Add(this.label4);
@@ -225,5 +250,7 @@ namespace Team1CMPT291_Final
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.ComboBox comboBox_Customer;
+        private System.Windows.Forms.Label label6;
+        private System.Windows.Forms.ComboBox comboBox_Dropoff;
     }
 }
