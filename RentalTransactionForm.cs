@@ -85,9 +85,8 @@ namespace Team1CMPT291_Final
             String VIN = dataGridView1.SelectedRows[0].Cells[0].Value?.ToString();
             String query = "INSERT INTO Reservations (Start_Date, End_Date, TotalPrice, Customer_ID, Employee_ID, Branch_Pickup_ID, Branch_Dropoff_ID, VIN) VALUES ('" + startDate + "', '" + endDate + "', '" + price + "', '" + Customer_ID + "', '" + Employee_ID + "', '" + Branch_Pickup_ID + "', '" + Branch_Dropoff_ID + "', '" + VIN + "')";
             new DBConnection().Insert(query);
-            this.Close();
-            MainScreenForm mainScreenForm = new MainScreenForm();
-            mainScreenForm.Show();
+            PriceConfirmationForm priceConfirmationForm = new PriceConfirmationForm(startDate, endDate, Customer_ID, Employee_ID, Branch_Pickup_ID, Branch_Dropoff_ID, VIN);
+            priceConfirmationForm.Show();
         }
     }
 }
