@@ -23,6 +23,11 @@ namespace Team1CMPT291_Final
         public RentalTransactionForm()
         {
             InitializeComponent();
+
+            // Dynamic date picker settings.
+            dateTimePickerPickup.MinDate  = DateTime.Today;
+            dateTimePickerDropoff.MinDate = DateTime.Today;
+
             DataTable branches = new DBConnection().Query("SELECT Branch_ID, Name FROM Branches");
             comboBox_Branch.DataSource = branches;
             comboBox_Branch.DisplayMember = "Name";

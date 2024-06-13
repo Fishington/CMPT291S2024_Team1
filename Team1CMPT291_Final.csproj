@@ -97,6 +97,12 @@
     <Compile Include="ReportForm.Designer.cs">
       <DependentUpon>ReportForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="ReportFormNew.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ReportFormNew.Designer.cs">
+      <DependentUpon>ReportFormNew.cs</DependentUpon>
+    </Compile>
     <EmbeddedResource Include="AddCarForm.resx">
       <DependentUpon>AddCarForm.cs</DependentUpon>
     </EmbeddedResource>
@@ -130,6 +136,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="ReportForm.resx">
       <DependentUpon>ReportForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ReportFormNew.resx">
+      <DependentUpon>ReportFormNew.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
