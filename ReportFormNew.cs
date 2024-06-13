@@ -28,7 +28,7 @@ namespace Team1CMPT291_Final
 
         private void CarUsagesSubmit_Click(object sender, EventArgs e)
         {
-            var query   = "SELECT * FROM CarType WHERE Type = 'SMALL'";
+            var query   = "SELECT C.Model, COUNT(R.Reservation_ID) as RentalCount FROM Cars as C, Reservations as R WHERE C.VIN = R.VIN GROUP BY C.Model ORDER BY UsageCount DESC";
             var results = DBConnectionInstance.Query(query);
             CarUsageResults.DataSource = results;
         }
