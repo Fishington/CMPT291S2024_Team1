@@ -32,6 +32,10 @@ namespace Team1CMPT291_Final
             comboBox_Branch.DataSource = branches;
             comboBox_Branch.DisplayMember = "Name";
             comboBox_Branch.ValueMember = "Branch_ID";
+            comboBox_Dropoff.BindingContext = new BindingContext();
+            comboBox_Dropoff.DataSource = branches;
+            comboBox_Dropoff.DisplayMember = "Name";
+            comboBox_Dropoff.ValueMember = "Branch_ID";
             DataTable employees = new DBConnection().Query("SELECT Employee_ID, CONCAT(Employee_ID, ': ', FirstName, ' ', LastName) as Name FROM Employees");
             comboBox_Employee.DataSource = employees;
             comboBox_Employee.DisplayMember = "Name";
@@ -71,6 +75,8 @@ namespace Team1CMPT291_Final
         private void comboBox_Branch_SelectedIndexChanged(object sender, EventArgs e)
         {
             UpdateDataGrid();
+            comboBox_Dropoff.SelectedValue = comboBox_Branch.SelectedValue;
+
         }
 
         private void dateTimePickerDropoff_ValueChanged(object sender, EventArgs e)
@@ -86,7 +92,7 @@ namespace Team1CMPT291_Final
             String Customer_ID = comboBox_Customer.SelectedValue.ToString();
             String Employee_ID = comboBox_Employee.SelectedValue.ToString();
             String Branch_Pickup_ID = comboBox_Branch.SelectedValue.ToString();
-            String Branch_Dropoff_ID = comboBox_Branch.SelectedValue.ToString();
+            String Branch_Dropoff_ID = comboBox_Dropoff.SelectedValue.ToString();
             String VIN = dataGridView1.SelectedRows[0].Cells[0].Value?.ToString();
             String query = "INSERT INTO Reservations (Start_Date, End_Date, TotalPrice, Customer_ID, Employee_ID, Branch_Pickup_ID, Branch_Dropoff_ID, VIN) VALUES ('" + startDate + "', '" + endDate + "', '" + price + "', '" + Customer_ID + "', '" + Employee_ID + "', '" + Branch_Pickup_ID + "', '" + Branch_Dropoff_ID + "', '" + VIN + "')";
             new DBConnection().Insert(query);
