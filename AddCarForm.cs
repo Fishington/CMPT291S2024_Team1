@@ -27,6 +27,16 @@ namespace Team1CMPT291_Final
 
             DBConnectionInstance = new DBConnection();
 
+            // Get all the different types of cars from the database
+            DataTable carTypes = DBConnectionInstance.Query("SELECT Type FROM CarType");
+            ComboBox_Type.DataSource = carTypes;
+            ComboBox_Type.DisplayMember = "Type";
+            ComboBox_Type.ValueMember = "Type";
+            DataTable branches = DBConnectionInstance.Query("SELECT Branch_ID, Name FROM Branches");
+            ComboBox_Branch.DataSource = branches;
+            ComboBox_Branch.DisplayMember = "Name";
+            ComboBox_Branch.ValueMember = "Branch_ID";
+
         }
 
 
@@ -46,7 +56,7 @@ namespace Team1CMPT291_Final
         private void Save_Button_Click(object sender, EventArgs e)
         {
             string insertQuery = $"INSERT INTO Cars (VIN, License_Plate, Make, Model, Transmission, Branch_ID, Type) VALUES" +
-                $" ('{VIN_Box.Text}', '{Plate_Box.Text}', '{Make_Box.Text}', '{Model_Box.Text}', '{Transmission_Box.Text}', {Branch_ID_Box.Text}, '{Type_Box.Text}')";
+                $" ('{VIN_Box.Text}', '{Plate_Box.Text}', '{Make_Box.Text}', '{Model_Box.Text}', '{Transmission_Box.Text}', {ComboBox_Branch.SelectedValue.ToString()}, '{ComboBox_Type.SelectedValue.ToString()}')";
 
 
             int toss = DBConnectionInstance.Insert(insertQuery);
