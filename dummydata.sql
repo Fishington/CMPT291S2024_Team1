@@ -1,13 +1,11 @@
 USE CarRental
 
--- Put this in so that we could start fresh if needed.
 -- Disable foreign key constraints
 ALTER TABLE Reservations NOCHECK CONSTRAINT ALL;
 ALTER TABLE Cars NOCHECK CONSTRAINT ALL;
 ALTER TABLE Employees NOCHECK CONSTRAINT ALL;
 ALTER TABLE Customers NOCHECK CONSTRAINT ALL;
 
--- Delete data in order of foreign key dependency
 DELETE FROM Reservations;
 DELETE FROM Employees;
 DELETE FROM Cars;
