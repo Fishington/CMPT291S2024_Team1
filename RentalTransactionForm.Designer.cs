@@ -50,12 +50,12 @@ namespace Team1CMPT291_Final
             // 
             // comboBox_Branch
             // 
-            this.comboBox_Branch.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.85714F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.comboBox_Branch.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.comboBox_Branch.FormattingEnabled = true;
             this.comboBox_Branch.Location = new System.Drawing.Point(25, 194);
             this.comboBox_Branch.Margin = new System.Windows.Forms.Padding(2);
             this.comboBox_Branch.Name = "comboBox_Branch";
-            this.comboBox_Branch.Size = new System.Drawing.Size(195, 33);
+            this.comboBox_Branch.Size = new System.Drawing.Size(195, 26);
             this.comboBox_Branch.TabIndex = 2;
             this.comboBox_Branch.SelectedIndexChanged += new System.EventHandler(this.comboBox_Branch_SelectedIndexChanged);
             // 
@@ -105,21 +105,23 @@ namespace Team1CMPT291_Final
             // 
             // dateTimePickerPickup
             // 
+            this.dateTimePickerPickup.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.dateTimePickerPickup.Location = new System.Drawing.Point(25, 64);
             this.dateTimePickerPickup.MaxDate = new System.DateTime(2029, 12, 31, 23, 59, 0, 0);
             this.dateTimePickerPickup.MinDate = new System.DateTime(2024, 6, 5, 0, 0, 0, 0);
             this.dateTimePickerPickup.Name = "dateTimePickerPickup";
-            this.dateTimePickerPickup.Size = new System.Drawing.Size(146, 20);
+            this.dateTimePickerPickup.Size = new System.Drawing.Size(195, 24);
             this.dateTimePickerPickup.TabIndex = 11;
             this.dateTimePickerPickup.ValueChanged += new System.EventHandler(this.dateTimePickerPickup_ValueChanged_1);
             // 
             // dateTimePickerDropoff
             // 
+            this.dateTimePickerDropoff.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.dateTimePickerDropoff.Location = new System.Drawing.Point(25, 128);
             this.dateTimePickerDropoff.MaxDate = new System.DateTime(2029, 12, 31, 23, 59, 0, 0);
             this.dateTimePickerDropoff.MinDate = new System.DateTime(2024, 6, 5, 0, 0, 0, 0);
             this.dateTimePickerDropoff.Name = "dateTimePickerDropoff";
-            this.dateTimePickerDropoff.Size = new System.Drawing.Size(143, 20);
+            this.dateTimePickerDropoff.Size = new System.Drawing.Size(195, 24);
             this.dateTimePickerDropoff.TabIndex = 12;
             this.dateTimePickerDropoff.ValueChanged += new System.EventHandler(this.dateTimePickerDropoff_ValueChanged);
             // 
@@ -148,10 +150,11 @@ namespace Team1CMPT291_Final
             // 
             // comboBox_Employee
             // 
+            this.comboBox_Employee.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.comboBox_Employee.FormattingEnabled = true;
             this.comboBox_Employee.Location = new System.Drawing.Point(353, 423);
             this.comboBox_Employee.Name = "comboBox_Employee";
-            this.comboBox_Employee.Size = new System.Drawing.Size(168, 21);
+            this.comboBox_Employee.Size = new System.Drawing.Size(168, 26);
             this.comboBox_Employee.TabIndex = 14;
             // 
             // label4
@@ -174,17 +177,18 @@ namespace Team1CMPT291_Final
             // 
             // comboBox_Customer
             // 
+            this.comboBox_Customer.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.comboBox_Customer.FormattingEnabled = true;
             this.comboBox_Customer.Location = new System.Drawing.Point(353, 472);
             this.comboBox_Customer.Name = "comboBox_Customer";
-            this.comboBox_Customer.Size = new System.Drawing.Size(168, 21);
+            this.comboBox_Customer.Size = new System.Drawing.Size(168, 26);
             this.comboBox_Customer.TabIndex = 17;
             // 
             // label6
             // 
             this.label6.AutoSize = true;
             this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.85714F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label6.Location = new System.Drawing.Point(20, 243);
+            this.label6.Location = new System.Drawing.Point(20, 234);
             this.label6.Margin = new System.Windows.Forms.Padding(1, 0, 1, 0);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(130, 26);
@@ -193,12 +197,12 @@ namespace Team1CMPT291_Final
             // 
             // comboBox_Dropoff
             // 
-            this.comboBox_Dropoff.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.85714F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.comboBox_Dropoff.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.comboBox_Dropoff.FormattingEnabled = true;
-            this.comboBox_Dropoff.Location = new System.Drawing.Point(25, 270);
+            this.comboBox_Dropoff.Location = new System.Drawing.Point(25, 261);
             this.comboBox_Dropoff.Margin = new System.Windows.Forms.Padding(1);
             this.comboBox_Dropoff.Name = "comboBox_Dropoff";
-            this.comboBox_Dropoff.Size = new System.Drawing.Size(195, 33);
+            this.comboBox_Dropoff.Size = new System.Drawing.Size(195, 26);
             this.comboBox_Dropoff.TabIndex = 19;
             // 
             // RentalTransactionForm
