@@ -1,10 +1,31 @@
--- Put this in so that we could start fresh if needed.
 USE CarRental
+
+-- Put this in so that we could start fresh if needed.
+-- Disable foreign key constraints
+ALTER TABLE Reservations NOCHECK CONSTRAINT ALL;
+ALTER TABLE Cars NOCHECK CONSTRAINT ALL;
+ALTER TABLE Employees NOCHECK CONSTRAINT ALL;
+ALTER TABLE Customers NOCHECK CONSTRAINT ALL;
+
+-- Delete data in order of foreign key dependency
+DELETE FROM Reservations;
 DELETE FROM Employees;
 DELETE FROM Cars;
 DELETE FROM Branches;
 DELETE FROM CarType;
 DELETE FROM Customers;
+
+-- Reset identity columns
+DBCC CHECKIDENT ('Reservations', RESEED, 0);
+DBCC CHECKIDENT ('Employees', RESEED, 0);
+DBCC CHECKIDENT ('Branches', RESEED, 0);
+DBCC CHECKIDENT ('Customers', RESEED, 0);
+
+-- Re-enable foreign key constraints
+ALTER TABLE Reservations CHECK CONSTRAINT ALL;
+ALTER TABLE Cars CHECK CONSTRAINT ALL;
+ALTER TABLE Employees CHECK CONSTRAINT ALL;
+ALTER TABLE Customers CHECK CONSTRAINT ALL;
 
 INSERT INTO CarType (Type, DailyPrice, WeeklyPrice, MonthlyPrice) VALUES ('SMALL', 30, 175, 500)
 INSERT INTO CarType (Type, DailyPrice, WeeklyPrice, MonthlyPrice) VALUES ('SUV', 40, 200, 600)
@@ -43,7 +64,6 @@ INSERT INTO Cars (VIN, License_Plate, Make, Model, Transmission, Branch_ID, Type
 INSERT INTO Cars (VIN, License_Plate, Make, Model, Transmission, Branch_ID, Type) VALUES ('2SLNH3JH9YJDWLVW6', 'EOMP1B9', 'Chevrolet', 'Accord', 'Automatic', 4, 'TRUCK');
 INSERT INTO Cars (VIN, License_Plate, Make, Model, Transmission, Branch_ID, Type) VALUES ('B98YAL25SDE6UNM1E', '9XD6H7B', 'Hyundai', 'Sonata', 'Automatic', 1, 'SPORT');
 INSERT INTO Cars (VIN, License_Plate, Make, Model, Transmission, Branch_ID, Type) VALUES ('1R3HFATOMDG9E9QT5', 'FTQ70R4', 'Kia', 'Silverado', 'Automatic', 2, 'SUV');
-INSERT INTO Cars (VIN, License_Plate, Make, Model, Transmission, Branch_ID, Type) VALUES ('2L9QYF3T9C3605J0E', 'D52BZ2L', 'Ford', 'Camry', 'Manual', 2, 'LUXURY');
 INSERT INTO Cars (VIN, License_Plate, Make, Model, Transmission, Branch_ID, Type) VALUES ('2L9QYF3T9C3605J0E', 'D52BZ2L', 'Ford', 'Camry', 'Manual', 2, 'LUXURY');
 INSERT INTO Cars (VIN, License_Plate, Make, Model, Transmission, Branch_ID, Type) VALUES ('1G4A1B7C8HF000001', 'MitchelGoated', 'Buick', 'Century', 'Automatic', 1, 'LUXURY');
 
