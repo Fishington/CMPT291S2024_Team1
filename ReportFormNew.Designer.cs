@@ -45,6 +45,8 @@
             this.UnderPerformingEmpsSubmit = new System.Windows.Forms.Button();
             this.UnderPerformingEmpsResults = new System.Windows.Forms.DataGridView();
             this.BackButton = new System.Windows.Forms.Button();
+            this.label2 = new System.Windows.Forms.Label();
+            this.label1 = new System.Windows.Forms.Label();
             this.TabControlMenu.SuspendLayout();
             this.ReportTab1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.CarUsageResults)).BeginInit();
@@ -195,6 +197,8 @@
             // 
             // ReportTab5
             // 
+            this.ReportTab5.Controls.Add(this.label2);
+            this.ReportTab5.Controls.Add(this.label1);
             this.ReportTab5.Controls.Add(this.UnderPerformingEmpsSubmit);
             this.ReportTab5.Controls.Add(this.UnderPerformingEmpsResults);
             this.ReportTab5.Location = new System.Drawing.Point(4, 22);
@@ -234,6 +238,27 @@
             this.BackButton.UseVisualStyleBackColor = true;
             this.BackButton.Click += new System.EventHandler(this.BackButtonClick);
             // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.Location = new System.Drawing.Point(60, 39);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(317, 25);
+            this.label2.TabIndex = 11;
+            this.label2.Text = "Under-performing Employees";
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Location = new System.Drawing.Point(61, 64);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(627, 20);
+            this.label1.TabIndex = 10;
+            this.label1.Text = "A list of all of employees, each with a sum of their revenue and a count of their" +
+    " bookings.";
+            // 
             // ReportFormNew
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -255,6 +280,7 @@
             this.ReportTab4.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.BusyBranchTimesResults)).EndInit();
             this.ReportTab5.ResumeLayout(false);
+            this.ReportTab5.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.UnderPerformingEmpsResults)).EndInit();
             this.ResumeLayout(false);
 
@@ -279,5 +305,7 @@
         private System.Windows.Forms.Button MonthlyRevenueSubmit;
         private System.Windows.Forms.Button BusyBranchTimesSubmit;
         private System.Windows.Forms.Button UnderPerformingEmpsSubmit;
+        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.Label label1;
     }
 }

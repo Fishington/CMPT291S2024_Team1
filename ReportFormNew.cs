@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Drawing;
 using System.Windows.Forms;
 
 namespace Team1CMPT291_Final
@@ -77,24 +78,32 @@ namespace Team1CMPT291_Final
 
             var results = DBConnectionInstance.Query(query);
 
-            // Report data source
+            // Data source
             UnderPerformingEmpsResults.DataSource = results;
 
-            // Report column headers widths
+            // Header widths
             UnderPerformingEmpsResults.Columns[0].Width = 75;
             UnderPerformingEmpsResults.Columns[1].Width = 150;
             UnderPerformingEmpsResults.Columns[2].Width = 150;
             UnderPerformingEmpsResults.Columns[3].Width = 150;
             UnderPerformingEmpsResults.Columns[4].Width = 150;
 
-            // Report column headers names
+            // Header names
             UnderPerformingEmpsResults.Columns[0].HeaderText = "Employee ID";
             UnderPerformingEmpsResults.Columns[1].HeaderText = "Employee";
             UnderPerformingEmpsResults.Columns[2].HeaderText = "Revenue Made";
             UnderPerformingEmpsResults.Columns[3].HeaderText = "Number of Bookings";
             UnderPerformingEmpsResults.Columns[4].HeaderText = "Home Branch";
 
-            // Revenue made column money formatting style
+            // Bolded headers
+            var headerFont = new Font(UnderPerformingEmpsResults.Font, FontStyle.Bold);
+            UnderPerformingEmpsResults.Columns[0].HeaderCell.Style.Font = headerFont;
+            UnderPerformingEmpsResults.Columns[1].HeaderCell.Style.Font = headerFont;
+            UnderPerformingEmpsResults.Columns[2].HeaderCell.Style.Font = headerFont;
+            UnderPerformingEmpsResults.Columns[3].HeaderCell.Style.Font = headerFont;
+            UnderPerformingEmpsResults.Columns[4].HeaderCell.Style.Font = headerFont;
+
+            // Revenue column formatting type
             UnderPerformingEmpsResults.Columns[2].DefaultCellStyle.Format = "c";
         }
     }
