@@ -60,8 +60,8 @@ namespace Team1CMPT291_Final
                 SELECT 
                     e.Employee_ID,
                     CONCAT(e.FirstName, ' ', e.LastName) AS FullName,
-                    COUNT(DISTINCT r.Reservation_ID)     AS TotalBookings,
                     SUM(r.TotalPrice)                    AS TotalRevenue,
+                    COUNT(DISTINCT r.Reservation_ID)     AS TotalBookings,
                     b.Name                               AS HomeBranch
                 FROM Employees e
                     LEFT JOIN Reservations AS r ON e.Employee_ID = r.Employee_ID
@@ -90,12 +90,12 @@ namespace Team1CMPT291_Final
             // Report column headers names
             UnderPerformingEmpsResults.Columns[0].HeaderText = "Employee ID";
             UnderPerformingEmpsResults.Columns[1].HeaderText = "Employee";
-            UnderPerformingEmpsResults.Columns[2].HeaderText = "Number of Bookings";
-            UnderPerformingEmpsResults.Columns[3].HeaderText = "Revenue Made";
+            UnderPerformingEmpsResults.Columns[2].HeaderText = "Revenue Made";
+            UnderPerformingEmpsResults.Columns[3].HeaderText = "Number of Bookings";
             UnderPerformingEmpsResults.Columns[4].HeaderText = "Home Branch";
 
             // Revenue made column money formatting style
-            UnderPerformingEmpsResults.Columns[3].DefaultCellStyle.Format = "c";
+            UnderPerformingEmpsResults.Columns[2].DefaultCellStyle.Format = "c";
         }
     }
 }
