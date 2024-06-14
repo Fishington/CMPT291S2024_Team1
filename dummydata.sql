@@ -1,10 +1,29 @@
--- Put this in so that we could start fresh if needed.
 USE CarRental
+
+-- Disable foreign key constraints
+ALTER TABLE Reservations NOCHECK CONSTRAINT ALL;
+ALTER TABLE Cars NOCHECK CONSTRAINT ALL;
+ALTER TABLE Employees NOCHECK CONSTRAINT ALL;
+ALTER TABLE Customers NOCHECK CONSTRAINT ALL;
+
+DELETE FROM Reservations;
 DELETE FROM Employees;
 DELETE FROM Cars;
 DELETE FROM Branches;
 DELETE FROM CarType;
 DELETE FROM Customers;
+
+-- Reset identity columns
+DBCC CHECKIDENT ('Reservations', RESEED, 0);
+DBCC CHECKIDENT ('Employees', RESEED, 0);
+DBCC CHECKIDENT ('Branches', RESEED, 0);
+DBCC CHECKIDENT ('Customers', RESEED, 0);
+
+-- Re-enable foreign key constraints
+ALTER TABLE Reservations CHECK CONSTRAINT ALL;
+ALTER TABLE Cars CHECK CONSTRAINT ALL;
+ALTER TABLE Employees CHECK CONSTRAINT ALL;
+ALTER TABLE Customers CHECK CONSTRAINT ALL;
 
 INSERT INTO CarType (Type, DailyPrice, WeeklyPrice, MonthlyPrice) VALUES ('SMALL', 30, 175, 500)
 INSERT INTO CarType (Type, DailyPrice, WeeklyPrice, MonthlyPrice) VALUES ('SUV', 40, 200, 600)
@@ -43,7 +62,6 @@ INSERT INTO Cars (VIN, License_Plate, Make, Model, Transmission, Branch_ID, Type
 INSERT INTO Cars (VIN, License_Plate, Make, Model, Transmission, Branch_ID, Type) VALUES ('2SLNH3JH9YJDWLVW6', 'EOMP1B9', 'Chevrolet', 'Accord', 'Automatic', 4, 'TRUCK');
 INSERT INTO Cars (VIN, License_Plate, Make, Model, Transmission, Branch_ID, Type) VALUES ('B98YAL25SDE6UNM1E', '9XD6H7B', 'Hyundai', 'Sonata', 'Automatic', 1, 'SPORT');
 INSERT INTO Cars (VIN, License_Plate, Make, Model, Transmission, Branch_ID, Type) VALUES ('1R3HFATOMDG9E9QT5', 'FTQ70R4', 'Kia', 'Silverado', 'Automatic', 2, 'SUV');
-INSERT INTO Cars (VIN, License_Plate, Make, Model, Transmission, Branch_ID, Type) VALUES ('2L9QYF3T9C3605J0E', 'D52BZ2L', 'Ford', 'Camry', 'Manual', 2, 'LUXURY');
 INSERT INTO Cars (VIN, License_Plate, Make, Model, Transmission, Branch_ID, Type) VALUES ('2L9QYF3T9C3605J0E', 'D52BZ2L', 'Ford', 'Camry', 'Manual', 2, 'LUXURY');
 INSERT INTO Cars (VIN, License_Plate, Make, Model, Transmission, Branch_ID, Type) VALUES ('1G4A1B7C8HF000001', 'MitchelGoated', 'Buick', 'Century', 'Automatic', 1, 'LUXURY');
 
@@ -109,3 +127,108 @@ VALUES ('Daniel', 'Mckernan', '2021 Hickory St', 'Anytown', '12378', 'NB', 'Cana
 
 INSERT INTO Employees (FirstName, LastName, Street, City, Postal_Code, Province, Country, PhoneNumber, Branch_ID)
 VALUES ('Emily', 'Enterprise', '2223 Ash St', 'Anytown', '45600', 'NL', 'Canada', '(555) 555-1221', 3);
+
+-- Reservations
+INSERT INTO Reservations (Start_Date, End_Date, TotalPrice, Customer_ID, Employee_ID, Branch_Pickup_ID, Branch_Dropoff_ID, VIN)
+VALUES ('2024-04-01', '2024-04-05', 150.00, 1, 1, 1, 1, 'WA1DGAFP4EA042058');
+
+INSERT INTO Reservations (Start_Date, End_Date, TotalPrice, Customer_ID, Employee_ID, Branch_Pickup_ID, Branch_Dropoff_ID, VIN)
+VALUES ('2024-04-10', '2024-04-15', 200.00, 2, 2, 2, 2, '56PI8I9PLGN7Z4SPN');
+
+INSERT INTO Reservations (Start_Date, End_Date, TotalPrice, Customer_ID, Employee_ID, Branch_Pickup_ID, Branch_Dropoff_ID, VIN)
+VALUES ('2024-04-20', '2024-04-25', 175.00, 3, 3, 3, 3, '5E4A3G05DMUPZD89A');
+
+INSERT INTO Reservations (Start_Date, End_Date, TotalPrice, Customer_ID, Employee_ID, Branch_Pickup_ID, Branch_Dropoff_ID, VIN)
+VALUES ('2024-05-01', '2024-05-07', 250.00, 4, 4, 4, 4, '38VGKOKZR0PCKXAFL');
+
+INSERT INTO Reservations (Start_Date, End_Date, TotalPrice, Customer_ID, Employee_ID, Branch_Pickup_ID, Branch_Dropoff_ID, VIN)
+VALUES ('2024-05-10', '2024-05-17', 300.00, 5, 5, 5, 5, 'DKA35BZT3ENC5MBVS');
+
+INSERT INTO Reservations (Start_Date, End_Date, TotalPrice, Customer_ID, Employee_ID, Branch_Pickup_ID, Branch_Dropoff_ID, VIN)
+VALUES ('2024-05-15', '2024-05-20', 225.00, 6, 6, 6, 6, 'QM7NQREKOUI6HRD6T');
+
+INSERT INTO Reservations (Start_Date, End_Date, TotalPrice, Customer_ID, Employee_ID, Branch_Pickup_ID, Branch_Dropoff_ID, VIN)
+VALUES ('2024-05-20', '2024-05-25', 175.00, 7, 7, 1, 2, 'XS0EO3HS2TFG682FF');
+
+INSERT INTO Reservations (Start_Date, End_Date, TotalPrice, Customer_ID, Employee_ID, Branch_Pickup_ID, Branch_Dropoff_ID, VIN)
+VALUES ('2024-05-25', '2024-06-01', 400.00, 8, 8, 2, 3, '2SLNH3JH9YJDWLVW6');
+
+INSERT INTO Reservations (Start_Date, End_Date, TotalPrice, Customer_ID, Employee_ID, Branch_Pickup_ID, Branch_Dropoff_ID, VIN)
+VALUES ('2024-06-01', '2024-06-07', 350.00, 9, 9, 3, 4, 'B98YAL25SDE6UNM1E');
+
+INSERT INTO Reservations (Start_Date, End_Date, TotalPrice, Customer_ID, Employee_ID, Branch_Pickup_ID, Branch_Dropoff_ID, VIN)
+VALUES ('2024-06-07', '2024-06-14', 450.00, 10, 10, 4, 5, '1R3HFATOMDG9E9QT5');
+
+INSERT INTO Reservations (Start_Date, End_Date, TotalPrice, Customer_ID, Employee_ID, Branch_Pickup_ID, Branch_Dropoff_ID, VIN)
+VALUES ('2024-04-02', '2024-04-04', 120.00, 1, 1, 1, 1, '56PI8I9PLGN7Z4SPN');
+
+INSERT INTO Reservations (Start_Date, End_Date, TotalPrice, Customer_ID, Employee_ID, Branch_Pickup_ID, Branch_Dropoff_ID, VIN)
+VALUES ('2024-04-05', '2024-04-09', 180.00, 2, 1, 1, 1, '5E4A3G05DMUPZD89A');
+
+INSERT INTO Reservations (Start_Date, End_Date, TotalPrice, Customer_ID, Employee_ID, Branch_Pickup_ID, Branch_Dropoff_ID, VIN)
+VALUES ('2024-04-15', '2024-04-18', 150.00, 3, 2, 2, 2, '38VGKOKZR0PCKXAFL');
+
+INSERT INTO Reservations (Start_Date, End_Date, TotalPrice, Customer_ID, Employee_ID, Branch_Pickup_ID, Branch_Dropoff_ID, VIN)
+VALUES ('2024-04-20', '2024-04-24', 210.00, 4, 2, 2, 2, 'DKA35BZT3ENC5MBVS');
+
+INSERT INTO Reservations (Start_Date, End_Date, TotalPrice, Customer_ID, Employee_ID, Branch_Pickup_ID, Branch_Dropoff_ID, VIN)
+VALUES ('2024-04-25', '2024-04-29', 240.00, 5, 3, 3, 3, 'QM7NQREKOUI6HRD6T');
+
+INSERT INTO Reservations (Start_Date, End_Date, TotalPrice, Customer_ID, Employee_ID, Branch_Pickup_ID, Branch_Dropoff_ID, VIN)
+VALUES ('2024-05-02', '2024-05-06', 260.00, 6, 4, 4, 4, 'XS0EO3HS2TFG682FF');
+
+INSERT INTO Reservations (Start_Date, End_Date, TotalPrice, Customer_ID, Employee_ID, Branch_Pickup_ID, Branch_Dropoff_ID, VIN)
+VALUES ('2024-05-07', '2024-05-12', 300.00, 7, 4, 4, 4, '2SLNH3JH9YJDWLVW6');
+
+INSERT INTO Reservations (Start_Date, End_Date, TotalPrice, Customer_ID, Employee_ID, Branch_Pickup_ID, Branch_Dropoff_ID, VIN)
+VALUES ('2024-05-13', '2024-05-17', 200.00, 8, 5, 5, 5, 'B98YAL25SDE6UNM1E');
+
+INSERT INTO Reservations (Start_Date, End_Date, TotalPrice, Customer_ID, Employee_ID, Branch_Pickup_ID, Branch_Dropoff_ID, VIN)
+VALUES ('2024-05-18', '2024-05-23', 350.00, 9, 5, 5, 5, '1R3HFATOMDG9E9QT5');
+
+INSERT INTO Reservations (Start_Date, End_Date, TotalPrice, Customer_ID, Employee_ID, Branch_Pickup_ID, Branch_Dropoff_ID, VIN)
+VALUES ('2024-05-24', '2024-05-29', 400.00, 10, 5, 5, 5, '1G4A1B7C8HF000001');
+
+INSERT INTO Reservations (Start_Date, End_Date, TotalPrice, Customer_ID, Employee_ID, Branch_Pickup_ID, Branch_Dropoff_ID, VIN)
+VALUES ('2024-06-01', '2024-06-05', 150.00, 1, 1, 1, 1, 'WA1DGAFP4EA042058');
+
+INSERT INTO Reservations (Start_Date, End_Date, TotalPrice, Customer_ID, Employee_ID, Branch_Pickup_ID, Branch_Dropoff_ID, VIN)
+VALUES ('2024-06-06', '2024-06-10', 180.00, 2, 1, 1, 1, '56PI8I9PLGN7Z4SPN');
+
+INSERT INTO Reservations (Start_Date, End_Date, TotalPrice, Customer_ID, Employee_ID, Branch_Pickup_ID, Branch_Dropoff_ID, VIN)
+VALUES ('2024-06-11', '2024-06-14', 210.00, 3, 1, 1, 1, '5E4A3G05DMUPZD89A');
+
+-- More reservations for Employee_ID 1
+INSERT INTO Reservations (Start_Date, End_Date, TotalPrice, Customer_ID, Employee_ID, Branch_Pickup_ID, Branch_Dropoff_ID, VIN)
+VALUES ('2024-04-01', '2024-04-04', 120.00, 1, 1, 1, 1, '5E4A3G05DMUPZD89A');
+
+INSERT INTO Reservations (Start_Date, End_Date, TotalPrice, Customer_ID, Employee_ID, Branch_Pickup_ID, Branch_Dropoff_ID, VIN)
+VALUES ('2024-04-06', '2024-04-09', 180.00, 2, 1, 1, 1, '38VGKOKZR0PCKXAFL');
+
+INSERT INTO Reservations (Start_Date, End_Date, TotalPrice, Customer_ID, Employee_ID, Branch_Pickup_ID, Branch_Dropoff_ID, VIN)
+VALUES ('2024-04-10', '2024-04-14', 150.00, 3, 1, 1, 1, 'DKA35BZT3ENC5MBVS');
+
+INSERT INTO Reservations (Start_Date, End_Date, TotalPrice, Customer_ID, Employee_ID, Branch_Pickup_ID, Branch_Dropoff_ID, VIN)
+VALUES ('2024-04-15', '2024-04-19', 210.00, 4, 1, 1, 1, 'QM7NQREKOUI6HRD6T');
+
+INSERT INTO Reservations (Start_Date, End_Date, TotalPrice, Customer_ID, Employee_ID, Branch_Pickup_ID, Branch_Dropoff_ID, VIN)
+VALUES ('2024-04-20', '2024-04-24', 240.00, 5, 1, 1, 1, 'XS0EO3HS2TFG682FF');
+
+-- More reservations for Employee_ID 2
+INSERT INTO Reservations (Start_Date, End_Date, TotalPrice, Customer_ID, Employee_ID, Branch_Pickup_ID, Branch_Dropoff_ID, VIN)
+VALUES ('2024-05-02', '2024-05-06', 260.00, 6, 2, 2, 2, '2SLNH3JH9YJDWLVW6');
+
+INSERT INTO Reservations (Start_Date, End_Date, TotalPrice, Customer_ID, Employee_ID, Branch_Pickup_ID, Branch_Dropoff_ID, VIN)
+VALUES ('2024-05-07', '2024-05-12', 300.00, 7, 2, 2, 2, 'B98YAL25SDE6UNM1E');
+
+INSERT INTO Reservations (Start_Date, End_Date, TotalPrice, Customer_ID, Employee_ID, Branch_Pickup_ID, Branch_Dropoff_ID, VIN)
+VALUES ('2024-05-13', '2024-05-17', 200.00, 8, 2, 2, 2, '1R3HFATOMDG9E9QT5');
+
+INSERT INTO Reservations (Start_Date, End_Date, TotalPrice, Customer_ID, Employee_ID, Branch_Pickup_ID, Branch_Dropoff_ID, VIN)
+VALUES ('2024-05-18', '2024-05-23', 350.00, 9, 2, 2, 2, '1G4A1B7C8HF000001');
+
+INSERT INTO Reservations (Start_Date, End_Date, TotalPrice, Customer_ID, Employee_ID, Branch_Pickup_ID, Branch_Dropoff_ID, VIN)
+VALUES ('2024-05-24', '2024-05-29', 400.00, 10, 2, 2, 2, 'WA1DGAFP4EA042058');
+
+INSERT INTO Reservations (Start_Date, End_Date, TotalPrice, Customer_ID, Employee_ID, Branch_Pickup_ID, Branch_Dropoff_ID, VIN)
+VALUES ('2024-06-01', '2024-06-05', 150.00, 1, 3, 3, 3, '56PI8I9PLGN7Z4SPN');

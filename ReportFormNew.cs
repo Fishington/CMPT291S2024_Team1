@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Drawing;
 using System.Windows.Forms;
 
 namespace Team1CMPT291_Final
@@ -28,7 +29,7 @@ namespace Team1CMPT291_Final
 
         private void CarUsagesSubmit_Click(object sender, EventArgs e)
         {
-            var query   = "SELECT C.Model, COUNT(R.Reservation_ID) as RentalCount FROM Cars as C, Reservations as R WHERE C.VIN = R.VIN GROUP BY C.Model ORDER BY UsageCount DESC";
+            var query   = "SELECT C.Model, COUNT(R.Reservation_ID) as RentalCount FROM Cars as C, Reservations as R WHERE C.VIN = R.VIN GROUP BY C.Model ORDER BY RentalCount DESC";
             var results = DBConnectionInstance.Query(query);
             CarUsageResults.DataSource = results;
         }
@@ -56,9 +57,54 @@ namespace Team1CMPT291_Final
 
         private void UnderPerformingEmpsSubmit_Click(object sender, EventArgs e)
         {
-            var query   = "SELECT * FROM CarType WHERE Type = 'SMALL'";
+            const string query = @"
+                SELECT 
+                    e.Employee_ID,
+                    CONCAT(e.FirstName, ' ', e.LastName) AS FullName,
+                    SUM(r.TotalPrice)                    AS TotalRevenue,
+                    COUNT(DISTINCT r.Reservation_ID)     AS TotalBookings,
+                    b.Name                               AS HomeBranch
+                FROM Employees e
+                    LEFT JOIN Reservations AS r ON e.Employee_ID = r.Employee_ID
+                    LEFT JOIN Branches     AS b ON b.Branch_ID   = e.Branch_ID
+                GROUP BY 
+                    e.Employee_ID,
+                    e.FirstName,
+                    e.LastName,
+                    b.Name
+                HAVING COUNT(r.Reservation_ID) > 0
+                ORDER BY TotalRevenue ASC, TotalBookings ASC;
+            ";
+
             var results = DBConnectionInstance.Query(query);
+
+            // Data source
             UnderPerformingEmpsResults.DataSource = results;
+
+            // Header widths
+            UnderPerformingEmpsResults.Columns[0].Width = 75;
+            UnderPerformingEmpsResults.Columns[1].Width = 150;
+            UnderPerformingEmpsResults.Columns[2].Width = 150;
+            UnderPerformingEmpsResults.Columns[3].Width = 150;
+            UnderPerformingEmpsResults.Columns[4].Width = 150;
+
+            // Header names
+            UnderPerformingEmpsResults.Columns[0].HeaderText = "Employee ID";
+            UnderPerformingEmpsResults.Columns[1].HeaderText = "Employee";
+            UnderPerformingEmpsResults.Columns[2].HeaderText = "Revenue Made";
+            UnderPerformingEmpsResults.Columns[3].HeaderText = "Number of Bookings";
+            UnderPerformingEmpsResults.Columns[4].HeaderText = "Home Branch";
+
+            // Bolded headers
+            var headerFont = new Font(UnderPerformingEmpsResults.Font, FontStyle.Bold);
+            UnderPerformingEmpsResults.Columns[0].HeaderCell.Style.Font = headerFont;
+            UnderPerformingEmpsResults.Columns[1].HeaderCell.Style.Font = headerFont;
+            UnderPerformingEmpsResults.Columns[2].HeaderCell.Style.Font = headerFont;
+            UnderPerformingEmpsResults.Columns[3].HeaderCell.Style.Font = headerFont;
+            UnderPerformingEmpsResults.Columns[4].HeaderCell.Style.Font = headerFont;
+
+            // Revenue column formatting type
+            UnderPerformingEmpsResults.Columns[2].DefaultCellStyle.Format = "c";
         }
     }
 }
