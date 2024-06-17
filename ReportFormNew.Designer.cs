@@ -39,14 +39,17 @@
             this.MonthlyRevenueSubmit = new System.Windows.Forms.Button();
             this.MonthlyRevenueResults = new System.Windows.Forms.DataGridView();
             this.ReportTab4 = new System.Windows.Forms.TabPage();
+            this.label3 = new System.Windows.Forms.Label();
+            this.label4 = new System.Windows.Forms.Label();
             this.BusyBranchTimesSubmit = new System.Windows.Forms.Button();
             this.BusyBranchTimesResults = new System.Windows.Forms.DataGridView();
             this.ReportTab5 = new System.Windows.Forms.TabPage();
+            this.label2 = new System.Windows.Forms.Label();
+            this.label1 = new System.Windows.Forms.Label();
             this.UnderPerformingEmpsSubmit = new System.Windows.Forms.Button();
             this.UnderPerformingEmpsResults = new System.Windows.Forms.DataGridView();
             this.BackButton = new System.Windows.Forms.Button();
-            this.label2 = new System.Windows.Forms.Label();
-            this.label1 = new System.Windows.Forms.Label();
+            this.comboBox_Busy_Branch = new System.Windows.Forms.ComboBox();
             this.TabControlMenu.SuspendLayout();
             this.ReportTab1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.CarUsageResults)).BeginInit();
@@ -167,6 +170,9 @@
             // 
             // ReportTab4
             // 
+            this.ReportTab4.Controls.Add(this.comboBox_Busy_Branch);
+            this.ReportTab4.Controls.Add(this.label3);
+            this.ReportTab4.Controls.Add(this.label4);
             this.ReportTab4.Controls.Add(this.BusyBranchTimesSubmit);
             this.ReportTab4.Controls.Add(this.BusyBranchTimesResults);
             this.ReportTab4.Location = new System.Drawing.Point(4, 22);
@@ -175,6 +181,26 @@
             this.ReportTab4.TabIndex = 3;
             this.ReportTab4.Text = "Busy Branch Times";
             this.ReportTab4.UseVisualStyleBackColor = true;
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label3.Location = new System.Drawing.Point(60, 33);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(295, 25);
+            this.label3.TabIndex = 13;
+            this.label3.Text = "Busiest months per Branch";
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label4.Location = new System.Drawing.Point(61, 58);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(438, 20);
+            this.label4.TabIndex = 12;
+            this.label4.Text = "A list of all month with the amount of reservations per branch.";
             // 
             // BusyBranchTimesSubmit
             // 
@@ -208,6 +234,27 @@
             this.ReportTab5.Text = "Under-performing Employees";
             this.ReportTab5.UseVisualStyleBackColor = true;
             // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.Location = new System.Drawing.Point(60, 39);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(317, 25);
+            this.label2.TabIndex = 11;
+            this.label2.Text = "Under-performing Employees";
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Location = new System.Drawing.Point(61, 64);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(627, 20);
+            this.label1.TabIndex = 10;
+            this.label1.Text = "A list of all of employees, each with a sum of their revenue and a count of their" +
+    " bookings.";
+            // 
             // UnderPerformingEmpsSubmit
             // 
             this.UnderPerformingEmpsSubmit.Location = new System.Drawing.Point(733, 447);
@@ -238,26 +285,13 @@
             this.BackButton.UseVisualStyleBackColor = true;
             this.BackButton.Click += new System.EventHandler(this.BackButtonClick);
             // 
-            // label2
+            // comboBox_Busy_Branch
             // 
-            this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(60, 39);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(317, 25);
-            this.label2.TabIndex = 11;
-            this.label2.Text = "Under-performing Employees";
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(61, 64);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(627, 20);
-            this.label1.TabIndex = 10;
-            this.label1.Text = "A list of all of employees, each with a sum of their revenue and a count of their" +
-    " bookings.";
+            this.comboBox_Busy_Branch.FormattingEnabled = true;
+            this.comboBox_Busy_Branch.Location = new System.Drawing.Point(120, 447);
+            this.comboBox_Busy_Branch.Name = "comboBox_Busy_Branch";
+            this.comboBox_Busy_Branch.Size = new System.Drawing.Size(121, 21);
+            this.comboBox_Busy_Branch.TabIndex = 14;
             // 
             // ReportFormNew
             // 
@@ -278,6 +312,7 @@
             this.ReportTab3.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.MonthlyRevenueResults)).EndInit();
             this.ReportTab4.ResumeLayout(false);
+            this.ReportTab4.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.BusyBranchTimesResults)).EndInit();
             this.ReportTab5.ResumeLayout(false);
             this.ReportTab5.PerformLayout();
@@ -307,5 +342,8 @@
         private System.Windows.Forms.Button UnderPerformingEmpsSubmit;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.ComboBox comboBox_Busy_Branch;
     }
 }

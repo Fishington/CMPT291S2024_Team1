@@ -29,7 +29,7 @@ namespace Team1CMPT291_Final
         public InventoryForm()
         {
             InitializeComponent();
-            UpdateDataGrid("SELECT * FROM Cars");
+            UpdateDataGrid("SELECT * FROM Cars where Branch_ID IS NOT NULL");
             populate_combo_boxes();
         }
 
@@ -162,7 +162,7 @@ namespace Team1CMPT291_Final
                 DialogResult confirmation = MessageBox.Show("Are you sure you want to delete this car?", "Delete Confirmation", MessageBoxButtons.YesNo);
                 if (confirmation == DialogResult.Yes)
                 {
-                    var deleteQuery = $"DELETE FROM Cars WHERE VIN = '{selectedVIN}';";
+                    var deleteQuery = $"UPDATE Cars SET Branch_ID = null WHERE VIN = '{selectedVIN}';";
 
                     var rowsAffected = DBConnectionInstance.Delete(deleteQuery);
 

@@ -59,7 +59,7 @@ CREATE TABLE Cars (
     Make                    NVARCHAR(50) NOT NULL,
     Model                   NVARCHAR(50) NOT NULL,
     Transmission            NVARCHAR(20) NOT NULL,
-    Branch_ID               INT NOT NULL,
+    Branch_ID               INT,
     Type                    NVARCHAR(20) NOT NULL,
     FOREIGN KEY (Branch_ID) REFERENCES Branches(Branch_ID),
     FOREIGN KEY (Type)      REFERENCES CarType(Type)
