@@ -1,6 +1,7 @@
+-- Use for inserting data into tables.
+
 USE CarRental;
 
--- Insert data into CarType
 INSERT INTO CarType (Type, DailyPrice, WeeklyPrice, MonthlyPrice)
 VALUES 
 ('SMALL', 30, 175, 500),
@@ -9,7 +10,6 @@ VALUES
 ('TRUCK', 50, 250, 750),
 ('LUXURY', 110, 500, 1500);
 
--- Enable identity insert for Branches and insert data
 SET IDENTITY_INSERT Branches ON;
 
 INSERT INTO Branches (Branch_ID, Name, Street, City, Postal_Code, Province, Country)
@@ -23,7 +23,6 @@ VALUES
 
 SET IDENTITY_INSERT Branches OFF;
 
--- Insert data into Cars
 INSERT INTO Cars (VIN, License_Plate, Make, Model, Transmission, Branch_ID, Type)
 VALUES 
 ('WA1DGAFP4EA042058', 'BobRox', 'Volkswagen', 'Golf', 'Manual', 1, 'SMALL'),
@@ -39,7 +38,6 @@ VALUES
 ('2L9QYF3T9C3605J0E', 'D52BZ2L', 'Ford', 'Camry', 'Manual', 2, 'LUXURY'),
 ('1G4A1B7C8HF000001', 'MitchelGoated', 'Buick', 'Century', 'Automatic', 1, 'LUXURY');
 
--- Insert data into Customers
 INSERT INTO Customers (FirstName, LastName, Street, City, Postal_Code, Province, Country, PhoneNumber)
 VALUES 
 ('Jimbo', 'Jones', '123 Main St', 'Edmonton', 'T5G 2C4', 'AB', 'Canada', '(555) 555-1234'),
@@ -53,7 +51,6 @@ VALUES
 ('Emily', 'Waluigi', '5678 Willow Way', 'Victoria', 'V9B 1T7', 'BC', 'Canada', '(250) 555-1212'),
 ('Alexander', 'Supertramp', '9012 Ash St', 'Regina', 'S4P 3J3', 'SK', 'Canada', '(306) 555-5678');
 
--- Insert data into Employees
 INSERT INTO Employees (FirstName, LastName, Street, City, Postal_Code, Province, Country, PhoneNumber, Branch_ID)
 VALUES 
 ('John', 'Doe', '123 Main St', 'Toronto', '12345', 'ON', 'Canada', '(555) 555-1212', 1),
@@ -67,7 +64,6 @@ VALUES
 ('Daniel', 'Mckernan', '2021 Hickory St', 'Fredericton', '12378', 'NB', 'Canada', '(555) 555-1220', 1),
 ('Emily', 'Enterprise', '2223 Ash St', 'St. Johns', '45600', 'NL', 'Canada', '(555) 555-1221', 3);
 
--- Insert data into Reservations
 INSERT INTO Reservations (Start_Date, End_Date, TotalPrice, Customer_ID, Employee_ID, Branch_Pickup_ID, Branch_Dropoff_ID, VIN)
 VALUES 
 ('2024-04-01', '2024-04-05', 150.00, 1, 1, 1, 1, 'WA1DGAFP4EA042058'),
