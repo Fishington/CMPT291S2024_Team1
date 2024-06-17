@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Data;
 using System.Drawing;
 using System.Windows.Forms;
 
@@ -17,6 +18,10 @@ namespace Team1CMPT291_Final
 
         private void ReportFormNew_Load(object sender, EventArgs e)
         {
+            DataTable branches = new DBConnection().Query("SELECT Branch_ID, Name FROM Branches");
+            comboBox_Busy_Branch.DataSource = branches;
+            comboBox_Busy_Branch.DisplayMember = "Name";
+            comboBox_Busy_Branch.ValueMember = "Branch_ID";
 
         }
 
@@ -50,7 +55,8 @@ namespace Team1CMPT291_Final
 
         private void BusyBranchTimesSubmit_Click(object sender, EventArgs e)
         {
-            var query   = "SELECT * FROM CarType WHERE Type = 'SMALL'";
+
+            var query   = "SELECT FORMAT(Start_Date, 'yyyy.MMMM') as Month, Count(*) as Rentals FROM Reservations WHERE Branch_Pickup_ID = " + comboBox_Busy_Branch.SelectedValue + " GROUP BY FORMAT(Start_Date, 'yyyy.MMMM') ORDER BY COUNT(*) DESC";
             var results = DBConnectionInstance.Query(query);
             BusyBranchTimesResults.DataSource = results;
         }
@@ -106,5 +112,7 @@ namespace Team1CMPT291_Final
             // Revenue column formatting type
             UnderPerformingEmpsResults.Columns[2].DefaultCellStyle.Format = "c";
         }
+
+
     }
 }
