@@ -61,7 +61,29 @@ namespace Team1CMPT291_Final
 
         private void MonthlyRevenueSubmit_Click(object sender, EventArgs e)
         {
-            var query   = "SELECT * FROM CarType WHERE Type = 'SMALL'";
+            //Aidan TODO
+            var query   = @" 
+                   SELECT 
+                        r.Start_Date AS Rental_Date,
+                        b.Name,
+                        SUM(r.TotalPrice) AS Daily_Revenue
+                    FROM Reservations r, Branches b 
+                    where r.Branch_Pickup_ID = b.Branch_ID
+                    GROUP BY r.Start_Date, b.Name
+                    HAVING SUM(r.TotalPrice) = (
+                        SELECT MAX(Daily_Revenue)
+                        FROM (
+                            SELECT 
+                              Start_Date,
+                              Branch_Pickup_ID,
+                              SUM(TotalPrice) AS Daily_Revenue
+                        FROM Reservations
+                        GROUP BY Start_Date, Branch_Pickup_ID
+                      ) AS subquery
+                      WHERE subquery.Start_Date = r.Start_Date
+                    )
+                    ORDER BY Rental_Date;";
+
             var results = DBConnectionInstance.Query(query);
             MonthlyRevenueResults.DataSource = results;
         }
