@@ -30,6 +30,8 @@
         {
             this.TabControlMenu = new System.Windows.Forms.TabControl();
             this.ReportTab1 = new System.Windows.Forms.TabPage();
+            this.comboBox_CarUsage = new System.Windows.Forms.ComboBox();
+            this.label5 = new System.Windows.Forms.Label();
             this.CarUsagesSubmit = new System.Windows.Forms.Button();
             this.CarUsageResults = new System.Windows.Forms.DataGridView();
             this.ReportTab2 = new System.Windows.Forms.TabPage();
@@ -50,8 +52,6 @@
             this.UnderPerformingEmpsSubmit = new System.Windows.Forms.Button();
             this.UnderPerformingEmpsResults = new System.Windows.Forms.DataGridView();
             this.BackButton = new System.Windows.Forms.Button();
-            this.label5 = new System.Windows.Forms.Label();
-            this.comboBox_CarUsage = new System.Windows.Forms.ComboBox();
             this.TabControlMenu.SuspendLayout();
             this.ReportTab1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.CarUsageResults)).BeginInit();
@@ -91,6 +91,24 @@
             this.ReportTab1.TabIndex = 0;
             this.ReportTab1.Text = "Car Usages";
             this.ReportTab1.UseVisualStyleBackColor = true;
+            // 
+            // comboBox_CarUsage
+            // 
+            this.comboBox_CarUsage.FormattingEnabled = true;
+            this.comboBox_CarUsage.Location = new System.Drawing.Point(65, 447);
+            this.comboBox_CarUsage.Name = "comboBox_CarUsage";
+            this.comboBox_CarUsage.Size = new System.Drawing.Size(121, 21);
+            this.comboBox_CarUsage.TabIndex = 9;
+            // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Bold);
+            this.label5.Location = new System.Drawing.Point(60, 35);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(481, 25);
+            this.label5.TabIndex = 8;
+            this.label5.Text = "Car Usage By Make, Model, or Transmission";
             // 
             // CarUsagesSubmit
             // 
@@ -250,7 +268,7 @@
             // 
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(60, 39);
+            this.label2.Location = new System.Drawing.Point(60, 33);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(317, 25);
             this.label2.TabIndex = 11;
@@ -258,14 +276,13 @@
             // 
             // label1
             // 
-            this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(61, 64);
+            this.label1.Location = new System.Drawing.Point(61, 58);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(627, 20);
+            this.label1.Size = new System.Drawing.Size(800, 46);
             this.label1.TabIndex = 10;
-            this.label1.Text = "A list of all of employees, each with a sum of their revenue and a count of their" +
-    " bookings.";
+            this.label1.Text = "A list of all employees, each with a sum of their revenue, a count of their booki" +
+    "ngs, and the average revenue generated per booking.";
             // 
             // UnderPerformingEmpsSubmit
             // 
@@ -296,24 +313,6 @@
             this.BackButton.Text = "Back";
             this.BackButton.UseVisualStyleBackColor = true;
             this.BackButton.Click += new System.EventHandler(this.BackButtonClick);
-            // 
-            // label5
-            // 
-            this.label5.AutoSize = true;
-            this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Bold);
-            this.label5.Location = new System.Drawing.Point(60, 35);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(481, 25);
-            this.label5.TabIndex = 8;
-            this.label5.Text = "Car Usage By Make, Model, or Transmission";
-            // 
-            // comboBox_CarUsage
-            // 
-            this.comboBox_CarUsage.FormattingEnabled = true;
-            this.comboBox_CarUsage.Location = new System.Drawing.Point(65, 447);
-            this.comboBox_CarUsage.Name = "comboBox_CarUsage";
-            this.comboBox_CarUsage.Size = new System.Drawing.Size(121, 21);
-            this.comboBox_CarUsage.TabIndex = 9;
             // 
             // ReportFormNew
             // 
