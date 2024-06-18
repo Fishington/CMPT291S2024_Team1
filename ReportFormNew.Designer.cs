@@ -99,6 +99,7 @@
             // comboBox_CarUsage
             // 
             this.comboBox_CarUsage.FormattingEnabled = true;
+
             this.comboBox_CarUsage.Location = new System.Drawing.Point(119, 825);
             this.comboBox_CarUsage.Margin = new System.Windows.Forms.Padding(6);
             this.comboBox_CarUsage.Name = "comboBox_CarUsage";
@@ -109,10 +110,12 @@
             // 
             this.label5.AutoSize = true;
             this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Bold);
+
             this.label5.Location = new System.Drawing.Point(110, 65);
             this.label5.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(801, 42);
+
             this.label5.TabIndex = 8;
             this.label5.Text = "Car Usage By Make, Model, or Transmission";
             // 
@@ -315,6 +318,7 @@
             this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label2.Location = new System.Drawing.Point(110, 72);
             this.label2.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
+
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(530, 42);
             this.label2.TabIndex = 11;
@@ -322,15 +326,17 @@
             // 
             // label1
             // 
-            this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+
             this.label1.Location = new System.Drawing.Point(112, 118);
             this.label1.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(1121, 32);
+
+           
             this.label1.TabIndex = 10;
-            this.label1.Text = "A list of all of employees, each with a sum of their revenue and a count of their" +
-    " bookings.";
+            this.label1.Text = "A list of all employees, each with a sum of their revenue, a count of their booki" +
+    "ngs, and the average revenue generated per booking.";
             // 
             // UnderPerformingEmpsSubmit
             // 
