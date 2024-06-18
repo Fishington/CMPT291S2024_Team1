@@ -2,6 +2,7 @@
 using System.Data;
 using System.Drawing;
 using System.Windows.Forms;
+using static System.Windows.Forms.VisualStyles.VisualStyleElement;
 
 namespace Team1CMPT291_Final
 {
@@ -23,6 +24,9 @@ namespace Team1CMPT291_Final
             comboBox_Busy_Branch.DisplayMember = "Name";
             comboBox_Busy_Branch.ValueMember = "Branch_ID";
 
+            comboBox_CarUsage.Items.Add("Make");
+            comboBox_CarUsage.Items.Add("Model");
+            comboBox_CarUsage.Items.Add("Transmission");
         }
 
         private void BackButtonClick(object sender, EventArgs e)
@@ -34,7 +38,16 @@ namespace Team1CMPT291_Final
 
         private void CarUsagesSubmit_Click(object sender, EventArgs e)
         {
-            var query   = "SELECT C.Model, COUNT(R.Reservation_ID) as RentalCount FROM Cars as C, Reservations as R WHERE C.VIN = R.VIN GROUP BY C.Model ORDER BY RentalCount DESC";
+            string selectedColumn = comboBox_CarUsage.SelectedItem.ToString();
+
+            string query = $@"
+                SELECT C.{selectedColumn}, COUNT(R.Reservation_ID) as RentalCount 
+                FROM Cars as C
+                JOIN Reservations as R ON C.VIN = R.VIN 
+                WHERE C.{selectedColumn} IS NOT NULL
+                GROUP BY C.{selectedColumn} 
+                ORDER BY RentalCount DESC";
+
             var results = DBConnectionInstance.Query(query);
             CarUsageResults.DataSource = results;
         }
