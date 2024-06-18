@@ -39,6 +39,7 @@
             this.MonthlyRevenueSubmit = new System.Windows.Forms.Button();
             this.MonthlyRevenueResults = new System.Windows.Forms.DataGridView();
             this.ReportTab4 = new System.Windows.Forms.TabPage();
+            this.comboBox_Busy_Branch = new System.Windows.Forms.ComboBox();
             this.label3 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.BusyBranchTimesSubmit = new System.Windows.Forms.Button();
@@ -49,7 +50,8 @@
             this.UnderPerformingEmpsSubmit = new System.Windows.Forms.Button();
             this.UnderPerformingEmpsResults = new System.Windows.Forms.DataGridView();
             this.BackButton = new System.Windows.Forms.Button();
-            this.comboBox_Busy_Branch = new System.Windows.Forms.ComboBox();
+            this.label5 = new System.Windows.Forms.Label();
+            this.comboBox_CarUsage = new System.Windows.Forms.ComboBox();
             this.TabControlMenu.SuspendLayout();
             this.ReportTab1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.CarUsageResults)).BeginInit();
@@ -78,6 +80,8 @@
             // 
             // ReportTab1
             // 
+            this.ReportTab1.Controls.Add(this.comboBox_CarUsage);
+            this.ReportTab1.Controls.Add(this.label5);
             this.ReportTab1.Controls.Add(this.CarUsagesSubmit);
             this.ReportTab1.Controls.Add(this.CarUsageResults);
             this.ReportTab1.Location = new System.Drawing.Point(4, 22);
@@ -182,6 +186,14 @@
             this.ReportTab4.Text = "Busy Branch Times";
             this.ReportTab4.UseVisualStyleBackColor = true;
             // 
+            // comboBox_Busy_Branch
+            // 
+            this.comboBox_Busy_Branch.FormattingEnabled = true;
+            this.comboBox_Busy_Branch.Location = new System.Drawing.Point(65, 447);
+            this.comboBox_Busy_Branch.Name = "comboBox_Busy_Branch";
+            this.comboBox_Busy_Branch.Size = new System.Drawing.Size(121, 21);
+            this.comboBox_Busy_Branch.TabIndex = 14;
+            // 
             // label3
             // 
             this.label3.AutoSize = true;
@@ -285,13 +297,23 @@
             this.BackButton.UseVisualStyleBackColor = true;
             this.BackButton.Click += new System.EventHandler(this.BackButtonClick);
             // 
-            // comboBox_Busy_Branch
+            // label5
             // 
-            this.comboBox_Busy_Branch.FormattingEnabled = true;
-            this.comboBox_Busy_Branch.Location = new System.Drawing.Point(120, 447);
-            this.comboBox_Busy_Branch.Name = "comboBox_Busy_Branch";
-            this.comboBox_Busy_Branch.Size = new System.Drawing.Size(121, 21);
-            this.comboBox_Busy_Branch.TabIndex = 14;
+            this.label5.AutoSize = true;
+            this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Bold);
+            this.label5.Location = new System.Drawing.Point(60, 35);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(481, 25);
+            this.label5.TabIndex = 8;
+            this.label5.Text = "Car Usage By Make, Model, or Transmission";
+            // 
+            // comboBox_CarUsage
+            // 
+            this.comboBox_CarUsage.FormattingEnabled = true;
+            this.comboBox_CarUsage.Location = new System.Drawing.Point(65, 447);
+            this.comboBox_CarUsage.Name = "comboBox_CarUsage";
+            this.comboBox_CarUsage.Size = new System.Drawing.Size(121, 21);
+            this.comboBox_CarUsage.TabIndex = 9;
             // 
             // ReportFormNew
             // 
@@ -306,6 +328,7 @@
             this.Load += new System.EventHandler(this.ReportFormNew_Load);
             this.TabControlMenu.ResumeLayout(false);
             this.ReportTab1.ResumeLayout(false);
+            this.ReportTab1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.CarUsageResults)).EndInit();
             this.ReportTab2.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.FrequentFlyerResults)).EndInit();
@@ -345,5 +368,7 @@
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.ComboBox comboBox_Busy_Branch;
+        private System.Windows.Forms.Label label5;
+        private System.Windows.Forms.ComboBox comboBox_CarUsage;
     }
 }
