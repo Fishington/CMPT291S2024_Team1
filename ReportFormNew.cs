@@ -59,7 +59,7 @@ namespace Team1CMPT291_Final
 
         private void FrequentFlyersSubmit_Click(object sender, EventArgs e)
         {
-            var query   = "SELECT * FROM CarType WHERE Type = 'SMALL'";
+            var query = "select CONCAT(C2.FirstName, ' ', C2.LastName) as Name, G.number_of_days, G.Total \r\nfrom (select C.Customer_ID, sum(R.TotalPrice) as Total, SUM(DATEDIFF(day, R.Start_Date, R.End_Date)) as number_of_days\r\nfrom Customers C, Reservations R\r\nwhere C.Customer_ID = R.Customer_ID\r\ngroup by C.Customer_ID) G, Customers C2\r\nwhere C2.Customer_ID = G.Customer_ID\r\norder by number_of_days desc;";
             var results = DBConnectionInstance.Query(query);
             FrequentFlyerResults.DataSource = results;
         }
