@@ -83,6 +83,7 @@
             // 
             // ReportTab1
             // 
+            this.ReportTab1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(237)))), ((int)(((byte)(255)))), ((int)(((byte)(244)))));
             this.ReportTab1.Controls.Add(this.comboBox_CarUsage);
             this.ReportTab1.Controls.Add(this.label5);
             this.ReportTab1.Controls.Add(this.CarUsagesSubmit);
@@ -94,54 +95,58 @@
             this.ReportTab1.Size = new System.Drawing.Size(1660, 943);
             this.ReportTab1.TabIndex = 0;
             this.ReportTab1.Text = "Car Usages";
-            this.ReportTab1.UseVisualStyleBackColor = true;
             // 
             // comboBox_CarUsage
             // 
+            this.comboBox_CarUsage.Font = new System.Drawing.Font("Inter Medium", 14F, System.Drawing.FontStyle.Bold);
             this.comboBox_CarUsage.FormattingEnabled = true;
-
             this.comboBox_CarUsage.Location = new System.Drawing.Point(119, 825);
             this.comboBox_CarUsage.Margin = new System.Windows.Forms.Padding(6);
             this.comboBox_CarUsage.Name = "comboBox_CarUsage";
-            this.comboBox_CarUsage.Size = new System.Drawing.Size(218, 32);
+            this.comboBox_CarUsage.Size = new System.Drawing.Size(369, 48);
             this.comboBox_CarUsage.TabIndex = 9;
             // 
             // label5
             // 
             this.label5.AutoSize = true;
-            this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Bold);
-
+            this.label5.Font = new System.Drawing.Font("Inter SemiBold", 15.85714F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label5.Location = new System.Drawing.Point(110, 65);
             this.label5.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(801, 42);
-
+            this.label5.Size = new System.Drawing.Size(803, 45);
             this.label5.TabIndex = 8;
             this.label5.Text = "Car Usage By Make, Model, or Transmission";
             // 
             // CarUsagesSubmit
             // 
+            this.CarUsagesSubmit.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(6)))), ((int)(((byte)(254)))), ((int)(((byte)(111)))));
+            this.CarUsagesSubmit.FlatAppearance.BorderSize = 0;
+            this.CarUsagesSubmit.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.CarUsagesSubmit.Location = new System.Drawing.Point(1344, 825);
             this.CarUsagesSubmit.Margin = new System.Windows.Forms.Padding(4);
             this.CarUsagesSubmit.Name = "CarUsagesSubmit";
             this.CarUsagesSubmit.Size = new System.Drawing.Size(191, 76);
             this.CarUsagesSubmit.TabIndex = 7;
             this.CarUsagesSubmit.Text = "Run Report";
-            this.CarUsagesSubmit.UseVisualStyleBackColor = true;
+            this.CarUsagesSubmit.UseVisualStyleBackColor = false;
             this.CarUsagesSubmit.Click += new System.EventHandler(this.CarUsagesSubmit_Click);
             // 
             // CarUsageResults
             // 
+            this.CarUsageResults.AllowUserToAddRows = false;
+            this.CarUsageResults.AllowUserToDeleteRows = false;
             this.CarUsageResults.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.CarUsageResults.Location = new System.Drawing.Point(119, 209);
             this.CarUsageResults.Margin = new System.Windows.Forms.Padding(6);
             this.CarUsageResults.Name = "CarUsageResults";
+            this.CarUsageResults.ReadOnly = true;
             this.CarUsageResults.RowHeadersWidth = 72;
             this.CarUsageResults.Size = new System.Drawing.Size(1415, 604);
             this.CarUsageResults.TabIndex = 2;
             // 
             // ReportTab2
             // 
+            this.ReportTab2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(237)))), ((int)(((byte)(255)))), ((int)(((byte)(244)))));
             this.ReportTab2.Controls.Add(this.FrequentFlyersSubmit);
             this.ReportTab2.Controls.Add(this.FrequentFlyerResults);
             this.ReportTab2.Location = new System.Drawing.Point(4, 33);
@@ -151,31 +156,38 @@
             this.ReportTab2.Size = new System.Drawing.Size(1660, 943);
             this.ReportTab2.TabIndex = 1;
             this.ReportTab2.Text = "Frequent Flyers";
-            this.ReportTab2.UseVisualStyleBackColor = true;
             // 
             // FrequentFlyersSubmit
             // 
+            this.FrequentFlyersSubmit.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(6)))), ((int)(((byte)(254)))), ((int)(((byte)(111)))));
+            this.FrequentFlyersSubmit.FlatAppearance.BorderSize = 0;
+            this.FrequentFlyersSubmit.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.FrequentFlyersSubmit.ForeColor = System.Drawing.SystemColors.ControlText;
             this.FrequentFlyersSubmit.Location = new System.Drawing.Point(1344, 825);
             this.FrequentFlyersSubmit.Margin = new System.Windows.Forms.Padding(4);
             this.FrequentFlyersSubmit.Name = "FrequentFlyersSubmit";
             this.FrequentFlyersSubmit.Size = new System.Drawing.Size(191, 76);
             this.FrequentFlyersSubmit.TabIndex = 7;
             this.FrequentFlyersSubmit.Text = "Run Report";
-            this.FrequentFlyersSubmit.UseVisualStyleBackColor = true;
+            this.FrequentFlyersSubmit.UseVisualStyleBackColor = false;
             this.FrequentFlyersSubmit.Click += new System.EventHandler(this.FrequentFlyersSubmit_Click);
             // 
             // FrequentFlyerResults
             // 
+            this.FrequentFlyerResults.AllowUserToAddRows = false;
+            this.FrequentFlyerResults.AllowUserToDeleteRows = false;
             this.FrequentFlyerResults.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.FrequentFlyerResults.Location = new System.Drawing.Point(119, 209);
             this.FrequentFlyerResults.Margin = new System.Windows.Forms.Padding(6);
             this.FrequentFlyerResults.Name = "FrequentFlyerResults";
+            this.FrequentFlyerResults.ReadOnly = true;
             this.FrequentFlyerResults.RowHeadersWidth = 72;
             this.FrequentFlyerResults.Size = new System.Drawing.Size(1415, 604);
             this.FrequentFlyerResults.TabIndex = 1;
             // 
             // ReportTab3
             // 
+            this.ReportTab3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(237)))), ((int)(((byte)(255)))), ((int)(((byte)(244)))));
             this.ReportTab3.Controls.Add(this.label6);
             this.ReportTab3.Controls.Add(this.label7);
             this.ReportTab3.Controls.Add(this.MonthlyRevenueSubmit);
@@ -186,12 +198,12 @@
             this.ReportTab3.Size = new System.Drawing.Size(1660, 943);
             this.ReportTab3.TabIndex = 2;
             this.ReportTab3.Text = "Daily Revenue";
-            this.ReportTab3.UseVisualStyleBackColor = true;
             // 
             // label6
             // 
             this.label6.AutoSize = true;
             this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label6.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(40)))), ((int)(((byte)(19)))));
             this.label6.Location = new System.Drawing.Point(112, 73);
             this.label6.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
             this.label6.Name = "label6";
@@ -203,6 +215,7 @@
             // 
             this.label7.AutoSize = true;
             this.label7.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label7.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(40)))), ((int)(((byte)(19)))));
             this.label7.Location = new System.Drawing.Point(114, 119);
             this.label7.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
             this.label7.Name = "label7";
@@ -212,27 +225,34 @@
             // 
             // MonthlyRevenueSubmit
             // 
+            this.MonthlyRevenueSubmit.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(6)))), ((int)(((byte)(254)))), ((int)(((byte)(111)))));
+            this.MonthlyRevenueSubmit.FlatAppearance.BorderSize = 0;
+            this.MonthlyRevenueSubmit.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.MonthlyRevenueSubmit.Location = new System.Drawing.Point(1344, 825);
             this.MonthlyRevenueSubmit.Margin = new System.Windows.Forms.Padding(4);
             this.MonthlyRevenueSubmit.Name = "MonthlyRevenueSubmit";
             this.MonthlyRevenueSubmit.Size = new System.Drawing.Size(191, 76);
             this.MonthlyRevenueSubmit.TabIndex = 7;
             this.MonthlyRevenueSubmit.Text = "Run Report";
-            this.MonthlyRevenueSubmit.UseVisualStyleBackColor = true;
+            this.MonthlyRevenueSubmit.UseVisualStyleBackColor = false;
             this.MonthlyRevenueSubmit.Click += new System.EventHandler(this.MonthlyRevenueSubmit_Click);
             // 
             // MonthlyRevenueResults
             // 
+            this.MonthlyRevenueResults.AllowUserToAddRows = false;
+            this.MonthlyRevenueResults.AllowUserToDeleteRows = false;
             this.MonthlyRevenueResults.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.MonthlyRevenueResults.Location = new System.Drawing.Point(119, 209);
             this.MonthlyRevenueResults.Margin = new System.Windows.Forms.Padding(6);
             this.MonthlyRevenueResults.Name = "MonthlyRevenueResults";
+            this.MonthlyRevenueResults.ReadOnly = true;
             this.MonthlyRevenueResults.RowHeadersWidth = 72;
             this.MonthlyRevenueResults.Size = new System.Drawing.Size(1415, 604);
             this.MonthlyRevenueResults.TabIndex = 1;
             // 
             // ReportTab4
             // 
+            this.ReportTab4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(237)))), ((int)(((byte)(255)))), ((int)(((byte)(244)))));
             this.ReportTab4.Controls.Add(this.comboBox_Busy_Branch);
             this.ReportTab4.Controls.Add(this.label3);
             this.ReportTab4.Controls.Add(this.label4);
@@ -244,7 +264,6 @@
             this.ReportTab4.Size = new System.Drawing.Size(1660, 943);
             this.ReportTab4.TabIndex = 3;
             this.ReportTab4.Text = "Busy Branch Times";
-            this.ReportTab4.UseVisualStyleBackColor = true;
             // 
             // comboBox_Busy_Branch
             // 
@@ -279,27 +298,34 @@
             // 
             // BusyBranchTimesSubmit
             // 
+            this.BusyBranchTimesSubmit.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(6)))), ((int)(((byte)(254)))), ((int)(((byte)(111)))));
+            this.BusyBranchTimesSubmit.FlatAppearance.BorderSize = 0;
+            this.BusyBranchTimesSubmit.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.BusyBranchTimesSubmit.Location = new System.Drawing.Point(1344, 825);
             this.BusyBranchTimesSubmit.Margin = new System.Windows.Forms.Padding(4);
             this.BusyBranchTimesSubmit.Name = "BusyBranchTimesSubmit";
             this.BusyBranchTimesSubmit.Size = new System.Drawing.Size(191, 76);
             this.BusyBranchTimesSubmit.TabIndex = 7;
             this.BusyBranchTimesSubmit.Text = "Run Report";
-            this.BusyBranchTimesSubmit.UseVisualStyleBackColor = true;
+            this.BusyBranchTimesSubmit.UseVisualStyleBackColor = false;
             this.BusyBranchTimesSubmit.Click += new System.EventHandler(this.BusyBranchTimesSubmit_Click);
             // 
             // BusyBranchTimesResults
             // 
+            this.BusyBranchTimesResults.AllowUserToAddRows = false;
+            this.BusyBranchTimesResults.AllowUserToDeleteRows = false;
             this.BusyBranchTimesResults.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.BusyBranchTimesResults.Location = new System.Drawing.Point(119, 209);
             this.BusyBranchTimesResults.Margin = new System.Windows.Forms.Padding(6);
             this.BusyBranchTimesResults.Name = "BusyBranchTimesResults";
+            this.BusyBranchTimesResults.ReadOnly = true;
             this.BusyBranchTimesResults.RowHeadersWidth = 72;
             this.BusyBranchTimesResults.Size = new System.Drawing.Size(1415, 604);
             this.BusyBranchTimesResults.TabIndex = 1;
             // 
             // ReportTab5
             // 
+            this.ReportTab5.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(237)))), ((int)(((byte)(255)))), ((int)(((byte)(244)))));
             this.ReportTab5.Controls.Add(this.label2);
             this.ReportTab5.Controls.Add(this.label1);
             this.ReportTab5.Controls.Add(this.UnderPerformingEmpsSubmit);
@@ -310,15 +336,13 @@
             this.ReportTab5.Size = new System.Drawing.Size(1660, 943);
             this.ReportTab5.TabIndex = 4;
             this.ReportTab5.Text = "Under-performing Employees";
-            this.ReportTab5.UseVisualStyleBackColor = true;
             // 
             // label2
             // 
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(110, 72);
+            this.label2.Location = new System.Drawing.Point(112, 56);
             this.label2.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
-
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(530, 42);
             this.label2.TabIndex = 11;
@@ -327,56 +351,64 @@
             // label1
             // 
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-
-            this.label1.Location = new System.Drawing.Point(112, 118);
+            this.label1.Location = new System.Drawing.Point(114, 102);
             this.label1.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(1121, 32);
-
-           
             this.label1.TabIndex = 10;
             this.label1.Text = "A list of all employees, each with a sum of their revenue, a count of their booki" +
     "ngs, and the average revenue generated per booking.";
             // 
             // UnderPerformingEmpsSubmit
             // 
+            this.UnderPerformingEmpsSubmit.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(6)))), ((int)(((byte)(254)))), ((int)(((byte)(111)))));
+            this.UnderPerformingEmpsSubmit.FlatAppearance.BorderSize = 0;
+            this.UnderPerformingEmpsSubmit.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.UnderPerformingEmpsSubmit.Location = new System.Drawing.Point(1344, 825);
             this.UnderPerformingEmpsSubmit.Margin = new System.Windows.Forms.Padding(4);
             this.UnderPerformingEmpsSubmit.Name = "UnderPerformingEmpsSubmit";
             this.UnderPerformingEmpsSubmit.Size = new System.Drawing.Size(191, 76);
             this.UnderPerformingEmpsSubmit.TabIndex = 6;
             this.UnderPerformingEmpsSubmit.Text = "Run Report";
-            this.UnderPerformingEmpsSubmit.UseVisualStyleBackColor = true;
+            this.UnderPerformingEmpsSubmit.UseVisualStyleBackColor = false;
             this.UnderPerformingEmpsSubmit.Click += new System.EventHandler(this.UnderPerformingEmpsSubmit_Click);
             // 
             // UnderPerformingEmpsResults
             // 
+            this.UnderPerformingEmpsResults.AllowUserToAddRows = false;
+            this.UnderPerformingEmpsResults.AllowUserToDeleteRows = false;
             this.UnderPerformingEmpsResults.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.UnderPerformingEmpsResults.Location = new System.Drawing.Point(119, 209);
             this.UnderPerformingEmpsResults.Margin = new System.Windows.Forms.Padding(6);
             this.UnderPerformingEmpsResults.Name = "UnderPerformingEmpsResults";
+            this.UnderPerformingEmpsResults.ReadOnly = true;
             this.UnderPerformingEmpsResults.RowHeadersWidth = 72;
             this.UnderPerformingEmpsResults.Size = new System.Drawing.Size(1415, 604);
             this.UnderPerformingEmpsResults.TabIndex = 1;
             // 
             // BackButton
             // 
+            this.BackButton.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(118)))), ((int)(((byte)(193)))), ((int)(((byte)(254)))));
+            this.BackButton.FlatAppearance.BorderSize = 0;
+            this.BackButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.BackButton.Location = new System.Drawing.Point(1470, 9);
             this.BackButton.Margin = new System.Windows.Forms.Padding(4);
             this.BackButton.Name = "BackButton";
             this.BackButton.Size = new System.Drawing.Size(189, 42);
             this.BackButton.TabIndex = 5;
             this.BackButton.Text = "Back";
-            this.BackButton.UseVisualStyleBackColor = true;
+            this.BackButton.UseVisualStyleBackColor = false;
             this.BackButton.Click += new System.EventHandler(this.BackButtonClick);
             // 
             // ReportFormNew
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(11F, 24F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(237)))), ((int)(((byte)(255)))), ((int)(((byte)(244)))));
             this.ClientSize = new System.Drawing.Size(1663, 1002);
             this.Controls.Add(this.BackButton);
             this.Controls.Add(this.TabControlMenu);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow;
             this.Margin = new System.Windows.Forms.Padding(6);
             this.Name = "ReportFormNew";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
