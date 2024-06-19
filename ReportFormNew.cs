@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Data;
 using System.Drawing;
+using System.Runtime.InteropServices;
 using System.Windows.Forms;
 using static System.Windows.Forms.VisualStyles.VisualStyleElement;
 
@@ -20,6 +21,7 @@ namespace Team1CMPT291_Final
         private void ReportFormNew_Load(object sender, EventArgs e)
         {
             DataTable branches = new DBConnection().Query("SELECT Branch_ID, Name FROM Branches");
+            branches.Rows.Add(new Object[] { -1, "Best Branch" });
             comboBox_Busy_Branch.DataSource = branches;
             comboBox_Busy_Branch.DisplayMember = "Name";
             comboBox_Busy_Branch.ValueMember = "Branch_ID";
@@ -95,9 +97,10 @@ namespace Team1CMPT291_Final
 
         private void BusyBranchTimesSubmit_Click(object sender, EventArgs e)
         {
-
-            var query2   = "SELECT FORMAT(Start_Date, 'yyyy.MMMM') as Month, Count(*) as Rentals FROM Reservations WHERE Branch_Pickup_ID = " + comboBox_Busy_Branch.SelectedValue + " GROUP BY FORMAT(Start_Date, 'yyyy.MMMM') ORDER BY COUNT(*) DESC";
-            var query = @"
+            string query;
+            int selectedbranch = (int)comboBox_Busy_Branch.SelectedValue;
+            if (selectedbranch == -1)
+            {query = @"
                 SELECT MonthCounts.Month, B.Name, MonthCounts.Rentals
                 FROM (SELECT FORMAT(Start_Date, 'yyyy-MM') as Month, Branch_Pickup_ID AS Branch ,Count(*) as Rentals
                     FROM Reservations
@@ -112,7 +115,13 @@ namespace Team1CMPT291_Final
                         ) As MC2
                     WHERE MC2.Month = MonthCounts.Month
                 ) AND MonthCounts.Branch = B.Branch_ID
-                ORDER BY MonthCounts.Month";
+                ORDER BY MonthCounts.Month"; 
+            } else {query = @"
+                    SELECT FORMAT(Start_Date, 'yyyy-MM') as Month, Count(*) as Rentals 
+                    FROM Reservations 
+                    WHERE Branch_Pickup_ID = " + selectedbranch + @" 
+                    GROUP BY FORMAT(Start_Date, 'yyyy-MM') 
+                    ORDER BY COUNT(*) DESC"; }
             var results = DBConnectionInstance.Query(query);
             BusyBranchTimesResults.DataSource = results;
         }
