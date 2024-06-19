@@ -44,6 +44,11 @@
             this.label6 = new System.Windows.Forms.Label();
             this.label7 = new System.Windows.Forms.Label();
             this.Label_Total = new System.Windows.Forms.Label();
+            this.label1 = new System.Windows.Forms.Label();
+            this.Label_DiffBFee = new System.Windows.Forms.Label();
+            this.Label_XMonthly = new System.Windows.Forms.Label();
+            this.Label_XWeekly = new System.Windows.Forms.Label();
+            this.Label_XDaily = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // button1
@@ -85,7 +90,7 @@
             this.lap.AutoSize = true;
             this.lap.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.85714F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lap.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(40)))), ((int)(((byte)(19)))));
-            this.lap.Location = new System.Drawing.Point(620, 204);
+            this.lap.Location = new System.Drawing.Point(620, 156);
             this.lap.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lap.Name = "lap";
             this.lap.Size = new System.Drawing.Size(152, 42);
@@ -109,7 +114,7 @@
             this.Label_DP.AutoSize = true;
             this.Label_DP.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.85714F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Label_DP.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(40)))), ((int)(((byte)(19)))));
-            this.Label_DP.Location = new System.Drawing.Point(620, 366);
+            this.Label_DP.Location = new System.Drawing.Point(565, 366);
             this.Label_DP.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.Label_DP.Name = "Label_DP";
             this.Label_DP.Size = new System.Drawing.Size(117, 42);
@@ -121,7 +126,7 @@
             this.Label_WP.AutoSize = true;
             this.Label_WP.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.85714F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Label_WP.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(40)))), ((int)(((byte)(19)))));
-            this.Label_WP.Location = new System.Drawing.Point(620, 430);
+            this.Label_WP.Location = new System.Drawing.Point(565, 430);
             this.Label_WP.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.Label_WP.Name = "Label_WP";
             this.Label_WP.Size = new System.Drawing.Size(117, 42);
@@ -133,7 +138,7 @@
             this.Label_MP.AutoSize = true;
             this.Label_MP.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.85714F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Label_MP.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(40)))), ((int)(((byte)(19)))));
-            this.Label_MP.Location = new System.Drawing.Point(620, 494);
+            this.Label_MP.Location = new System.Drawing.Point(565, 494);
             this.Label_MP.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.Label_MP.Name = "Label_MP";
             this.Label_MP.Size = new System.Drawing.Size(117, 42);
@@ -158,7 +163,7 @@
             this.label5.AutoSize = true;
             this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.85714F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label5.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(40)))), ((int)(((byte)(19)))));
-            this.label5.Location = new System.Drawing.Point(387, 570);
+            this.label5.Location = new System.Drawing.Point(330, 572);
             this.label5.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(117, 42);
@@ -170,7 +175,7 @@
             this.Label_Type.AutoSize = true;
             this.Label_Type.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.85714F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Label_Type.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(40)))), ((int)(((byte)(19)))));
-            this.Label_Type.Location = new System.Drawing.Point(120, 204);
+            this.Label_Type.Location = new System.Drawing.Point(120, 156);
             this.Label_Type.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.Label_Type.Name = "Label_Type";
             this.Label_Type.Size = new System.Drawing.Size(117, 42);
@@ -194,7 +199,7 @@
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.85714F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(40)))), ((int)(((byte)(19)))));
-            this.label2.Location = new System.Drawing.Point(286, 366);
+            this.label2.Location = new System.Drawing.Point(231, 366);
             this.label2.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(218, 42);
@@ -206,7 +211,7 @@
             this.label6.AutoSize = true;
             this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.85714F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label6.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(40)))), ((int)(((byte)(19)))));
-            this.label6.Location = new System.Drawing.Point(245, 430);
+            this.label6.Location = new System.Drawing.Point(190, 430);
             this.label6.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(259, 42);
@@ -218,7 +223,7 @@
             this.label7.AutoSize = true;
             this.label7.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.85714F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label7.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(40)))), ((int)(((byte)(19)))));
-            this.label7.Location = new System.Drawing.Point(236, 494);
+            this.label7.Location = new System.Drawing.Point(181, 494);
             this.label7.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(268, 42);
@@ -230,12 +235,72 @@
             this.Label_Total.AutoSize = true;
             this.Label_Total.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.85714F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Label_Total.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(40)))), ((int)(((byte)(19)))));
-            this.Label_Total.Location = new System.Drawing.Point(620, 570);
+            this.Label_Total.Location = new System.Drawing.Point(565, 572);
             this.Label_Total.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.Label_Total.Name = "Label_Total";
             this.Label_Total.Size = new System.Drawing.Size(117, 42);
             this.Label_Total.TabIndex = 17;
             this.Label_Total.Text = "Type:";
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.85714F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(40)))), ((int)(((byte)(19)))));
+            this.label1.Location = new System.Drawing.Point(120, 235);
+            this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(393, 42);
+            this.label1.TabIndex = 19;
+            this.label1.Text = "Different Branch Fee:";
+            // 
+            // Label_DiffBFee
+            // 
+            this.Label_DiffBFee.AutoSize = true;
+            this.Label_DiffBFee.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.85714F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Label_DiffBFee.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(40)))), ((int)(((byte)(19)))));
+            this.Label_DiffBFee.Location = new System.Drawing.Point(620, 235);
+            this.Label_DiffBFee.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.Label_DiffBFee.Name = "Label_DiffBFee";
+            this.Label_DiffBFee.Size = new System.Drawing.Size(62, 42);
+            this.Label_DiffBFee.TabIndex = 18;
+            this.Label_DiffBFee.Text = "$0";
+            // 
+            // Label_XMonthly
+            // 
+            this.Label_XMonthly.AutoSize = true;
+            this.Label_XMonthly.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.85714F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Label_XMonthly.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(40)))), ((int)(((byte)(19)))));
+            this.Label_XMonthly.Location = new System.Drawing.Point(815, 494);
+            this.Label_XMonthly.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.Label_XMonthly.Name = "Label_XMonthly";
+            this.Label_XMonthly.Size = new System.Drawing.Size(38, 42);
+            this.Label_XMonthly.TabIndex = 22;
+            this.Label_XMonthly.Text = "x";
+            // 
+            // Label_XWeekly
+            // 
+            this.Label_XWeekly.AutoSize = true;
+            this.Label_XWeekly.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.85714F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Label_XWeekly.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(40)))), ((int)(((byte)(19)))));
+            this.Label_XWeekly.Location = new System.Drawing.Point(815, 430);
+            this.Label_XWeekly.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.Label_XWeekly.Name = "Label_XWeekly";
+            this.Label_XWeekly.Size = new System.Drawing.Size(38, 42);
+            this.Label_XWeekly.TabIndex = 21;
+            this.Label_XWeekly.Text = "x";
+            // 
+            // Label_XDaily
+            // 
+            this.Label_XDaily.AutoSize = true;
+            this.Label_XDaily.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.85714F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Label_XDaily.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(40)))), ((int)(((byte)(19)))));
+            this.Label_XDaily.Location = new System.Drawing.Point(815, 366);
+            this.Label_XDaily.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.Label_XDaily.Name = "Label_XDaily";
+            this.Label_XDaily.Size = new System.Drawing.Size(38, 42);
+            this.Label_XDaily.TabIndex = 20;
+            this.Label_XDaily.Text = "x";
             // 
             // PriceConfirmationForm
             // 
@@ -243,6 +308,11 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(237)))), ((int)(((byte)(255)))), ((int)(((byte)(244)))));
             this.ClientSize = new System.Drawing.Size(1139, 795);
+            this.Controls.Add(this.Label_XMonthly);
+            this.Controls.Add(this.Label_XWeekly);
+            this.Controls.Add(this.Label_XDaily);
+            this.Controls.Add(this.label1);
+            this.Controls.Add(this.Label_DiffBFee);
             this.Controls.Add(this.Label_Total);
             this.Controls.Add(this.label7);
             this.Controls.Add(this.label6);
@@ -285,5 +355,10 @@
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.Label Label_Total;
+        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Label Label_DiffBFee;
+        private System.Windows.Forms.Label Label_XMonthly;
+        private System.Windows.Forms.Label Label_XWeekly;
+        private System.Windows.Forms.Label Label_XDaily;
     }
 }

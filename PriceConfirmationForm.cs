@@ -70,12 +70,14 @@ namespace Team1CMPT291_Final
             // Calculate the number of weeks and months
 
             int months = TotalDays / 30;
+            Label_XMonthly.Text = "x " + months.ToString();
             int remainingDays = TotalDays % 30;
 
             decimal rate = months * MonthlyPrice;
 
             // Calculate full weeks from remaining days
             int fullWeeks = remainingDays / 7;
+            Label_XWeekly.Text = "x " + fullWeeks.ToString();
             remainingDays %= 7;
 
             // Add cost of full weeks
@@ -83,6 +85,16 @@ namespace Team1CMPT291_Final
 
             // Add cost of remaining days
             rate += remainingDays * DailyPrice;
+            Label_XDaily.Text = "x " + remainingDays.ToString();
+
+
+            //If Car is dropped off at different location
+            if (Branch_Dropoff_ID != Branch_Pickup_ID)
+            {
+                rate += 50;
+                Label_DiffBFee.Text = "$50";
+            }
+                
 
             price = rate.ToString();
 
