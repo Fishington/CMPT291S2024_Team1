@@ -138,11 +138,13 @@ namespace Team1CMPT291_Final
             int selectedbranch = (int)comboBox_Busy_Branch.SelectedValue;
             if (selectedbranch == -1)
             {query = @"
-                SELECT MonthCounts.Month, B.Name, MonthCounts.Rentals
+            SELECT MC3.Month, B.Name ,MC3.Rentals, COUNT(C.VIN) as Available_Cars
+			FROM 
+                (SELECT MonthCounts.Month, MonthCounts.Branch, MonthCounts.Rentals
                 FROM (SELECT FORMAT(Start_Date, 'yyyy-MM') as Month, Branch_Pickup_ID AS Branch ,Count(*) as Rentals
                     FROM Reservations
                     GROUP BY FORMAT(Start_Date, 'yyyy-MM'), Branch_Pickup_ID
-                    ) As MonthCounts , Branches as B
+                    ) As MonthCounts 
                 WHERE MonthCounts.Rentals = (
                     SELECT MAX(MC2.Rentals)
                     FROM (
@@ -151,8 +153,12 @@ namespace Team1CMPT291_Final
                         GROUP BY FORMAT(Start_Date, 'yyyy-MM'), Branch_Pickup_ID
                         ) As MC2
                     WHERE MC2.Month = MonthCounts.Month
-                ) AND MonthCounts.Branch = B.Branch_ID
-                ORDER BY MonthCounts.Month";
+                )
+				) as MC3, Branches as B, Cars as C
+			WHERE B.Branch_ID= MC3.Branch
+			AND C.Branch_ID = MC3.Branch
+			GROUP BY MC3.Month, B.Name ,MC3.Rentals
+			ORDER BY MC3.Month";
             } else {query = @"
                     SELECT FORMAT(Start_Date, 'yyyy-MM') as Month, Count(*) as Rentals 
                     FROM Reservations 
