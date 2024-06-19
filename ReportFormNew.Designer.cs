@@ -54,7 +54,6 @@
             this.UnderPerformingEmpsSubmit = new System.Windows.Forms.Button();
             this.UnderPerformingEmpsResults = new System.Windows.Forms.DataGridView();
             this.BackButton = new System.Windows.Forms.Button();
-            this.checkBox1 = new System.Windows.Forms.CheckBox();
             this.TabControlMenu.SuspendLayout();
             this.ReportTab1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.CarUsageResults)).BeginInit();
@@ -189,7 +188,6 @@
             // ReportTab3
             // 
             this.ReportTab3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(237)))), ((int)(((byte)(255)))), ((int)(((byte)(244)))));
-            this.ReportTab3.Controls.Add(this.checkBox1);
             this.ReportTab3.Controls.Add(this.label6);
             this.ReportTab3.Controls.Add(this.label7);
             this.ReportTab3.Controls.Add(this.MonthlyRevenueSubmit);
@@ -209,9 +207,9 @@
             this.label6.Location = new System.Drawing.Point(112, 73);
             this.label6.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(481, 42);
+            this.label6.Size = new System.Drawing.Size(617, 42);
             this.label6.TabIndex = 15;
-            this.label6.Text = "Top Revenue Sorted Daily";
+            this.label6.Text = "Top Branch Revenue Sorted Daily";
             // 
             // label7
             // 
@@ -402,18 +400,6 @@
             this.BackButton.UseVisualStyleBackColor = false;
             this.BackButton.Click += new System.EventHandler(this.BackButtonClick);
             // 
-            // checkBox1
-            // 
-            this.checkBox1.AutoSize = true;
-            this.checkBox1.Font = new System.Drawing.Font("Inter Medium", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.checkBox1.Location = new System.Drawing.Point(119, 853);
-            this.checkBox1.Name = "checkBox1";
-            this.checkBox1.Size = new System.Drawing.Size(477, 38);
-            this.checkBox1.TabIndex = 16;
-            this.checkBox1.Text = "Calculate Full Company Revenue";
-            this.checkBox1.UseVisualStyleBackColor = true;
-            this.checkBox1.CheckedChanged += new System.EventHandler(this.checkBox1_CheckedChanged);
-            // 
             // ReportFormNew
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(11F, 24F);
@@ -475,6 +461,5 @@
         private System.Windows.Forms.ComboBox comboBox_CarUsage;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Label label7;
-        private System.Windows.Forms.CheckBox checkBox1;
     }
 }
