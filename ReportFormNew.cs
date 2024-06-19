@@ -38,18 +38,23 @@ namespace Team1CMPT291_Final
 
         private void CarUsagesSubmit_Click(object sender, EventArgs e)
         {
-            string selectedColumn = comboBox_CarUsage.SelectedItem.ToString();
+            if (comboBox_CarUsage.SelectedIndex != -1)
+            {
+                string selectedColumn = comboBox_CarUsage.SelectedItem.ToString();
 
-            string query = $@"
-                SELECT C.{selectedColumn}, COUNT(R.Reservation_ID) as RentalCount 
-                FROM Cars as C
-                JOIN Reservations as R ON C.VIN = R.VIN 
-                WHERE C.{selectedColumn} IS NOT NULL
-                GROUP BY C.{selectedColumn} 
-                ORDER BY RentalCount DESC";
+                string query = $@"
+                    SELECT C.{selectedColumn}, COUNT(R.Reservation_ID) as RentalCount 
+                    FROM Cars as C
+                    JOIN Reservations as R ON C.VIN = R.VIN 
+                    WHERE C.{selectedColumn} IS NOT NULL
+                    GROUP BY C.{selectedColumn} 
+                    ORDER BY RentalCount DESC";
 
-            var results = DBConnectionInstance.Query(query);
-            CarUsageResults.DataSource = results;
+                var results = DBConnectionInstance.Query(query);
+                CarUsageResults.DataSource = results;
+            }
+            
+            
         }
 
         private void FrequentFlyersSubmit_Click(object sender, EventArgs e)

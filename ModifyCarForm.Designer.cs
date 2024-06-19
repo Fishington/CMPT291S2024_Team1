@@ -51,40 +51,42 @@
             // 
             this.label_VIN.AutoSize = true;
             this.label_VIN.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.14286F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label_VIN.Location = new System.Drawing.Point(21, 16);
-            this.label_VIN.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label_VIN.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(40)))), ((int)(((byte)(19)))));
+            this.label_VIN.Location = new System.Drawing.Point(38, 30);
+            this.label_VIN.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label_VIN.Name = "label_VIN";
-            this.label_VIN.Size = new System.Drawing.Size(35, 18);
+            this.label_VIN.Size = new System.Drawing.Size(68, 31);
             this.label_VIN.TabIndex = 0;
             this.label_VIN.Text = "VIN:";
             // 
             // textBox_LicensePlate
             // 
             this.textBox_LicensePlate.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox_LicensePlate.Location = new System.Drawing.Point(25, 87);
-            this.textBox_LicensePlate.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.textBox_LicensePlate.Location = new System.Drawing.Point(46, 161);
+            this.textBox_LicensePlate.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.textBox_LicensePlate.Name = "textBox_LicensePlate";
-            this.textBox_LicensePlate.Size = new System.Drawing.Size(157, 26);
+            this.textBox_LicensePlate.Size = new System.Drawing.Size(284, 39);
             this.textBox_LicensePlate.TabIndex = 1;
             // 
             // label1
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.14286F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(21, 67);
-            this.label1.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label1.Location = new System.Drawing.Point(38, 124);
+            this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(0, 18);
+            this.label1.Size = new System.Drawing.Size(0, 31);
             this.label1.TabIndex = 2;
             // 
             // label_LicencePlate
             // 
             this.label_LicencePlate.AutoSize = true;
             this.label_LicencePlate.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.14286F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label_LicencePlate.Location = new System.Drawing.Point(21, 67);
-            this.label_LicencePlate.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label_LicencePlate.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(40)))), ((int)(((byte)(19)))));
+            this.label_LicencePlate.Location = new System.Drawing.Point(38, 124);
+            this.label_LicencePlate.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label_LicencePlate.Name = "label_LicencePlate";
-            this.label_LicencePlate.Size = new System.Drawing.Size(100, 18);
+            this.label_LicencePlate.Size = new System.Drawing.Size(185, 31);
             this.label_LicencePlate.TabIndex = 3;
             this.label_LicencePlate.Text = "License Plate:";
             // 
@@ -92,10 +94,11 @@
             // 
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.14286F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(21, 123);
-            this.label2.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(40)))), ((int)(((byte)(19)))));
+            this.label2.Location = new System.Drawing.Point(38, 227);
+            this.label2.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(49, 18);
+            this.label2.Size = new System.Drawing.Size(88, 31);
             this.label2.TabIndex = 4;
             this.label2.Text = "Make:";
             // 
@@ -103,10 +106,11 @@
             // 
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.14286F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(21, 177);
-            this.label3.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(40)))), ((int)(((byte)(19)))));
+            this.label3.Location = new System.Drawing.Point(38, 327);
+            this.label3.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(53, 18);
+            this.label3.Size = new System.Drawing.Size(95, 31);
             this.label3.TabIndex = 5;
             this.label3.Text = "Model:";
             // 
@@ -114,10 +118,11 @@
             // 
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.14286F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.Location = new System.Drawing.Point(246, 16);
-            this.label4.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label4.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(40)))), ((int)(((byte)(19)))));
+            this.label4.Location = new System.Drawing.Point(451, 30);
+            this.label4.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(102, 18);
+            this.label4.Size = new System.Drawing.Size(184, 31);
             this.label4.TabIndex = 6;
             this.label4.Text = "Transmission:";
             // 
@@ -125,10 +130,11 @@
             // 
             this.label5.AutoSize = true;
             this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.14286F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label5.Location = new System.Drawing.Point(246, 67);
-            this.label5.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label5.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(40)))), ((int)(((byte)(19)))));
+            this.label5.Location = new System.Drawing.Point(451, 124);
+            this.label5.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(81, 18);
+            this.label5.Size = new System.Drawing.Size(151, 31);
             this.label5.TabIndex = 7;
             this.label5.Text = "Branch_ID:";
             // 
@@ -136,58 +142,60 @@
             // 
             this.label6.AutoSize = true;
             this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.14286F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label6.Location = new System.Drawing.Point(246, 123);
-            this.label6.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label6.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(40)))), ((int)(((byte)(19)))));
+            this.label6.Location = new System.Drawing.Point(451, 227);
+            this.label6.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(44, 18);
+            this.label6.Size = new System.Drawing.Size(83, 31);
             this.label6.TabIndex = 8;
             this.label6.Text = "Type:";
             // 
             // textBox_Make
             // 
             this.textBox_Make.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox_Make.Location = new System.Drawing.Point(24, 142);
-            this.textBox_Make.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.textBox_Make.Location = new System.Drawing.Point(44, 262);
+            this.textBox_Make.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.textBox_Make.Name = "textBox_Make";
-            this.textBox_Make.Size = new System.Drawing.Size(158, 26);
+            this.textBox_Make.Size = new System.Drawing.Size(286, 39);
             this.textBox_Make.TabIndex = 9;
             // 
             // textBox_Model
             // 
             this.textBox_Model.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox_Model.Location = new System.Drawing.Point(25, 196);
-            this.textBox_Model.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.textBox_Model.Location = new System.Drawing.Point(46, 362);
+            this.textBox_Model.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.textBox_Model.Name = "textBox_Model";
-            this.textBox_Model.Size = new System.Drawing.Size(157, 26);
+            this.textBox_Model.Size = new System.Drawing.Size(284, 39);
             this.textBox_Model.TabIndex = 10;
             // 
             // textBox_Transmission
             // 
             this.textBox_Transmission.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox_Transmission.Location = new System.Drawing.Point(249, 36);
-            this.textBox_Transmission.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.textBox_Transmission.Location = new System.Drawing.Point(456, 66);
+            this.textBox_Transmission.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.textBox_Transmission.Name = "textBox_Transmission";
-            this.textBox_Transmission.Size = new System.Drawing.Size(159, 26);
+            this.textBox_Transmission.Size = new System.Drawing.Size(288, 39);
             this.textBox_Transmission.TabIndex = 11;
             // 
             // textbox_VIN
             // 
             this.textbox_VIN.AutoSize = true;
             this.textbox_VIN.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.14286F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textbox_VIN.Location = new System.Drawing.Point(21, 40);
-            this.textbox_VIN.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.textbox_VIN.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(40)))), ((int)(((byte)(19)))));
+            this.textbox_VIN.Location = new System.Drawing.Point(38, 74);
+            this.textbox_VIN.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.textbox_VIN.Name = "textbox_VIN";
-            this.textbox_VIN.Size = new System.Drawing.Size(80, 18);
+            this.textbox_VIN.Size = new System.Drawing.Size(151, 31);
             this.textbox_VIN.TabIndex = 14;
             this.textbox_VIN.Text = "VIN LABEL";
             // 
             // SaveButton
             // 
-            this.SaveButton.BackColor = System.Drawing.Color.LightGreen;
-            this.SaveButton.Location = new System.Drawing.Point(25, 246);
-            this.SaveButton.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.SaveButton.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(6)))), ((int)(((byte)(254)))), ((int)(((byte)(111)))));
+            this.SaveButton.Location = new System.Drawing.Point(46, 454);
+            this.SaveButton.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.SaveButton.Name = "SaveButton";
-            this.SaveButton.Size = new System.Drawing.Size(198, 51);
+            this.SaveButton.Size = new System.Drawing.Size(363, 94);
             this.SaveButton.TabIndex = 15;
             this.SaveButton.Text = "Save";
             this.SaveButton.UseVisualStyleBackColor = false;
@@ -195,38 +203,42 @@
             // 
             // BackBTN
             // 
-            this.BackBTN.Location = new System.Drawing.Point(446, 255);
-            this.BackBTN.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.BackBTN.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(118)))), ((int)(((byte)(193)))), ((int)(((byte)(254)))));
+            this.BackBTN.Location = new System.Drawing.Point(818, 471);
+            this.BackBTN.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.BackBTN.Name = "BackBTN";
-            this.BackBTN.Size = new System.Drawing.Size(107, 42);
+            this.BackBTN.Size = new System.Drawing.Size(196, 78);
             this.BackBTN.TabIndex = 16;
             this.BackBTN.Text = "Back";
-            this.BackBTN.UseVisualStyleBackColor = true;
+            this.BackBTN.UseVisualStyleBackColor = false;
             this.BackBTN.Click += new System.EventHandler(this.BackBTN_Click);
             // 
             // ComboBox_Type
             // 
             this.ComboBox_Type.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.ComboBox_Type.FormattingEnabled = true;
-            this.ComboBox_Type.Location = new System.Drawing.Point(249, 142);
+            this.ComboBox_Type.Location = new System.Drawing.Point(456, 262);
+            this.ComboBox_Type.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
             this.ComboBox_Type.Name = "ComboBox_Type";
-            this.ComboBox_Type.Size = new System.Drawing.Size(159, 28);
+            this.ComboBox_Type.Size = new System.Drawing.Size(288, 40);
             this.ComboBox_Type.TabIndex = 17;
             // 
             // ComboBox_Branch
             // 
             this.ComboBox_Branch.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.ComboBox_Branch.FormattingEnabled = true;
-            this.ComboBox_Branch.Location = new System.Drawing.Point(249, 87);
+            this.ComboBox_Branch.Location = new System.Drawing.Point(456, 161);
+            this.ComboBox_Branch.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
             this.ComboBox_Branch.Name = "ComboBox_Branch";
-            this.ComboBox_Branch.Size = new System.Drawing.Size(159, 28);
+            this.ComboBox_Branch.Size = new System.Drawing.Size(288, 40);
             this.ComboBox_Branch.TabIndex = 18;
             // 
             // ModifyCarForm
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(11F, 24F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(564, 314);
+            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(237)))), ((int)(((byte)(255)))), ((int)(((byte)(244)))));
+            this.ClientSize = new System.Drawing.Size(1034, 580);
             this.Controls.Add(this.ComboBox_Branch);
             this.Controls.Add(this.ComboBox_Type);
             this.Controls.Add(this.BackBTN);
@@ -244,8 +256,9 @@
             this.Controls.Add(this.label1);
             this.Controls.Add(this.textBox_LicensePlate);
             this.Controls.Add(this.label_VIN);
+            this.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(40)))), ((int)(((byte)(19)))));
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow;
-            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.Name = "ModifyCarForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "ModifyCarForm";
