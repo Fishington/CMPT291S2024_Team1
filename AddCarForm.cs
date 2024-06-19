@@ -36,6 +36,14 @@ namespace Team1CMPT291_Final
             ComboBox_Branch.DataSource = branches;
             ComboBox_Branch.DisplayMember = "Name";
             ComboBox_Branch.ValueMember = "Branch_ID";
+            DataTable transmission = new DataTable();
+            transmission.Columns.Add("transmission", typeof(string));
+            transmission.Rows.Add(new object[] { "Manual" });
+            transmission.Rows.Add(new object[] { "Automatic" });
+            ComboBox_Transmission.DataSource = transmission;
+            ComboBox_Transmission.DisplayMember = "transmission";
+            ComboBox_Transmission.ValueMember = "transmission";
+
 
         }
 
@@ -56,7 +64,7 @@ namespace Team1CMPT291_Final
         private void Save_Button_Click(object sender, EventArgs e)
         {
             string insertQuery = $"INSERT INTO Cars (VIN, License_Plate, Make, Model, Transmission, Branch_ID, Type) VALUES" +
-                $" ('{VIN_Box.Text}', '{Plate_Box.Text}', '{Make_Box.Text}', '{Model_Box.Text}', '{Transmission_Box.Text}', {ComboBox_Branch.SelectedValue.ToString()}, '{ComboBox_Type.SelectedValue.ToString()}')";
+                $" ('{VIN_Box.Text}', '{Plate_Box.Text}', '{Make_Box.Text}', '{Model_Box.Text}', '{ComboBox_Transmission.SelectedValue.ToString()}', {ComboBox_Branch.SelectedValue.ToString()}, '{ComboBox_Type.SelectedValue.ToString()}')";
 
 
             int toss = DBConnectionInstance.Insert(insertQuery);
