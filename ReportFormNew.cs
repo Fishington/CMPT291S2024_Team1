@@ -56,7 +56,23 @@ namespace Team1CMPT291_Final
         private void BusyBranchTimesSubmit_Click(object sender, EventArgs e)
         {
 
-            var query   = "SELECT FORMAT(Start_Date, 'yyyy.MMMM') as Month, Count(*) as Rentals FROM Reservations WHERE Branch_Pickup_ID = " + comboBox_Busy_Branch.SelectedValue + " GROUP BY FORMAT(Start_Date, 'yyyy.MMMM') ORDER BY COUNT(*) DESC";
+            var query2   = "SELECT FORMAT(Start_Date, 'yyyy.MMMM') as Month, Count(*) as Rentals FROM Reservations WHERE Branch_Pickup_ID = " + comboBox_Busy_Branch.SelectedValue + " GROUP BY FORMAT(Start_Date, 'yyyy.MMMM') ORDER BY COUNT(*) DESC";
+            var query = @"
+                SELECT MonthCounts.Month, B.Name, MonthCounts.Rentals
+                FROM (SELECT FORMAT(Start_Date, 'yyyy-MM') as Month, Branch_Pickup_ID AS Branch ,Count(*) as Rentals
+                    FROM Reservations
+                    GROUP BY FORMAT(Start_Date, 'yyyy-MM'), Branch_Pickup_ID
+                    ) As MonthCounts , Branches as B
+                WHERE MonthCounts.Rentals = (
+                    SELECT MAX(MC2.Rentals)
+                    FROM (
+                        SELECT FORMAT(Start_Date, 'yyyy-MM') as Month, Branch_Pickup_ID AS Branch ,Count(*) as Rentals
+                        FROM Reservations
+                        GROUP BY FORMAT(Start_Date, 'yyyy-MM'), Branch_Pickup_ID
+                        ) As MC2
+                    WHERE MC2.Month = MonthCounts.Month
+                ) AND MonthCounts.Branch = B.Branch_ID
+                ORDER BY MonthCounts.Month";
             var results = DBConnectionInstance.Query(query);
             BusyBranchTimesResults.DataSource = results;
         }
