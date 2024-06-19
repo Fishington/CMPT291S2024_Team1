@@ -54,9 +54,18 @@ namespace Team1CMPT291_Final
 
                 var results = DBConnectionInstance.Query(query);
                 CarUsageResults.DataSource = results;
+
+                // Header names
+                CarUsageResults.Columns[1].HeaderText = "Rental Count";
+
+                // Bolded headers
+                var headerFont = new Font(CarUsageResults.Font, FontStyle.Bold);
+                CarUsageResults.Columns[0].HeaderCell.Style.Font = headerFont;
+                CarUsageResults.Columns[1].HeaderCell.Style.Font = headerFont;
+
             }
-            
-            
+
+
         }
 
         private void FrequentFlyersSubmit_Click(object sender, EventArgs e)
@@ -143,7 +152,7 @@ namespace Team1CMPT291_Final
                         ) As MC2
                     WHERE MC2.Month = MonthCounts.Month
                 ) AND MonthCounts.Branch = B.Branch_ID
-                ORDER BY MonthCounts.Month"; 
+                ORDER BY MonthCounts.Month";
             } else {query = @"
                     SELECT FORMAT(Start_Date, 'yyyy-MM') as Month, Count(*) as Rentals 
                     FROM Reservations 
