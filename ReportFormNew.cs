@@ -26,9 +26,19 @@ namespace Team1CMPT291_Final
             comboBox_Busy_Branch.DisplayMember = "Name";
             comboBox_Busy_Branch.ValueMember = "Branch_ID";
 
-            comboBox_CarUsage.Items.Add("Make");
-            comboBox_CarUsage.Items.Add("Model");
-            comboBox_CarUsage.Items.Add("Transmission");
+
+            DataTable carUsageOptions = new DataTable();
+            carUsageOptions.Columns.Add("ID", typeof(int));
+            carUsageOptions.Columns.Add("DisplayName", typeof(string));
+            carUsageOptions.Columns.Add("ColumnName", typeof(string));
+
+            carUsageOptions.Rows.Add(new object[] { 1, "Make", "Make" });
+            carUsageOptions.Rows.Add(new object[] { 2, "Model", "Model" });
+            carUsageOptions.Rows.Add(new object[] { 3, "Transmission", "Transmission" });
+
+            comboBox_CarUsage.DataSource = carUsageOptions;
+            comboBox_CarUsage.DisplayMember = "DisplayName";
+            comboBox_CarUsage.ValueMember = "ColumnName";
         }
 
         private void BackButtonClick(object sender, EventArgs e)
@@ -42,30 +52,51 @@ namespace Team1CMPT291_Final
         {
             if (comboBox_CarUsage.SelectedIndex != -1)
             {
-                string selectedColumn = comboBox_CarUsage.SelectedItem.ToString();
+                string selectedColumn = comboBox_CarUsage.SelectedValue.ToString();
 
-                string query = $@"
-                    SELECT C.{selectedColumn}, COUNT(R.Reservation_ID) as RentalCount 
-                    FROM Cars as C
-                    JOIN Reservations as R ON C.VIN = R.VIN 
-                    WHERE C.{selectedColumn} IS NOT NULL
-                    GROUP BY C.{selectedColumn} 
+                if (selectedColumn == "Model")
+                {
+                    string query = $@"
+                        SELECT CarCount.Make, CarCount.{selectedColumn}, CarCount.RentalCount 
+                            FROM (
+                                SELECT C.Make, C.{selectedColumn}, COUNT(R.Reservation_ID) as RentalCount 
+                                FROM Cars as C
+                                JOIN Reservations as R ON C.VIN = R.VIN 
+                                WHERE C.{selectedColumn} IS NOT NULL
+                                GROUP BY C.Make, C.{selectedColumn}
+                            ) as CarCount
+                            ORDER BY CarCount.RentalCount DESC;";
+
+                    var results = DBConnectionInstance.Query(query);
+                    CarUsageResults.DataSource = results;
+
+                    var headerFont = new Font(CarUsageResults.Font, FontStyle.Bold);
+                    CarUsageResults.Columns[0].HeaderCell.Style.Font = headerFont;
+                    CarUsageResults.Columns[1].HeaderCell.Style.Font = headerFont;
+                    CarUsageResults.Columns[2].HeaderCell.Style.Font = headerFont;
+                }
+
+                else
+                {
+                    string query = $@"
+                    SELECT {selectedColumn}, RentalCount 
+                    FROM (
+                        SELECT C.{selectedColumn}, COUNT(R.Reservation_ID) as RentalCount 
+                        FROM Cars as C
+                        JOIN Reservations as R ON C.VIN = R.VIN 
+                        WHERE C.{selectedColumn} IS NOT NULL
+                        GROUP BY C.{selectedColumn}
+                    ) as CarCount
                     ORDER BY RentalCount DESC";
 
-                var results = DBConnectionInstance.Query(query);
-                CarUsageResults.DataSource = results;
+                    var results = DBConnectionInstance.Query(query);
+                    CarUsageResults.DataSource = results;
 
-                // Header names
-                CarUsageResults.Columns[1].HeaderText = "Rental Count";
-
-                // Bolded headers
-                var headerFont = new Font(CarUsageResults.Font, FontStyle.Bold);
-                CarUsageResults.Columns[0].HeaderCell.Style.Font = headerFont;
-                CarUsageResults.Columns[1].HeaderCell.Style.Font = headerFont;
-
+                    var headerFont = new Font(CarUsageResults.Font, FontStyle.Bold);
+                    CarUsageResults.Columns[0].HeaderCell.Style.Font = headerFont;
+                    CarUsageResults.Columns[1].HeaderCell.Style.Font = headerFont;
+                }
             }
-
-
         }
 
         private void FrequentFlyersSubmit_Click(object sender, EventArgs e)
