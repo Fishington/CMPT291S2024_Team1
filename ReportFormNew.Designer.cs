@@ -54,6 +54,9 @@
             this.UnderPerformingEmpsSubmit = new System.Windows.Forms.Button();
             this.UnderPerformingEmpsResults = new System.Windows.Forms.DataGridView();
             this.BackButton = new System.Windows.Forms.Button();
+            this.label8 = new System.Windows.Forms.Label();
+            this.label9 = new System.Windows.Forms.Label();
+            this.label10 = new System.Windows.Forms.Label();
             this.TabControlMenu.SuspendLayout();
             this.ReportTab1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.CarUsageResults)).BeginInit();
@@ -83,35 +86,36 @@
             // ReportTab1
             // 
             this.ReportTab1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(237)))), ((int)(((byte)(255)))), ((int)(((byte)(244)))));
+            this.ReportTab1.Controls.Add(this.label10);
             this.ReportTab1.Controls.Add(this.comboBox_CarUsage);
             this.ReportTab1.Controls.Add(this.label5);
             this.ReportTab1.Controls.Add(this.CarUsagesSubmit);
             this.ReportTab1.Controls.Add(this.CarUsageResults);
             this.ReportTab1.Location = new System.Drawing.Point(4, 22);
             this.ReportTab1.Name = "ReportTab1";
-            this.ReportTab1.Padding = new System.Windows.Forms.Padding(3, 3, 3, 3);
+            this.ReportTab1.Padding = new System.Windows.Forms.Padding(3);
             this.ReportTab1.Size = new System.Drawing.Size(902, 505);
             this.ReportTab1.TabIndex = 0;
             this.ReportTab1.Text = "Car Usages";
             // 
             // comboBox_CarUsage
             // 
-            this.comboBox_CarUsage.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Bold);
+            this.comboBox_CarUsage.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.comboBox_CarUsage.FormattingEnabled = true;
             this.comboBox_CarUsage.Location = new System.Drawing.Point(65, 447);
             this.comboBox_CarUsage.Name = "comboBox_CarUsage";
-            this.comboBox_CarUsage.Size = new System.Drawing.Size(203, 32);
+            this.comboBox_CarUsage.Size = new System.Drawing.Size(203, 21);
             this.comboBox_CarUsage.TabIndex = 9;
             // 
             // label5
             // 
             this.label5.AutoSize = true;
             this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.85714F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label5.Location = new System.Drawing.Point(60, 35);
+            this.label5.Location = new System.Drawing.Point(61, 30);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(485, 26);
+            this.label5.Size = new System.Drawing.Size(125, 26);
             this.label5.TabIndex = 8;
-            this.label5.Text = "Car Usage By Make, Model, or Transmission";
+            this.label5.Text = "Car Usage";
             // 
             // CarUsagesSubmit
             // 
@@ -119,7 +123,7 @@
             this.CarUsagesSubmit.FlatAppearance.BorderSize = 0;
             this.CarUsagesSubmit.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.CarUsagesSubmit.Location = new System.Drawing.Point(733, 447);
-            this.CarUsagesSubmit.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.CarUsagesSubmit.Margin = new System.Windows.Forms.Padding(2);
             this.CarUsagesSubmit.Name = "CarUsagesSubmit";
             this.CarUsagesSubmit.Size = new System.Drawing.Size(104, 41);
             this.CarUsagesSubmit.TabIndex = 7;
@@ -142,11 +146,13 @@
             // ReportTab2
             // 
             this.ReportTab2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(237)))), ((int)(((byte)(255)))), ((int)(((byte)(244)))));
+            this.ReportTab2.Controls.Add(this.label8);
+            this.ReportTab2.Controls.Add(this.label9);
             this.ReportTab2.Controls.Add(this.FrequentFlyersSubmit);
             this.ReportTab2.Controls.Add(this.FrequentFlyerResults);
             this.ReportTab2.Location = new System.Drawing.Point(4, 22);
             this.ReportTab2.Name = "ReportTab2";
-            this.ReportTab2.Padding = new System.Windows.Forms.Padding(3, 3, 3, 3);
+            this.ReportTab2.Padding = new System.Windows.Forms.Padding(3);
             this.ReportTab2.Size = new System.Drawing.Size(902, 505);
             this.ReportTab2.TabIndex = 1;
             this.ReportTab2.Text = "Frequent Flyers";
@@ -158,7 +164,7 @@
             this.FrequentFlyersSubmit.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.FrequentFlyersSubmit.ForeColor = System.Drawing.SystemColors.ControlText;
             this.FrequentFlyersSubmit.Location = new System.Drawing.Point(733, 447);
-            this.FrequentFlyersSubmit.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.FrequentFlyersSubmit.Margin = new System.Windows.Forms.Padding(2);
             this.FrequentFlyersSubmit.Name = "FrequentFlyersSubmit";
             this.FrequentFlyersSubmit.Size = new System.Drawing.Size(104, 41);
             this.FrequentFlyersSubmit.TabIndex = 7;
@@ -196,7 +202,7 @@
             this.label6.AutoSize = true;
             this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label6.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(40)))), ((int)(((byte)(19)))));
-            this.label6.Location = new System.Drawing.Point(61, 40);
+            this.label6.Location = new System.Drawing.Point(61, 30);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(293, 25);
             this.label6.TabIndex = 15;
@@ -207,7 +213,7 @@
             this.label7.AutoSize = true;
             this.label7.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label7.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(40)))), ((int)(((byte)(19)))));
-            this.label7.Location = new System.Drawing.Point(62, 64);
+            this.label7.Location = new System.Drawing.Point(62, 55);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(241, 20);
             this.label7.TabIndex = 14;
@@ -219,7 +225,7 @@
             this.MonthlyRevenueSubmit.FlatAppearance.BorderSize = 0;
             this.MonthlyRevenueSubmit.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.MonthlyRevenueSubmit.Location = new System.Drawing.Point(733, 447);
-            this.MonthlyRevenueSubmit.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.MonthlyRevenueSubmit.Margin = new System.Windows.Forms.Padding(2);
             this.MonthlyRevenueSubmit.Name = "MonthlyRevenueSubmit";
             this.MonthlyRevenueSubmit.Size = new System.Drawing.Size(104, 41);
             this.MonthlyRevenueSubmit.TabIndex = 7;
@@ -265,7 +271,7 @@
             // 
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(60, 33);
+            this.label3.Location = new System.Drawing.Point(61, 30);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(571, 25);
             this.label3.TabIndex = 13;
@@ -275,7 +281,7 @@
             // 
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.Location = new System.Drawing.Point(61, 58);
+            this.label4.Location = new System.Drawing.Point(62, 55);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(446, 20);
             this.label4.TabIndex = 12;
@@ -287,7 +293,7 @@
             this.BusyBranchTimesSubmit.FlatAppearance.BorderSize = 0;
             this.BusyBranchTimesSubmit.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.BusyBranchTimesSubmit.Location = new System.Drawing.Point(733, 447);
-            this.BusyBranchTimesSubmit.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.BusyBranchTimesSubmit.Margin = new System.Windows.Forms.Padding(2);
             this.BusyBranchTimesSubmit.Name = "BusyBranchTimesSubmit";
             this.BusyBranchTimesSubmit.Size = new System.Drawing.Size(104, 41);
             this.BusyBranchTimesSubmit.TabIndex = 7;
@@ -335,7 +341,7 @@
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.Location = new System.Drawing.Point(62, 55);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(611, 17);
+            this.label1.Size = new System.Drawing.Size(611, 55);
             this.label1.TabIndex = 10;
             this.label1.Text = "A list of all employees, each with a sum of their revenue, a count of their booki" +
     "ngs, and the average revenue generated per booking.";
@@ -346,7 +352,7 @@
             this.UnderPerformingEmpsSubmit.FlatAppearance.BorderSize = 0;
             this.UnderPerformingEmpsSubmit.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.UnderPerformingEmpsSubmit.Location = new System.Drawing.Point(733, 447);
-            this.UnderPerformingEmpsSubmit.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.UnderPerformingEmpsSubmit.Margin = new System.Windows.Forms.Padding(2);
             this.UnderPerformingEmpsSubmit.Name = "UnderPerformingEmpsSubmit";
             this.UnderPerformingEmpsSubmit.Size = new System.Drawing.Size(104, 41);
             this.UnderPerformingEmpsSubmit.TabIndex = 6;
@@ -372,13 +378,44 @@
             this.BackButton.FlatAppearance.BorderSize = 0;
             this.BackButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.BackButton.Location = new System.Drawing.Point(802, 5);
-            this.BackButton.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.BackButton.Margin = new System.Windows.Forms.Padding(2);
             this.BackButton.Name = "BackButton";
             this.BackButton.Size = new System.Drawing.Size(103, 23);
             this.BackButton.TabIndex = 5;
             this.BackButton.Text = "Back";
             this.BackButton.UseVisualStyleBackColor = false;
             this.BackButton.Click += new System.EventHandler(this.BackButtonClick);
+            // 
+            // label8
+            // 
+            this.label8.AutoSize = true;
+            this.label8.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label8.Location = new System.Drawing.Point(61, 30);
+            this.label8.Name = "label8";
+            this.label8.Size = new System.Drawing.Size(178, 25);
+            this.label8.TabIndex = 15;
+            this.label8.Text = "Frequent Flyers";
+            // 
+            // label9
+            // 
+            this.label9.AutoSize = true;
+            this.label9.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label9.Location = new System.Drawing.Point(62, 55);
+            this.label9.Name = "label9";
+            this.label9.Size = new System.Drawing.Size(402, 20);
+            this.label9.TabIndex = 14;
+            this.label9.Text = "A list of all customers who frequently make reservations.";
+            // 
+            // label10
+            // 
+            this.label10.AutoSize = true;
+            this.label10.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label10.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(40)))), ((int)(((byte)(19)))));
+            this.label10.Location = new System.Drawing.Point(62, 56);
+            this.label10.Name = "label10";
+            this.label10.Size = new System.Drawing.Size(240, 20);
+            this.label10.TabIndex = 15;
+            this.label10.Text = "By make, model, or transmission.";
             // 
             // ReportFormNew
             // 
@@ -398,6 +435,7 @@
             this.ReportTab1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.CarUsageResults)).EndInit();
             this.ReportTab2.ResumeLayout(false);
+            this.ReportTab2.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.FrequentFlyerResults)).EndInit();
             this.ReportTab3.ResumeLayout(false);
             this.ReportTab3.PerformLayout();
@@ -440,5 +478,8 @@
         private System.Windows.Forms.ComboBox comboBox_CarUsage;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Label label7;
+        private System.Windows.Forms.Label label8;
+        private System.Windows.Forms.Label label9;
+        private System.Windows.Forms.Label label10;
     }
 }
