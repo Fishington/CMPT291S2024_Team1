@@ -207,9 +207,9 @@
             this.label6.Location = new System.Drawing.Point(112, 73);
             this.label6.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(490, 42);
+            this.label6.Size = new System.Drawing.Size(617, 42);
             this.label6.TabIndex = 15;
-            this.label6.Text = "Top Daily Branch Revenue";
+            this.label6.Text = "Top Branch Revenue Sorted Daily";
             // 
             // label7
             // 
@@ -219,9 +219,9 @@
             this.label7.Location = new System.Drawing.Point(114, 119);
             this.label7.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
             this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(433, 32);
+            this.label7.Size = new System.Drawing.Size(973, 32);
             this.label7.TabIndex = 14;
-            this.label7.Text = "Daily list of #1 revenue branches.";
+            this.label7.Text = "#1 revenue branches in daily order. (Nothing is shown if there are no rentals)\r\n";
             // 
             // MonthlyRevenueSubmit
             // 
