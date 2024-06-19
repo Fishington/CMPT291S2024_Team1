@@ -1,3 +1,5 @@
+-- Use to create tables.
+
 IF NOT EXISTS (SELECT name FROM sys.databases WHERE name = N'CarRental')
 BEGIN
     CREATE DATABASE CarRental;
@@ -8,8 +10,10 @@ BEGIN
     PRINT 'CarRental DB already exists.';
 END
 GO
+
 USE CarRental;
 GO
+
 CREATE TABLE Branches (
     Branch_ID   INT PRIMARY KEY IDENTITY(1, 1),
     Name        NVARCHAR(60) NOT NULL,
@@ -59,7 +63,7 @@ CREATE TABLE Cars (
     Make                    NVARCHAR(50) NOT NULL,
     Model                   NVARCHAR(50) NOT NULL,
     Transmission            NVARCHAR(20) NOT NULL,
-    Branch_ID               INT NOT NULL,
+    Branch_ID               INT,
     Type                    NVARCHAR(20) NOT NULL,
     FOREIGN KEY (Branch_ID) REFERENCES Branches(Branch_ID),
     FOREIGN KEY (Type)      REFERENCES CarType(Type)

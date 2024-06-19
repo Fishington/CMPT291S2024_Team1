@@ -29,15 +29,16 @@ namespace Team1CMPT291_Final
         public InventoryForm()
         {
             InitializeComponent();
-            UpdateDataGrid("SELECT * FROM Cars");
+            UpdateDataGrid("SELECT * FROM Cars WHERE Branch_ID IS NOT NULL");
             populate_combo_boxes();
         }
 
         private void populate_combo_boxes()
         {
-            DBConnection dbConnection = new DBConnection();
-            DataTable carTypes = dbConnection.Query("SELECT Distinct Type FROM CarType");
-            DataRow carTypesRow = carTypes.NewRow();
+            var dbConnection = new DBConnection();
+
+            var carTypes = dbConnection.Query("SELECT DISTINCT Type FROM CarType");
+            var carTypesRow = carTypes.NewRow();
             carTypesRow["Type"] = "";
             carTypes.Rows.InsertAt(carTypesRow, 0);
             ComboBox_Type.DataSource = carTypes;
@@ -45,8 +46,8 @@ namespace Team1CMPT291_Final
             ComboBox_Type.ValueMember = "Type";
             ComboBox_Type.SelectedIndex = 0;
 
-            DataTable carMakes = dbConnection.Query("SELECT Distinct Make FROM Cars");
-            DataRow carMakesRow = carMakes.NewRow();
+            var carMakes = dbConnection.Query("SELECT DISTINCT Make FROM Cars WHERE Branch_ID IS NOT NULL");
+            var carMakesRow = carMakes.NewRow();
             carMakesRow["Make"] = "";
             carMakes.Rows.InsertAt(carMakesRow, 0);
             Combo_Make.DataSource = carMakes;
@@ -54,8 +55,8 @@ namespace Team1CMPT291_Final
             Combo_Make.ValueMember = "Make";
             Combo_Make.SelectedIndex = 0;
 
-            DataTable carTransmissions = dbConnection.Query("SELECT Distinct Transmission FROM Cars");
-            DataRow carTransmissionsRow = carTransmissions.NewRow();
+            var carTransmissions = dbConnection.Query("SELECT DISTINCT Transmission FROM Cars WHERE Branch_ID IS NOT NULL");
+            var carTransmissionsRow = carTransmissions.NewRow();
             carTransmissionsRow["Transmission"] = "";
             carTransmissions.Rows.InsertAt(carTransmissionsRow, 0);
             Combo_Transmission.DataSource = carTransmissions;
@@ -63,8 +64,8 @@ namespace Team1CMPT291_Final
             Combo_Transmission.ValueMember = "Transmission";
             Combo_Transmission.SelectedIndex = 0;
 
-            DataTable carModel = dbConnection.Query("SELECT Distinct Model FROM Cars");
-            DataRow carModelRow = carModel.NewRow();
+            var carModel = dbConnection.Query("SELECT DISTINCT Model FROM Cars WHERE Branch_ID IS NOT NULL");
+            var carModelRow = carModel.NewRow();
             carModelRow["Model"] = "";
             carModel.Rows.InsertAt(carModelRow, 0);
             Combo_Model.DataSource = carModel;
@@ -72,8 +73,8 @@ namespace Team1CMPT291_Final
             Combo_Model.ValueMember = "Model";
             Combo_Model.SelectedIndex = 0;
 
-            DataTable carBranch = dbConnection.Query("SELECT Distinct Branch_ID, Name FROM Branches");
-            DataRow carBranchRow = carBranch.NewRow();
+            var carBranch = dbConnection.Query("SELECT DISTINCT Branch_ID, Name FROM Branches");
+            var carBranchRow = carBranch.NewRow();
             carBranchRow["Name"] = "";
             carBranch.Rows.InsertAt(carBranchRow, 0);
             ComboBox_Branch.DataSource = carBranch;
@@ -84,7 +85,7 @@ namespace Team1CMPT291_Final
 
         private string build_search_query()
         {
-            StringBuilder query = new StringBuilder("SELECT * FROM Cars WHERE 1=1");
+            var query = new StringBuilder("SELECT * FROM Cars WHERE Branch_ID IS NOT NULL");
 
             if (!string.IsNullOrEmpty(ComboBox_Type.Text))
             {
@@ -110,6 +111,7 @@ namespace Team1CMPT291_Final
             {
                 query.Append($" AND Branch_ID = '{ComboBox_Branch.SelectedValue}'");
             }
+
             Debug.WriteLine(query.ToString());
             return query.ToString();
         }
@@ -162,14 +164,15 @@ namespace Team1CMPT291_Final
                 DialogResult confirmation = MessageBox.Show("Are you sure you want to delete this car?", "Delete Confirmation", MessageBoxButtons.YesNo);
                 if (confirmation == DialogResult.Yes)
                 {
-                    var deleteQuery = $"DELETE FROM Cars WHERE VIN = '{selectedVIN}';";
+                    var deleteQuery = $"UPDATE Cars SET Branch_ID = NULL WHERE VIN = '{selectedVIN}';";
 
                     var rowsAffected = DBConnectionInstance.Delete(deleteQuery);
 
                     if (rowsAffected > 0)
                     {
                         MessageBox.Show("Car deleted successfully.");
-                        UpdateDataGrid("SELECT * FROM Cars");
+                        UpdateDataGrid("SELECT * FROM Cars WHERE Branch_ID IS NOT NULL");
+                        populate_combo_boxes();
                     }
                     else
                     {
@@ -194,7 +197,7 @@ namespace Team1CMPT291_Final
                 // Create ModifyCarForm instance and pass selectedVIN
                 var modifyForm = new ModifyCarForm(selectedVIN);
                 modifyForm.ShowDialog(); // Show the popup form modally
-                UpdateDataGrid("SELECT * FROM Cars"); // Refresh the DataGridView after the form is closed
+                UpdateDataGrid("SELECT * FROM Cars WHERE Branch_ID IS NOT NULL"); // Refresh the DataGridView after the form is closed
             }
             else
             {
@@ -207,13 +210,12 @@ namespace Team1CMPT291_Final
             Close();
             var addCarForm = new AddCarForm();
             addCarForm.Show();
-
-            UpdateDataGrid("SELECT * FROM Cars");
+            UpdateDataGrid("SELECT * FROM Cars WHERE Branch_ID IS NOT NULL");
         }
 
         private void button1_Click(object sender, EventArgs e)
         {
-            string query = build_search_query();
+            var query = build_search_query();
             UpdateDataGrid(query);
         }
 

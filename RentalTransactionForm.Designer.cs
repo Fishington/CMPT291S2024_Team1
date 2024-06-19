@@ -43,17 +43,19 @@ namespace Team1CMPT291_Final
             this.label4 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
             this.comboBox_Customer = new System.Windows.Forms.ComboBox();
+            this.label6 = new System.Windows.Forms.Label();
+            this.comboBox_Dropoff = new System.Windows.Forms.ComboBox();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
             // 
             // comboBox_Branch
             // 
-            this.comboBox_Branch.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.85714F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.comboBox_Branch.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.comboBox_Branch.FormattingEnabled = true;
             this.comboBox_Branch.Location = new System.Drawing.Point(25, 194);
             this.comboBox_Branch.Margin = new System.Windows.Forms.Padding(2);
             this.comboBox_Branch.Name = "comboBox_Branch";
-            this.comboBox_Branch.Size = new System.Drawing.Size(195, 33);
+            this.comboBox_Branch.Size = new System.Drawing.Size(195, 26);
             this.comboBox_Branch.TabIndex = 2;
             this.comboBox_Branch.SelectedIndexChanged += new System.EventHandler(this.comboBox_Branch_SelectedIndexChanged);
             // 
@@ -97,27 +99,29 @@ namespace Team1CMPT291_Final
             this.button_Book.Name = "button_Book";
             this.button_Book.Size = new System.Drawing.Size(146, 83);
             this.button_Book.TabIndex = 10;
-            this.button_Book.Text = "Book Car";
+            this.button_Book.Text = "View Quote";
             this.button_Book.UseVisualStyleBackColor = true;
             this.button_Book.Click += new System.EventHandler(this.button_Book_Click);
             // 
             // dateTimePickerPickup
             // 
+            this.dateTimePickerPickup.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.dateTimePickerPickup.Location = new System.Drawing.Point(25, 64);
             this.dateTimePickerPickup.MaxDate = new System.DateTime(2029, 12, 31, 23, 59, 0, 0);
             this.dateTimePickerPickup.MinDate = new System.DateTime(2024, 6, 5, 0, 0, 0, 0);
             this.dateTimePickerPickup.Name = "dateTimePickerPickup";
-            this.dateTimePickerPickup.Size = new System.Drawing.Size(146, 20);
+            this.dateTimePickerPickup.Size = new System.Drawing.Size(195, 24);
             this.dateTimePickerPickup.TabIndex = 11;
             this.dateTimePickerPickup.ValueChanged += new System.EventHandler(this.dateTimePickerPickup_ValueChanged_1);
             // 
             // dateTimePickerDropoff
             // 
+            this.dateTimePickerDropoff.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.dateTimePickerDropoff.Location = new System.Drawing.Point(25, 128);
             this.dateTimePickerDropoff.MaxDate = new System.DateTime(2029, 12, 31, 23, 59, 0, 0);
             this.dateTimePickerDropoff.MinDate = new System.DateTime(2024, 6, 5, 0, 0, 0, 0);
             this.dateTimePickerDropoff.Name = "dateTimePickerDropoff";
-            this.dateTimePickerDropoff.Size = new System.Drawing.Size(143, 20);
+            this.dateTimePickerDropoff.Size = new System.Drawing.Size(195, 24);
             this.dateTimePickerDropoff.TabIndex = 12;
             this.dateTimePickerDropoff.ValueChanged += new System.EventHandler(this.dateTimePickerDropoff_ValueChanged);
             // 
@@ -128,9 +132,9 @@ namespace Team1CMPT291_Final
             this.label3.Location = new System.Drawing.Point(20, 166);
             this.label3.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(94, 26);
+            this.label3.Size = new System.Drawing.Size(153, 26);
             this.label3.TabIndex = 5;
-            this.label3.Text = "Branch:";
+            this.label3.Text = "Pickup From:";
             // 
             // dataGridView1
             // 
@@ -139,16 +143,18 @@ namespace Team1CMPT291_Final
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridView1.Location = new System.Drawing.Point(241, 35);
             this.dataGridView1.Name = "dataGridView1";
+            this.dataGridView1.RowHeadersWidth = 72;
             this.dataGridView1.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dataGridView1.Size = new System.Drawing.Size(533, 340);
             this.dataGridView1.TabIndex = 13;
             // 
             // comboBox_Employee
             // 
+            this.comboBox_Employee.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.comboBox_Employee.FormattingEnabled = true;
             this.comboBox_Employee.Location = new System.Drawing.Point(353, 423);
             this.comboBox_Employee.Name = "comboBox_Employee";
-            this.comboBox_Employee.Size = new System.Drawing.Size(168, 21);
+            this.comboBox_Employee.Size = new System.Drawing.Size(168, 26);
             this.comboBox_Employee.TabIndex = 14;
             // 
             // label4
@@ -171,17 +177,41 @@ namespace Team1CMPT291_Final
             // 
             // comboBox_Customer
             // 
+            this.comboBox_Customer.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.comboBox_Customer.FormattingEnabled = true;
             this.comboBox_Customer.Location = new System.Drawing.Point(353, 472);
             this.comboBox_Customer.Name = "comboBox_Customer";
-            this.comboBox_Customer.Size = new System.Drawing.Size(168, 21);
+            this.comboBox_Customer.Size = new System.Drawing.Size(168, 26);
             this.comboBox_Customer.TabIndex = 17;
+            // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.85714F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label6.Location = new System.Drawing.Point(20, 234);
+            this.label6.Margin = new System.Windows.Forms.Padding(1, 0, 1, 0);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(130, 26);
+            this.label6.TabIndex = 18;
+            this.label6.Text = "Dropoff To:";
+            // 
+            // comboBox_Dropoff
+            // 
+            this.comboBox_Dropoff.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.comboBox_Dropoff.FormattingEnabled = true;
+            this.comboBox_Dropoff.Location = new System.Drawing.Point(25, 261);
+            this.comboBox_Dropoff.Margin = new System.Windows.Forms.Padding(1);
+            this.comboBox_Dropoff.Name = "comboBox_Dropoff";
+            this.comboBox_Dropoff.Size = new System.Drawing.Size(195, 26);
+            this.comboBox_Dropoff.TabIndex = 19;
             // 
             // RentalTransactionForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(803, 555);
+            this.Controls.Add(this.comboBox_Dropoff);
+            this.Controls.Add(this.label6);
             this.Controls.Add(this.comboBox_Customer);
             this.Controls.Add(this.label5);
             this.Controls.Add(this.label4);
@@ -225,5 +255,7 @@ namespace Team1CMPT291_Final
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.ComboBox comboBox_Customer;
+        private System.Windows.Forms.Label label6;
+        private System.Windows.Forms.ComboBox comboBox_Dropoff;
     }
 }
