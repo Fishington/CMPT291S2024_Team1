@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Data;
 using System.Drawing;
+using System.Runtime.InteropServices;
 using System.Windows.Forms;
 using static System.Windows.Forms.VisualStyles.VisualStyleElement;
 
@@ -20,6 +21,7 @@ namespace Team1CMPT291_Final
         private void ReportFormNew_Load(object sender, EventArgs e)
         {
             DataTable branches = new DBConnection().Query("SELECT Branch_ID, Name FROM Branches");
+            branches.Rows.Add(new Object[] { -1, "Best Branch" });
             comboBox_Busy_Branch.DataSource = branches;
             comboBox_Busy_Branch.DisplayMember = "Name";
             comboBox_Busy_Branch.ValueMember = "Branch_ID";
@@ -52,9 +54,18 @@ namespace Team1CMPT291_Final
 
                 var results = DBConnectionInstance.Query(query);
                 CarUsageResults.DataSource = results;
+
+                // Header names
+                CarUsageResults.Columns[1].HeaderText = "Rental Count";
+
+                // Bolded headers
+                var headerFont = new Font(CarUsageResults.Font, FontStyle.Bold);
+                CarUsageResults.Columns[0].HeaderCell.Style.Font = headerFont;
+                CarUsageResults.Columns[1].HeaderCell.Style.Font = headerFont;
+
             }
-            
-            
+
+
         }
 
         private void FrequentFlyersSubmit_Click(object sender, EventArgs e)
@@ -62,6 +73,21 @@ namespace Team1CMPT291_Final
             var query = "select CONCAT(C2.FirstName, ' ', C2.LastName) as Name, G.number_of_days, G.Total \r\nfrom (select C.Customer_ID, sum(R.TotalPrice) as Total, SUM(DATEDIFF(day, R.Start_Date, R.End_Date)) as number_of_days\r\nfrom Customers C, Reservations R\r\nwhere C.Customer_ID = R.Customer_ID\r\ngroup by C.Customer_ID) G, Customers C2\r\nwhere C2.Customer_ID = G.Customer_ID\r\norder by number_of_days desc;";
             var results = DBConnectionInstance.Query(query);
             FrequentFlyerResults.DataSource = results;
+
+            // Header widths
+            FrequentFlyerResults.Columns[0].Width = 150;
+
+            // Header names
+            FrequentFlyerResults.Columns[1].HeaderText = "Total Days Booked";
+
+            // Bolded headers
+            var headerFont = new Font(FrequentFlyerResults.Font, FontStyle.Bold);
+            FrequentFlyerResults.Columns[0].HeaderCell.Style.Font = headerFont;
+            FrequentFlyerResults.Columns[1].HeaderCell.Style.Font = headerFont;
+            FrequentFlyerResults.Columns[2].HeaderCell.Style.Font = headerFont;
+
+            // Revenue columns formatting type
+            FrequentFlyerResults.Columns[2].DefaultCellStyle.Format = "c";
         }
 
         private void MonthlyRevenueSubmit_Click(object sender, EventArgs e)
@@ -91,14 +117,63 @@ namespace Team1CMPT291_Final
 
             var results = DBConnectionInstance.Query(query);
             MonthlyRevenueResults.DataSource = results;
+
+            // Header names
+            MonthlyRevenueResults.Columns[0].HeaderText = "Rental Date";
+            MonthlyRevenueResults.Columns[2].HeaderText = "Daily Revenue";
+
+            // Bolded headers
+            var headerFont = new Font(MonthlyRevenueResults.Font, FontStyle.Bold);
+            MonthlyRevenueResults.Columns[0].HeaderCell.Style.Font = headerFont;
+            MonthlyRevenueResults.Columns[1].HeaderCell.Style.Font = headerFont;
+            MonthlyRevenueResults.Columns[2].HeaderCell.Style.Font = headerFont;
+
+            // Revenue columns formatting type
+            MonthlyRevenueResults.Columns[2].DefaultCellStyle.Format = "c";
         }
 
         private void BusyBranchTimesSubmit_Click(object sender, EventArgs e)
         {
-
-            var query   = "SELECT FORMAT(Start_Date, 'yyyy.MMMM') as Month, Count(*) as Rentals FROM Reservations WHERE Branch_Pickup_ID = " + comboBox_Busy_Branch.SelectedValue + " GROUP BY FORMAT(Start_Date, 'yyyy.MMMM') ORDER BY COUNT(*) DESC";
+            string query;
+            int selectedbranch = (int)comboBox_Busy_Branch.SelectedValue;
+            if (selectedbranch == -1)
+            {query = @"
+            SELECT MC3.Month, B.Name ,MC3.Rentals, COUNT(C.VIN) as Available_Cars
+			FROM 
+                (SELECT MonthCounts.Month, MonthCounts.Branch, MonthCounts.Rentals
+                FROM (SELECT FORMAT(Start_Date, 'yyyy-MM') as Month, Branch_Pickup_ID AS Branch ,Count(*) as Rentals
+                    FROM Reservations
+                    GROUP BY FORMAT(Start_Date, 'yyyy-MM'), Branch_Pickup_ID
+                    ) As MonthCounts 
+                WHERE MonthCounts.Rentals = (
+                    SELECT MAX(MC2.Rentals)
+                    FROM (
+                        SELECT FORMAT(Start_Date, 'yyyy-MM') as Month, Branch_Pickup_ID AS Branch ,Count(*) as Rentals
+                        FROM Reservations
+                        GROUP BY FORMAT(Start_Date, 'yyyy-MM'), Branch_Pickup_ID
+                        ) As MC2
+                    WHERE MC2.Month = MonthCounts.Month
+                )
+				) as MC3, Branches as B, Cars as C
+			WHERE B.Branch_ID= MC3.Branch
+			AND C.Branch_ID = MC3.Branch
+			GROUP BY MC3.Month, B.Name ,MC3.Rentals
+			ORDER BY MC3.Month";
+            } else {query = @"
+                    SELECT FORMAT(Start_Date, 'yyyy-MM') as Month, Count(*) as Rentals 
+                    FROM Reservations 
+                    WHERE Branch_Pickup_ID = " + selectedbranch + @" 
+                    GROUP BY FORMAT(Start_Date, 'yyyy-MM') 
+                    ORDER BY COUNT(*) DESC"; }
             var results = DBConnectionInstance.Query(query);
             BusyBranchTimesResults.DataSource = results;
+
+            // Bolded headers
+            var headerFont = new Font(BusyBranchTimesResults.Font, FontStyle.Bold);
+            BusyBranchTimesResults.Columns[0].HeaderCell.Style.Font = headerFont;
+            BusyBranchTimesResults.Columns[1].HeaderCell.Style.Font = headerFont;
+
+            if (selectedbranch == -1) { BusyBranchTimesResults.Columns[2].HeaderCell.Style.Font = headerFont; }
         }
 
         private void UnderPerformingEmpsSubmit_Click(object sender, EventArgs e)
