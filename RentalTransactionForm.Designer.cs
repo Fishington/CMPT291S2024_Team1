@@ -33,7 +33,6 @@ namespace Team1CMPT291_Final
             this.comboBox_Branch = new System.Windows.Forms.ComboBox();
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
-            this.button_Back = new System.Windows.Forms.Button();
             this.button_Book = new System.Windows.Forms.Button();
             this.dateTimePickerPickup = new System.Windows.Forms.DateTimePicker();
             this.dateTimePickerDropoff = new System.Windows.Forms.DateTimePicker();
@@ -45,6 +44,7 @@ namespace Team1CMPT291_Final
             this.comboBox_Customer = new System.Windows.Forms.ComboBox();
             this.label6 = new System.Windows.Forms.Label();
             this.comboBox_Dropoff = new System.Windows.Forms.ComboBox();
+            this.button_Back = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -53,7 +53,7 @@ namespace Team1CMPT291_Final
             this.comboBox_Branch.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.comboBox_Branch.FormattingEnabled = true;
             this.comboBox_Branch.Location = new System.Drawing.Point(25, 194);
-            this.comboBox_Branch.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.comboBox_Branch.Margin = new System.Windows.Forms.Padding(2);
             this.comboBox_Branch.Name = "comboBox_Branch";
             this.comboBox_Branch.Size = new System.Drawing.Size(195, 26);
             this.comboBox_Branch.TabIndex = 2;
@@ -83,27 +83,13 @@ namespace Team1CMPT291_Final
             this.label2.TabIndex = 4;
             this.label2.Text = "Drop Off Date:";
             // 
-            // button_Back
-            // 
-            this.button_Back.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(118)))), ((int)(((byte)(193)))), ((int)(((byte)(254)))));
-            this.button_Back.FlatAppearance.BorderSize = 0;
-            this.button_Back.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button_Back.Location = new System.Drawing.Point(40, 423);
-            this.button_Back.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
-            this.button_Back.Name = "button_Back";
-            this.button_Back.Size = new System.Drawing.Size(146, 83);
-            this.button_Back.TabIndex = 9;
-            this.button_Back.Text = "Back";
-            this.button_Back.UseVisualStyleBackColor = false;
-            this.button_Back.Click += new System.EventHandler(this.button_Back_Click);
-            // 
             // button_Book
             // 
             this.button_Book.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(6)))), ((int)(((byte)(254)))), ((int)(((byte)(111)))));
             this.button_Book.FlatAppearance.BorderSize = 0;
             this.button_Book.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button_Book.Location = new System.Drawing.Point(605, 423);
-            this.button_Book.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.button_Book.Margin = new System.Windows.Forms.Padding(2);
             this.button_Book.Name = "button_Book";
             this.button_Book.Size = new System.Drawing.Size(146, 83);
             this.button_Book.TabIndex = 10;
@@ -212,10 +198,25 @@ namespace Team1CMPT291_Final
             this.comboBox_Dropoff.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.comboBox_Dropoff.FormattingEnabled = true;
             this.comboBox_Dropoff.Location = new System.Drawing.Point(25, 261);
-            this.comboBox_Dropoff.Margin = new System.Windows.Forms.Padding(1, 1, 1, 1);
+            this.comboBox_Dropoff.Margin = new System.Windows.Forms.Padding(1);
             this.comboBox_Dropoff.Name = "comboBox_Dropoff";
             this.comboBox_Dropoff.Size = new System.Drawing.Size(195, 26);
             this.comboBox_Dropoff.TabIndex = 19;
+            // 
+            // button_Back
+            // 
+            this.button_Back.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(118)))), ((int)(((byte)(193)))), ((int)(((byte)(254)))));
+            this.button_Back.FlatAppearance.BorderColor = System.Drawing.Color.DimGray;
+            this.button_Back.FlatAppearance.BorderSize = 0;
+            this.button_Back.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button_Back.Location = new System.Drawing.Point(40, 423);
+            this.button_Back.Margin = new System.Windows.Forms.Padding(2);
+            this.button_Back.Name = "button_Back";
+            this.button_Back.Size = new System.Drawing.Size(146, 83);
+            this.button_Back.TabIndex = 9;
+            this.button_Back.Text = "Back";
+            this.button_Back.UseVisualStyleBackColor = false;
+            this.button_Back.Click += new System.EventHandler(this.button_Back_Click);
             // 
             // RentalTransactionForm
             // 
@@ -239,7 +240,7 @@ namespace Team1CMPT291_Final
             this.Controls.Add(this.label1);
             this.Controls.Add(this.comboBox_Branch);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow;
-            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "RentalTransactionForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Book Car";
@@ -258,7 +259,6 @@ namespace Team1CMPT291_Final
         private System.Windows.Forms.ComboBox comboBox_Branch;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.Button button_Back;
         private System.Windows.Forms.Button button_Book;
         private System.Windows.Forms.DateTimePicker dateTimePickerPickup;
         private System.Windows.Forms.DateTimePicker dateTimePickerDropoff;
@@ -270,5 +270,6 @@ namespace Team1CMPT291_Final
         private System.Windows.Forms.ComboBox comboBox_Customer;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.ComboBox comboBox_Dropoff;
+        private System.Windows.Forms.Button button_Back;
     }
 }

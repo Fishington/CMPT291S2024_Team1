@@ -219,6 +219,10 @@ namespace Team1CMPT291_Final
             UpdateDataGrid(query);
         }
 
-
+        private void ClearFiltersButton_Click(object sender, EventArgs e)
+        {
+            UpdateDataGrid("SELECT * FROM Cars WHERE Branch_ID IS NOT NULL");
+            populate_combo_boxes();
+        }
     }
 }

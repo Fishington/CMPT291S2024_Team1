@@ -49,9 +49,9 @@
             // Save_Button
             // 
             this.Save_Button.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(6)))), ((int)(((byte)(254)))), ((int)(((byte)(111)))));
-            this.Save_Button.FlatAppearance.BorderSize = 0;
+            this.Save_Button.FlatAppearance.BorderColor = System.Drawing.Color.White;
             this.Save_Button.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.Save_Button.Location = new System.Drawing.Point(107, 355);
+            this.Save_Button.Location = new System.Drawing.Point(380, 355);
             this.Save_Button.Margin = new System.Windows.Forms.Padding(2);
             this.Save_Button.Name = "Save_Button";
             this.Save_Button.Size = new System.Drawing.Size(187, 63);
@@ -63,9 +63,9 @@
             // Cancel_Button
             // 
             this.Cancel_Button.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(118)))), ((int)(((byte)(193)))), ((int)(((byte)(254)))));
-            this.Cancel_Button.FlatAppearance.BorderSize = 0;
+            this.Cancel_Button.FlatAppearance.BorderColor = System.Drawing.Color.White;
             this.Cancel_Button.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.Cancel_Button.Location = new System.Drawing.Point(412, 355);
+            this.Cancel_Button.Location = new System.Drawing.Point(139, 355);
             this.Cancel_Button.Margin = new System.Windows.Forms.Padding(2);
             this.Cancel_Button.Name = "Cancel_Button";
             this.Cancel_Button.Size = new System.Drawing.Size(187, 63);
