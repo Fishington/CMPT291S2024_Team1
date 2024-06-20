@@ -45,7 +45,7 @@ Main Inventory Page
 Add Car Page
 
 ### Rental Transaction Screen
-Allows the user to book a car based off of Pick Up Date, Drop Off Date, Pickup Location and Dropoff location. The data table auto-populates based on the above criteria. The user can then select the Employee and Customer who are doing the transaction. (This assumes that the employee and customer are already in the database. More Info Below)
+Allows the user to book a car based on the pick-up date, Drop-off Date, pick-up location, and drop-off location. The data table auto-populates based on the above criteria. The user can then select the Employee and Customer who are doing the transaction. (This assumes that the employee and customer are already in the database. More Info Below)
 ![image](https://github.com/Fishington/CMPT291S2024_Team1/assets/76424114/f81dbbf3-0ea5-404b-9434-8f6fb10fbaf7)
 
 ### Pricing Page
@@ -59,7 +59,7 @@ A report that displays which car makes, models, and transmissions are rented the
 ###### Frequent Flyers
 A report displaying a list of the most frequent renters 
 ###### Daily Revenue
-A report showing the top revenue earning branch in daily order
+A report showing the top revenue-earning branch in daily order; you can also determine total company revenue for that day with a checkbox.
 ###### Busy Branch Times
 A report that shows the total amount of reservations per branch for each month
 ###### Under-performing Employees
