@@ -45,13 +45,14 @@
             this.Combo_Model = new System.Windows.Forms.ComboBox();
             this.label3 = new System.Windows.Forms.Label();
             this.button1 = new System.Windows.Forms.Button();
+            this.ResetFiltersButton = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
             // 
             // button_add_car
             // 
             this.button_add_car.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(6)))), ((int)(((byte)(254)))), ((int)(((byte)(111)))));
-            this.button_add_car.FlatAppearance.BorderSize = 0;
+            this.button_add_car.FlatAppearance.BorderColor = System.Drawing.Color.DimGray;
             this.button_add_car.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button_add_car.Location = new System.Drawing.Point(7, 6);
             this.button_add_car.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
@@ -65,7 +66,7 @@
             // button_modify_car
             // 
             this.button_modify_car.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(118)))), ((int)(((byte)(193)))), ((int)(((byte)(254)))));
-            this.button_modify_car.FlatAppearance.BorderSize = 0;
+            this.button_modify_car.FlatAppearance.BorderColor = System.Drawing.Color.DimGray;
             this.button_modify_car.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button_modify_car.Location = new System.Drawing.Point(7, 119);
             this.button_modify_car.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
@@ -79,7 +80,7 @@
             // button_delete_car
             // 
             this.button_delete_car.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(118)))), ((int)(((byte)(193)))), ((int)(((byte)(254)))));
-            this.button_delete_car.FlatAppearance.BorderSize = 0;
+            this.button_delete_car.FlatAppearance.BorderColor = System.Drawing.Color.DimGray;
             this.button_delete_car.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button_delete_car.Location = new System.Drawing.Point(7, 232);
             this.button_delete_car.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
@@ -92,6 +93,7 @@
             // 
             // button_back
             // 
+            this.button_back.FlatAppearance.BorderColor = System.Drawing.Color.DimGray;
             this.button_back.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button_back.Location = new System.Drawing.Point(7, 344);
             this.button_back.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
@@ -123,7 +125,7 @@
             // 
             this.TestLabel.AutoSize = true;
             this.TestLabel.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(40)))), ((int)(((byte)(19)))));
-            this.TestLabel.Location = new System.Drawing.Point(189, 419);
+            this.TestLabel.Location = new System.Drawing.Point(200, 419);
             this.TestLabel.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.TestLabel.Name = "TestLabel";
             this.TestLabel.Size = new System.Drawing.Size(113, 13);
@@ -137,7 +139,7 @@
             this.ComboBox_Branch.FormattingEnabled = true;
             this.ComboBox_Branch.Location = new System.Drawing.Point(721, 335);
             this.ComboBox_Branch.Name = "ComboBox_Branch";
-            this.ComboBox_Branch.Size = new System.Drawing.Size(159, 28);
+            this.ComboBox_Branch.Size = new System.Drawing.Size(262, 28);
             this.ComboBox_Branch.TabIndex = 19;
             // 
             // label5
@@ -239,15 +241,27 @@
             // button1
             // 
             this.button1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(254)))), ((int)(((byte)(221)))), ((int)(((byte)(59)))));
-            this.button1.FlatAppearance.BorderSize = 0;
+            this.button1.FlatAppearance.BorderColor = System.Drawing.Color.DimGray;
             this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button1.Location = new System.Drawing.Point(721, 368);
             this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(159, 28);
+            this.button1.Size = new System.Drawing.Size(262, 28);
             this.button1.TabIndex = 29;
             this.button1.Text = "Search Cars";
             this.button1.UseVisualStyleBackColor = false;
             this.button1.Click += new System.EventHandler(this.button1_Click);
+            // 
+            // ResetFiltersButton
+            // 
+            this.ResetFiltersButton.BackColor = System.Drawing.Color.WhiteSmoke;
+            this.ResetFiltersButton.FlatAppearance.BorderColor = System.Drawing.Color.DimGray;
+            this.ResetFiltersButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.ResetFiltersButton.Location = new System.Drawing.Point(899, 411);
+            this.ResetFiltersButton.Name = "ResetFiltersButton";
+            this.ResetFiltersButton.Size = new System.Drawing.Size(84, 28);
+            this.ResetFiltersButton.TabIndex = 30;
+            this.ResetFiltersButton.Text = "Reset Filters";
+            this.ResetFiltersButton.UseVisualStyleBackColor = false;
             // 
             // InventoryForm
             // 
@@ -255,6 +269,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(237)))), ((int)(((byte)(255)))), ((int)(((byte)(244)))));
             this.ClientSize = new System.Drawing.Size(1021, 446);
+            this.Controls.Add(this.ResetFiltersButton);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.Combo_Model);
@@ -302,5 +317,6 @@
         private System.Windows.Forms.ComboBox Combo_Model;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button ResetFiltersButton;
     }
 }
