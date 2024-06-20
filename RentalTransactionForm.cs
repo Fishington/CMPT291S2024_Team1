@@ -90,7 +90,6 @@ namespace Team1CMPT291_Final
             {
                 DateTime startDate = dateTimePickerPickup.Value;
                 DateTime endDate = dateTimePickerDropoff.Value;
-                String price = "0";
                 String Customer_ID = comboBox_Customer.SelectedValue.ToString();
                 String Employee_ID = comboBox_Employee.SelectedValue.ToString();
                 String Branch_Pickup_ID = comboBox_Branch.SelectedValue.ToString();
@@ -102,11 +101,11 @@ namespace Team1CMPT291_Final
                 priceConfirmationForm.Show();
                 this.Close();
             }
-            catch (NullReferenceException ex)
+            catch (NullReferenceException)
             {
                 MessageBox.Show("Not all selections were made.");
             }
-            catch (Exception ex)
+            catch (Exception)
             {
                 MessageBox.Show("Something went wrong.");
             }
