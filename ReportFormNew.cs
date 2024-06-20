@@ -26,9 +26,19 @@ namespace Team1CMPT291_Final
             comboBox_Busy_Branch.DisplayMember = "Name";
             comboBox_Busy_Branch.ValueMember = "Branch_ID";
 
-            comboBox_CarUsage.Items.Add("Make");
-            comboBox_CarUsage.Items.Add("Model");
-            comboBox_CarUsage.Items.Add("Transmission");
+
+            DataTable carUsageOptions = new DataTable();
+            carUsageOptions.Columns.Add("ID", typeof(int));
+            carUsageOptions.Columns.Add("DisplayName", typeof(string));
+            carUsageOptions.Columns.Add("ColumnName", typeof(string));
+
+            carUsageOptions.Rows.Add(new object[] { 1, "Make", "Make" });
+            carUsageOptions.Rows.Add(new object[] { 2, "Model", "Model" });
+            carUsageOptions.Rows.Add(new object[] { 3, "Transmission", "Transmission" });
+
+            comboBox_CarUsage.DataSource = carUsageOptions;
+            comboBox_CarUsage.DisplayMember = "DisplayName";
+            comboBox_CarUsage.ValueMember = "ColumnName";
         }
 
         private void BackButtonClick(object sender, EventArgs e)
@@ -42,30 +52,51 @@ namespace Team1CMPT291_Final
         {
             if (comboBox_CarUsage.SelectedIndex != -1)
             {
-                string selectedColumn = comboBox_CarUsage.SelectedItem.ToString();
+                string selectedColumn = comboBox_CarUsage.SelectedValue.ToString();
 
-                string query = $@"
-                    SELECT C.{selectedColumn}, COUNT(R.Reservation_ID) as RentalCount 
-                    FROM Cars as C
-                    JOIN Reservations as R ON C.VIN = R.VIN 
-                    WHERE C.{selectedColumn} IS NOT NULL
-                    GROUP BY C.{selectedColumn} 
+                if (selectedColumn == "Model")
+                {
+                    string query = $@"
+                        SELECT CarCount.Make, CarCount.{selectedColumn}, CarCount.RentalCount 
+                            FROM (
+                                SELECT C.Make, C.{selectedColumn}, COUNT(R.Reservation_ID) as RentalCount 
+                                FROM Cars as C
+                                JOIN Reservations as R ON C.VIN = R.VIN 
+                                WHERE C.{selectedColumn} IS NOT NULL
+                                GROUP BY C.Make, C.{selectedColumn}
+                            ) as CarCount
+                            ORDER BY CarCount.RentalCount DESC;";
+
+                    var results = DBConnectionInstance.Query(query);
+                    CarUsageResults.DataSource = results;
+
+                    var headerFont = new Font(CarUsageResults.Font, FontStyle.Bold);
+                    CarUsageResults.Columns[0].HeaderCell.Style.Font = headerFont;
+                    CarUsageResults.Columns[1].HeaderCell.Style.Font = headerFont;
+                    CarUsageResults.Columns[2].HeaderCell.Style.Font = headerFont;
+                }
+
+                else
+                {
+                    string query = $@"
+                    SELECT {selectedColumn}, RentalCount 
+                    FROM (
+                        SELECT C.{selectedColumn}, COUNT(R.Reservation_ID) as RentalCount 
+                        FROM Cars as C
+                        JOIN Reservations as R ON C.VIN = R.VIN 
+                        WHERE C.{selectedColumn} IS NOT NULL
+                        GROUP BY C.{selectedColumn}
+                    ) as CarCount
                     ORDER BY RentalCount DESC";
 
-                var results = DBConnectionInstance.Query(query);
-                CarUsageResults.DataSource = results;
+                    var results = DBConnectionInstance.Query(query);
+                    CarUsageResults.DataSource = results;
 
-                // Header names
-                CarUsageResults.Columns[1].HeaderText = "Rental Count";
-
-                // Bolded headers
-                var headerFont = new Font(CarUsageResults.Font, FontStyle.Bold);
-                CarUsageResults.Columns[0].HeaderCell.Style.Font = headerFont;
-                CarUsageResults.Columns[1].HeaderCell.Style.Font = headerFont;
-
+                    var headerFont = new Font(CarUsageResults.Font, FontStyle.Bold);
+                    CarUsageResults.Columns[0].HeaderCell.Style.Font = headerFont;
+                    CarUsageResults.Columns[1].HeaderCell.Style.Font = headerFont;
+                }
             }
-
-
         }
 
         private void FrequentFlyersSubmit_Click(object sender, EventArgs e)
@@ -92,8 +123,11 @@ namespace Team1CMPT291_Final
 
         private void MonthlyRevenueSubmit_Click(object sender, EventArgs e)
         {
-            //Aidan TODO
-            var query   = @" 
+            string query = "";
+
+            if (!checkBox1.Checked)
+            {
+                   query   = @" 
                    SELECT 
                         r.Start_Date AS Rental_Date,
                         b.Name,
@@ -115,21 +149,81 @@ namespace Team1CMPT291_Final
                     )
                     ORDER BY Rental_Date;";
 
-            var results = DBConnectionInstance.Query(query);
-            MonthlyRevenueResults.DataSource = results;
+                var results = DBConnectionInstance.Query(query);
+                MonthlyRevenueResults.DataSource = results;
 
-            // Header names
-            MonthlyRevenueResults.Columns[0].HeaderText = "Rental Date";
-            MonthlyRevenueResults.Columns[2].HeaderText = "Daily Revenue";
+                // Header names
+                MonthlyRevenueResults.Columns[0].HeaderText = "Rental Date";
+                MonthlyRevenueResults.Columns[2].HeaderText = "Daily Revenue";
 
-            // Bolded headers
-            var headerFont = new Font(MonthlyRevenueResults.Font, FontStyle.Bold);
-            MonthlyRevenueResults.Columns[0].HeaderCell.Style.Font = headerFont;
-            MonthlyRevenueResults.Columns[1].HeaderCell.Style.Font = headerFont;
-            MonthlyRevenueResults.Columns[2].HeaderCell.Style.Font = headerFont;
+                // Bolded headers
+                var headerFont = new Font(MonthlyRevenueResults.Font, FontStyle.Bold);
+                MonthlyRevenueResults.Columns[0].HeaderCell.Style.Font = headerFont;
+                MonthlyRevenueResults.Columns[1].HeaderCell.Style.Font = headerFont;
+                MonthlyRevenueResults.Columns[2].HeaderCell.Style.Font = headerFont;
 
-            // Revenue columns formatting type
-            MonthlyRevenueResults.Columns[2].DefaultCellStyle.Format = "c";
+                // Revenue columns formatting type
+                MonthlyRevenueResults.Columns[2].DefaultCellStyle.Format = "c";
+
+
+            }
+            else
+            {
+                query = @"
+                    DECLARE @MinDate AS Date;
+                    DECLARE @MaxDate AS Date;
+
+                    SET @MinDate = (
+                    SELECT MIN(R.Start_Date)
+                    FROM Reservations as R);
+
+                    SET @MaxDate = (
+                    SELECT MAX(R.Start_Date)
+                    FROM Reservations as R);
+
+                    WITH Dates(day) AS 
+                    (
+                    SELECT @MinDate as day
+                    UNION ALL
+                    SELECT CAST(DATEADD(day, 1 , day) as Date) as day
+                    FROM Dates
+                    WHERE CAST(DATEADD(day, 1, day) as Date) < @MaxDate
+                    )
+                     Select TOP 100 dates.day, ISNULL(SUM(R.TotalPrice),0) as Revenue
+                    FROM dates
+                    LEFT JOIN Reservations as R ON dates.day = R.Start_Date
+                    GROUP By dates.day
+                    HAVING ISNULL(SUM(R.TotalPrice),0) = (
+                        SELECT ISNULL(MAX(SumPrices.TotalPrice),0)
+                        FROM (
+                            SELECT R2.Start_Date, SUM(R2.TotalPrice) as TotalPrice
+                            FROM Reservations as R2
+                            GROUP BY R2.Start_Date
+                        ) AS SumPrices
+                        WHERE SumPrices.Start_Date = dates.day
+                        )
+                    ORDER BY dates.day";
+
+                var results = DBConnectionInstance.Query(query);
+                MonthlyRevenueResults.DataSource = results;
+
+                // Header names
+                MonthlyRevenueResults.Columns[0].HeaderText = "Rental Date";
+                MonthlyRevenueResults.Columns[1].HeaderText = "Total Revenue";
+
+                // Bolded headers
+                var headerFont = new Font(MonthlyRevenueResults.Font, FontStyle.Bold);
+                MonthlyRevenueResults.Columns[0].HeaderCell.Style.Font = headerFont;
+                MonthlyRevenueResults.Columns[1].HeaderCell.Style.Font = headerFont;
+ 
+
+                // Revenue columns formatting type
+                MonthlyRevenueResults.Columns[1].DefaultCellStyle.Format = "c";
+
+
+            }
+
+            
         }
 
         private void BusyBranchTimesSubmit_Click(object sender, EventArgs e)
@@ -249,6 +343,18 @@ namespace Team1CMPT291_Final
             UnderPerformingEmpsResults.Columns[4].DefaultCellStyle.Format = "c";
         }
 
+        private void checkBox1_CheckedChanged(object sender, EventArgs e)
+        {
+            if (checkBox1.Checked)
+            {
+                label7.Text = "Total Company Reveune in daily order.";
+                
+            }
+            else
+            {
+                label7.Text = "#1 revenue branches in daily order. (Nothing is shown if there are no rentals)";
 
+            }
+        }
     }
 }

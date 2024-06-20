@@ -30,11 +30,14 @@
         {
             this.TabControlMenu = new System.Windows.Forms.TabControl();
             this.ReportTab1 = new System.Windows.Forms.TabPage();
+            this.label10 = new System.Windows.Forms.Label();
             this.comboBox_CarUsage = new System.Windows.Forms.ComboBox();
             this.label5 = new System.Windows.Forms.Label();
             this.CarUsagesSubmit = new System.Windows.Forms.Button();
             this.CarUsageResults = new System.Windows.Forms.DataGridView();
             this.ReportTab2 = new System.Windows.Forms.TabPage();
+            this.label8 = new System.Windows.Forms.Label();
+            this.label9 = new System.Windows.Forms.Label();
             this.FrequentFlyersSubmit = new System.Windows.Forms.Button();
             this.FrequentFlyerResults = new System.Windows.Forms.DataGridView();
             this.ReportTab3 = new System.Windows.Forms.TabPage();
@@ -54,9 +57,7 @@
             this.UnderPerformingEmpsSubmit = new System.Windows.Forms.Button();
             this.UnderPerformingEmpsResults = new System.Windows.Forms.DataGridView();
             this.BackButton = new System.Windows.Forms.Button();
-            this.label8 = new System.Windows.Forms.Label();
-            this.label9 = new System.Windows.Forms.Label();
-            this.label10 = new System.Windows.Forms.Label();
+            this.checkBox1 = new System.Windows.Forms.CheckBox();
             this.TabControlMenu.SuspendLayout();
             this.ReportTab1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.CarUsageResults)).BeginInit();
@@ -77,10 +78,11 @@
             this.TabControlMenu.Controls.Add(this.ReportTab3);
             this.TabControlMenu.Controls.Add(this.ReportTab4);
             this.TabControlMenu.Controls.Add(this.ReportTab5);
-            this.TabControlMenu.Location = new System.Drawing.Point(-1, 12);
+            this.TabControlMenu.Location = new System.Drawing.Point(-2, 22);
+            this.TabControlMenu.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
             this.TabControlMenu.Name = "TabControlMenu";
             this.TabControlMenu.SelectedIndex = 0;
-            this.TabControlMenu.Size = new System.Drawing.Size(910, 531);
+            this.TabControlMenu.Size = new System.Drawing.Size(1668, 980);
             this.TabControlMenu.TabIndex = 0;
             // 
             // ReportTab1
@@ -91,29 +93,44 @@
             this.ReportTab1.Controls.Add(this.label5);
             this.ReportTab1.Controls.Add(this.CarUsagesSubmit);
             this.ReportTab1.Controls.Add(this.CarUsageResults);
-            this.ReportTab1.Location = new System.Drawing.Point(4, 22);
+            this.ReportTab1.Location = new System.Drawing.Point(4, 33);
+            this.ReportTab1.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
             this.ReportTab1.Name = "ReportTab1";
-            this.ReportTab1.Padding = new System.Windows.Forms.Padding(3);
-            this.ReportTab1.Size = new System.Drawing.Size(902, 505);
+            this.ReportTab1.Padding = new System.Windows.Forms.Padding(6, 6, 6, 6);
+            this.ReportTab1.Size = new System.Drawing.Size(1660, 943);
             this.ReportTab1.TabIndex = 0;
             this.ReportTab1.Text = "Car Usages";
+            // 
+            // label10
+            // 
+            this.label10.AutoSize = true;
+            this.label10.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label10.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(40)))), ((int)(((byte)(19)))));
+            this.label10.Location = new System.Drawing.Point(114, 103);
+            this.label10.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
+            this.label10.Name = "label10";
+            this.label10.Size = new System.Drawing.Size(431, 32);
+            this.label10.TabIndex = 15;
+            this.label10.Text = "By make, model, or transmission.";
             // 
             // comboBox_CarUsage
             // 
             this.comboBox_CarUsage.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.comboBox_CarUsage.FormattingEnabled = true;
-            this.comboBox_CarUsage.Location = new System.Drawing.Point(65, 447);
+            this.comboBox_CarUsage.Location = new System.Drawing.Point(119, 825);
+            this.comboBox_CarUsage.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
             this.comboBox_CarUsage.Name = "comboBox_CarUsage";
-            this.comboBox_CarUsage.Size = new System.Drawing.Size(203, 21);
+            this.comboBox_CarUsage.Size = new System.Drawing.Size(369, 32);
             this.comboBox_CarUsage.TabIndex = 9;
             // 
             // label5
             // 
             this.label5.AutoSize = true;
             this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.85714F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label5.Location = new System.Drawing.Point(61, 30);
+            this.label5.Location = new System.Drawing.Point(112, 55);
+            this.label5.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(125, 26);
+            this.label5.Size = new System.Drawing.Size(206, 42);
             this.label5.TabIndex = 8;
             this.label5.Text = "Car Usage";
             // 
@@ -122,10 +139,10 @@
             this.CarUsagesSubmit.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(6)))), ((int)(((byte)(254)))), ((int)(((byte)(111)))));
             this.CarUsagesSubmit.FlatAppearance.BorderSize = 0;
             this.CarUsagesSubmit.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.CarUsagesSubmit.Location = new System.Drawing.Point(733, 447);
-            this.CarUsagesSubmit.Margin = new System.Windows.Forms.Padding(2);
+            this.CarUsagesSubmit.Location = new System.Drawing.Point(1344, 825);
+            this.CarUsagesSubmit.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.CarUsagesSubmit.Name = "CarUsagesSubmit";
-            this.CarUsagesSubmit.Size = new System.Drawing.Size(104, 41);
+            this.CarUsagesSubmit.Size = new System.Drawing.Size(191, 76);
             this.CarUsagesSubmit.TabIndex = 7;
             this.CarUsagesSubmit.Text = "Run Report";
             this.CarUsagesSubmit.UseVisualStyleBackColor = false;
@@ -136,11 +153,12 @@
             this.CarUsageResults.AllowUserToAddRows = false;
             this.CarUsageResults.AllowUserToDeleteRows = false;
             this.CarUsageResults.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.CarUsageResults.Location = new System.Drawing.Point(65, 113);
+            this.CarUsageResults.Location = new System.Drawing.Point(119, 209);
+            this.CarUsageResults.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
             this.CarUsageResults.Name = "CarUsageResults";
             this.CarUsageResults.ReadOnly = true;
             this.CarUsageResults.RowHeadersWidth = 72;
-            this.CarUsageResults.Size = new System.Drawing.Size(772, 327);
+            this.CarUsageResults.Size = new System.Drawing.Size(1415, 604);
             this.CarUsageResults.TabIndex = 2;
             // 
             // ReportTab2
@@ -150,12 +168,35 @@
             this.ReportTab2.Controls.Add(this.label9);
             this.ReportTab2.Controls.Add(this.FrequentFlyersSubmit);
             this.ReportTab2.Controls.Add(this.FrequentFlyerResults);
-            this.ReportTab2.Location = new System.Drawing.Point(4, 22);
+            this.ReportTab2.Location = new System.Drawing.Point(4, 33);
+            this.ReportTab2.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
             this.ReportTab2.Name = "ReportTab2";
-            this.ReportTab2.Padding = new System.Windows.Forms.Padding(3);
-            this.ReportTab2.Size = new System.Drawing.Size(902, 505);
+            this.ReportTab2.Padding = new System.Windows.Forms.Padding(6, 6, 6, 6);
+            this.ReportTab2.Size = new System.Drawing.Size(1660, 943);
             this.ReportTab2.TabIndex = 1;
             this.ReportTab2.Text = "Frequent Flyers";
+            // 
+            // label8
+            // 
+            this.label8.AutoSize = true;
+            this.label8.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label8.Location = new System.Drawing.Point(112, 55);
+            this.label8.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
+            this.label8.Name = "label8";
+            this.label8.Size = new System.Drawing.Size(295, 42);
+            this.label8.TabIndex = 15;
+            this.label8.Text = "Frequent Flyers";
+            // 
+            // label9
+            // 
+            this.label9.AutoSize = true;
+            this.label9.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label9.Location = new System.Drawing.Point(114, 102);
+            this.label9.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
+            this.label9.Name = "label9";
+            this.label9.Size = new System.Drawing.Size(719, 32);
+            this.label9.TabIndex = 14;
+            this.label9.Text = "A list of all customers who frequently make reservations.";
             // 
             // FrequentFlyersSubmit
             // 
@@ -163,10 +204,10 @@
             this.FrequentFlyersSubmit.FlatAppearance.BorderSize = 0;
             this.FrequentFlyersSubmit.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.FrequentFlyersSubmit.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.FrequentFlyersSubmit.Location = new System.Drawing.Point(733, 447);
-            this.FrequentFlyersSubmit.Margin = new System.Windows.Forms.Padding(2);
+            this.FrequentFlyersSubmit.Location = new System.Drawing.Point(1344, 825);
+            this.FrequentFlyersSubmit.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.FrequentFlyersSubmit.Name = "FrequentFlyersSubmit";
-            this.FrequentFlyersSubmit.Size = new System.Drawing.Size(104, 41);
+            this.FrequentFlyersSubmit.Size = new System.Drawing.Size(191, 76);
             this.FrequentFlyersSubmit.TabIndex = 7;
             this.FrequentFlyersSubmit.Text = "Run Report";
             this.FrequentFlyersSubmit.UseVisualStyleBackColor = false;
@@ -177,23 +218,26 @@
             this.FrequentFlyerResults.AllowUserToAddRows = false;
             this.FrequentFlyerResults.AllowUserToDeleteRows = false;
             this.FrequentFlyerResults.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.FrequentFlyerResults.Location = new System.Drawing.Point(65, 113);
+            this.FrequentFlyerResults.Location = new System.Drawing.Point(119, 209);
+            this.FrequentFlyerResults.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
             this.FrequentFlyerResults.Name = "FrequentFlyerResults";
             this.FrequentFlyerResults.ReadOnly = true;
             this.FrequentFlyerResults.RowHeadersWidth = 72;
-            this.FrequentFlyerResults.Size = new System.Drawing.Size(772, 327);
+            this.FrequentFlyerResults.Size = new System.Drawing.Size(1415, 604);
             this.FrequentFlyerResults.TabIndex = 1;
             // 
             // ReportTab3
             // 
             this.ReportTab3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(237)))), ((int)(((byte)(255)))), ((int)(((byte)(244)))));
+            this.ReportTab3.Controls.Add(this.checkBox1);
             this.ReportTab3.Controls.Add(this.label6);
             this.ReportTab3.Controls.Add(this.label7);
             this.ReportTab3.Controls.Add(this.MonthlyRevenueSubmit);
             this.ReportTab3.Controls.Add(this.MonthlyRevenueResults);
-            this.ReportTab3.Location = new System.Drawing.Point(4, 22);
+            this.ReportTab3.Location = new System.Drawing.Point(4, 33);
+            this.ReportTab3.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
             this.ReportTab3.Name = "ReportTab3";
-            this.ReportTab3.Size = new System.Drawing.Size(902, 505);
+            this.ReportTab3.Size = new System.Drawing.Size(1660, 943);
             this.ReportTab3.TabIndex = 2;
             this.ReportTab3.Text = "Daily Revenue";
             // 
@@ -202,32 +246,34 @@
             this.label6.AutoSize = true;
             this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label6.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(40)))), ((int)(((byte)(19)))));
-            this.label6.Location = new System.Drawing.Point(61, 30);
+            this.label6.Location = new System.Drawing.Point(112, 55);
+            this.label6.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(293, 25);
+            this.label6.Size = new System.Drawing.Size(481, 42);
             this.label6.TabIndex = 15;
-            this.label6.Text = "Top Daily Branch Revenue";
+            this.label6.Text = "Top Revenue Sorted Daily";
             // 
             // label7
             // 
             this.label7.AutoSize = true;
             this.label7.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label7.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(40)))), ((int)(((byte)(19)))));
-            this.label7.Location = new System.Drawing.Point(62, 55);
+            this.label7.Location = new System.Drawing.Point(114, 102);
+            this.label7.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
             this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(241, 20);
+            this.label7.Size = new System.Drawing.Size(973, 32);
             this.label7.TabIndex = 14;
-            this.label7.Text = "Daily list of #1 revenue branches.";
+            this.label7.Text = "#1 revenue branches in daily order. (Nothing is shown if there are no rentals)\r\n";
             // 
             // MonthlyRevenueSubmit
             // 
             this.MonthlyRevenueSubmit.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(6)))), ((int)(((byte)(254)))), ((int)(((byte)(111)))));
             this.MonthlyRevenueSubmit.FlatAppearance.BorderSize = 0;
             this.MonthlyRevenueSubmit.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.MonthlyRevenueSubmit.Location = new System.Drawing.Point(733, 447);
-            this.MonthlyRevenueSubmit.Margin = new System.Windows.Forms.Padding(2);
+            this.MonthlyRevenueSubmit.Location = new System.Drawing.Point(1344, 825);
+            this.MonthlyRevenueSubmit.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.MonthlyRevenueSubmit.Name = "MonthlyRevenueSubmit";
-            this.MonthlyRevenueSubmit.Size = new System.Drawing.Size(104, 41);
+            this.MonthlyRevenueSubmit.Size = new System.Drawing.Size(191, 76);
             this.MonthlyRevenueSubmit.TabIndex = 7;
             this.MonthlyRevenueSubmit.Text = "Run Report";
             this.MonthlyRevenueSubmit.UseVisualStyleBackColor = false;
@@ -238,11 +284,12 @@
             this.MonthlyRevenueResults.AllowUserToAddRows = false;
             this.MonthlyRevenueResults.AllowUserToDeleteRows = false;
             this.MonthlyRevenueResults.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.MonthlyRevenueResults.Location = new System.Drawing.Point(65, 113);
+            this.MonthlyRevenueResults.Location = new System.Drawing.Point(119, 209);
+            this.MonthlyRevenueResults.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
             this.MonthlyRevenueResults.Name = "MonthlyRevenueResults";
             this.MonthlyRevenueResults.ReadOnly = true;
             this.MonthlyRevenueResults.RowHeadersWidth = 72;
-            this.MonthlyRevenueResults.Size = new System.Drawing.Size(772, 327);
+            this.MonthlyRevenueResults.Size = new System.Drawing.Size(1415, 604);
             this.MonthlyRevenueResults.TabIndex = 1;
             // 
             // ReportTab4
@@ -253,27 +300,30 @@
             this.ReportTab4.Controls.Add(this.label4);
             this.ReportTab4.Controls.Add(this.BusyBranchTimesSubmit);
             this.ReportTab4.Controls.Add(this.BusyBranchTimesResults);
-            this.ReportTab4.Location = new System.Drawing.Point(4, 22);
+            this.ReportTab4.Location = new System.Drawing.Point(4, 33);
+            this.ReportTab4.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
             this.ReportTab4.Name = "ReportTab4";
-            this.ReportTab4.Size = new System.Drawing.Size(902, 505);
+            this.ReportTab4.Size = new System.Drawing.Size(1660, 943);
             this.ReportTab4.TabIndex = 3;
             this.ReportTab4.Text = "Busy Branch Times";
             // 
             // comboBox_Busy_Branch
             // 
             this.comboBox_Busy_Branch.FormattingEnabled = true;
-            this.comboBox_Busy_Branch.Location = new System.Drawing.Point(65, 447);
+            this.comboBox_Busy_Branch.Location = new System.Drawing.Point(119, 825);
+            this.comboBox_Busy_Branch.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
             this.comboBox_Busy_Branch.Name = "comboBox_Busy_Branch";
-            this.comboBox_Busy_Branch.Size = new System.Drawing.Size(121, 21);
+            this.comboBox_Busy_Branch.Size = new System.Drawing.Size(218, 32);
             this.comboBox_Busy_Branch.TabIndex = 14;
             // 
             // label3
             // 
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(61, 30);
+            this.label3.Location = new System.Drawing.Point(112, 55);
+            this.label3.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(571, 25);
+            this.label3.Size = new System.Drawing.Size(951, 42);
             this.label3.TabIndex = 13;
             this.label3.Text = "Busiest months per Branch or Best Branch per Month";
             // 
@@ -281,9 +331,10 @@
             // 
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.Location = new System.Drawing.Point(62, 55);
+            this.label4.Location = new System.Drawing.Point(114, 102);
+            this.label4.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(446, 20);
+            this.label4.Size = new System.Drawing.Size(794, 32);
             this.label4.TabIndex = 12;
             this.label4.Text = "A list of all months with the amount of reservations per branch.";
             // 
@@ -292,10 +343,10 @@
             this.BusyBranchTimesSubmit.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(6)))), ((int)(((byte)(254)))), ((int)(((byte)(111)))));
             this.BusyBranchTimesSubmit.FlatAppearance.BorderSize = 0;
             this.BusyBranchTimesSubmit.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.BusyBranchTimesSubmit.Location = new System.Drawing.Point(733, 447);
-            this.BusyBranchTimesSubmit.Margin = new System.Windows.Forms.Padding(2);
+            this.BusyBranchTimesSubmit.Location = new System.Drawing.Point(1344, 825);
+            this.BusyBranchTimesSubmit.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.BusyBranchTimesSubmit.Name = "BusyBranchTimesSubmit";
-            this.BusyBranchTimesSubmit.Size = new System.Drawing.Size(104, 41);
+            this.BusyBranchTimesSubmit.Size = new System.Drawing.Size(191, 76);
             this.BusyBranchTimesSubmit.TabIndex = 7;
             this.BusyBranchTimesSubmit.Text = "Run Report";
             this.BusyBranchTimesSubmit.UseVisualStyleBackColor = false;
@@ -306,11 +357,12 @@
             this.BusyBranchTimesResults.AllowUserToAddRows = false;
             this.BusyBranchTimesResults.AllowUserToDeleteRows = false;
             this.BusyBranchTimesResults.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.BusyBranchTimesResults.Location = new System.Drawing.Point(65, 113);
+            this.BusyBranchTimesResults.Location = new System.Drawing.Point(119, 209);
+            this.BusyBranchTimesResults.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
             this.BusyBranchTimesResults.Name = "BusyBranchTimesResults";
             this.BusyBranchTimesResults.ReadOnly = true;
             this.BusyBranchTimesResults.RowHeadersWidth = 72;
-            this.BusyBranchTimesResults.Size = new System.Drawing.Size(772, 327);
+            this.BusyBranchTimesResults.Size = new System.Drawing.Size(1415, 604);
             this.BusyBranchTimesResults.TabIndex = 1;
             // 
             // ReportTab5
@@ -320,9 +372,10 @@
             this.ReportTab5.Controls.Add(this.label1);
             this.ReportTab5.Controls.Add(this.UnderPerformingEmpsSubmit);
             this.ReportTab5.Controls.Add(this.UnderPerformingEmpsResults);
-            this.ReportTab5.Location = new System.Drawing.Point(4, 22);
+            this.ReportTab5.Location = new System.Drawing.Point(4, 33);
+            this.ReportTab5.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
             this.ReportTab5.Name = "ReportTab5";
-            this.ReportTab5.Size = new System.Drawing.Size(902, 505);
+            this.ReportTab5.Size = new System.Drawing.Size(1660, 943);
             this.ReportTab5.TabIndex = 4;
             this.ReportTab5.Text = "Under-performing Employees";
             // 
@@ -330,18 +383,20 @@
             // 
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(61, 30);
+            this.label2.Location = new System.Drawing.Point(112, 55);
+            this.label2.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(317, 25);
+            this.label2.Size = new System.Drawing.Size(530, 42);
             this.label2.TabIndex = 11;
             this.label2.Text = "Under-performing Employees";
             // 
             // label1
             // 
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(62, 55);
+            this.label1.Location = new System.Drawing.Point(114, 102);
+            this.label1.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(611, 55);
+            this.label1.Size = new System.Drawing.Size(1120, 102);
             this.label1.TabIndex = 10;
             this.label1.Text = "A list of all employees, each with a sum of their revenue, a count of their booki" +
     "ngs, and the average revenue generated per booking.";
@@ -351,10 +406,10 @@
             this.UnderPerformingEmpsSubmit.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(6)))), ((int)(((byte)(254)))), ((int)(((byte)(111)))));
             this.UnderPerformingEmpsSubmit.FlatAppearance.BorderSize = 0;
             this.UnderPerformingEmpsSubmit.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.UnderPerformingEmpsSubmit.Location = new System.Drawing.Point(733, 447);
-            this.UnderPerformingEmpsSubmit.Margin = new System.Windows.Forms.Padding(2);
+            this.UnderPerformingEmpsSubmit.Location = new System.Drawing.Point(1344, 825);
+            this.UnderPerformingEmpsSubmit.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.UnderPerformingEmpsSubmit.Name = "UnderPerformingEmpsSubmit";
-            this.UnderPerformingEmpsSubmit.Size = new System.Drawing.Size(104, 41);
+            this.UnderPerformingEmpsSubmit.Size = new System.Drawing.Size(191, 76);
             this.UnderPerformingEmpsSubmit.TabIndex = 6;
             this.UnderPerformingEmpsSubmit.Text = "Run Report";
             this.UnderPerformingEmpsSubmit.UseVisualStyleBackColor = false;
@@ -365,11 +420,12 @@
             this.UnderPerformingEmpsResults.AllowUserToAddRows = false;
             this.UnderPerformingEmpsResults.AllowUserToDeleteRows = false;
             this.UnderPerformingEmpsResults.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.UnderPerformingEmpsResults.Location = new System.Drawing.Point(65, 113);
+            this.UnderPerformingEmpsResults.Location = new System.Drawing.Point(119, 209);
+            this.UnderPerformingEmpsResults.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
             this.UnderPerformingEmpsResults.Name = "UnderPerformingEmpsResults";
             this.UnderPerformingEmpsResults.ReadOnly = true;
             this.UnderPerformingEmpsResults.RowHeadersWidth = 72;
-            this.UnderPerformingEmpsResults.Size = new System.Drawing.Size(772, 327);
+            this.UnderPerformingEmpsResults.Size = new System.Drawing.Size(1415, 604);
             this.UnderPerformingEmpsResults.TabIndex = 1;
             // 
             // BackButton
@@ -377,55 +433,37 @@
             this.BackButton.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(118)))), ((int)(((byte)(193)))), ((int)(((byte)(254)))));
             this.BackButton.FlatAppearance.BorderSize = 0;
             this.BackButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.BackButton.Location = new System.Drawing.Point(802, 5);
-            this.BackButton.Margin = new System.Windows.Forms.Padding(2);
+            this.BackButton.Location = new System.Drawing.Point(1470, 9);
+            this.BackButton.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.BackButton.Name = "BackButton";
-            this.BackButton.Size = new System.Drawing.Size(103, 23);
+            this.BackButton.Size = new System.Drawing.Size(189, 42);
             this.BackButton.TabIndex = 5;
             this.BackButton.Text = "Back";
             this.BackButton.UseVisualStyleBackColor = false;
             this.BackButton.Click += new System.EventHandler(this.BackButtonClick);
             // 
-            // label8
+            // checkBox1
             // 
-            this.label8.AutoSize = true;
-            this.label8.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label8.Location = new System.Drawing.Point(61, 30);
-            this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(178, 25);
-            this.label8.TabIndex = 15;
-            this.label8.Text = "Frequent Flyers";
-            // 
-            // label9
-            // 
-            this.label9.AutoSize = true;
-            this.label9.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label9.Location = new System.Drawing.Point(62, 55);
-            this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(402, 20);
-            this.label9.TabIndex = 14;
-            this.label9.Text = "A list of all customers who frequently make reservations.";
-            // 
-            // label10
-            // 
-            this.label10.AutoSize = true;
-            this.label10.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label10.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(40)))), ((int)(((byte)(19)))));
-            this.label10.Location = new System.Drawing.Point(62, 56);
-            this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(240, 20);
-            this.label10.TabIndex = 15;
-            this.label10.Text = "By make, model, or transmission.";
+            this.checkBox1.AutoSize = true;
+            this.checkBox1.Font = new System.Drawing.Font("Inter Medium", 11.14286F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.checkBox1.Location = new System.Drawing.Point(119, 843);
+            this.checkBox1.Name = "checkBox1";
+            this.checkBox1.Size = new System.Drawing.Size(480, 37);
+            this.checkBox1.TabIndex = 16;
+            this.checkBox1.Text = "Calculate Total Company Revenue";
+            this.checkBox1.UseVisualStyleBackColor = true;
+            this.checkBox1.CheckedChanged += new System.EventHandler(this.checkBox1_CheckedChanged);
             // 
             // ReportFormNew
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(11F, 24F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(237)))), ((int)(((byte)(255)))), ((int)(((byte)(244)))));
-            this.ClientSize = new System.Drawing.Size(907, 543);
+            this.ClientSize = new System.Drawing.Size(1663, 1002);
             this.Controls.Add(this.BackButton);
             this.Controls.Add(this.TabControlMenu);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow;
+            this.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
             this.Name = "ReportFormNew";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Reports";
@@ -481,5 +519,6 @@
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.Label label9;
         private System.Windows.Forms.Label label10;
+        private System.Windows.Forms.CheckBox checkBox1;
     }
 }
