@@ -129,6 +129,7 @@
             this.TestLabel.Size = new System.Drawing.Size(113, 13);
             this.TestLabel.TabIndex = 8;
             this.TestLabel.Text = "Testing (Click on data)";
+            this.TestLabel.Visible = false;
             // 
             // ComboBox_Branch
             // 
