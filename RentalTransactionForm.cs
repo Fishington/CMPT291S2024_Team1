@@ -14,7 +14,7 @@ namespace Team1CMPT291_Final
     {
         public void UpdateDataGrid()
         {
-            String branchID = comboBox_Branch.SelectedValue.ToString();
+            String branchID = comboBox_Branch.SelectedValue?.ToString();
             string startDate = dateTimePickerPickup.Value.ToString("yyyyMMdd");
             string endDate = dateTimePickerDropoff.Value.ToString("yyyyMMdd");
             String query = "select * from Cars as C where C.Branch_ID = '" + branchID +"' AND C.VIN not in (select R.VIN from Reservations as R where R.Start_Date BETWEEN '" + startDate+"' AND '" + endDate + "' OR r.End_Date BETWEEN '" + startDate + "' AND '" + endDate + "')";
@@ -86,20 +86,30 @@ namespace Team1CMPT291_Final
 
         private void button_Book_Click(object sender, EventArgs e)
         {
-            DateTime startDate = dateTimePickerPickup.Value;
-            DateTime endDate = dateTimePickerDropoff.Value;
-            String price = "0";
-            String Customer_ID = comboBox_Customer.SelectedValue.ToString();
-            String Employee_ID = comboBox_Employee.SelectedValue.ToString();
-            String Branch_Pickup_ID = comboBox_Branch.SelectedValue.ToString();
-            String Branch_Dropoff_ID = comboBox_Dropoff.SelectedValue.ToString();
-            String VIN = dataGridView1.SelectedRows[0].Cells[0].Value?.ToString();
-            //String query = "INSERT INTO Reservations (Start_Date, End_Date, TotalPrice, Customer_ID, Employee_ID, Branch_Pickup_ID, Branch_Dropoff_ID, VIN) VALUES ('" + startDate + "', '" + endDate + "', '" + price + "', '" + Customer_ID + "', '" + Employee_ID + "', '" + Branch_Pickup_ID + "', '" + Branch_Dropoff_ID + "', '" + VIN + "')";
-            //new DBConnection().Insert(query);
-            PriceConfirmationForm priceConfirmationForm = new PriceConfirmationForm(startDate, endDate, Customer_ID, Employee_ID, Branch_Pickup_ID, Branch_Dropoff_ID, VIN);
-            priceConfirmationForm.Show();
-            this.Close();
-            
+            try
+            {
+                DateTime startDate = dateTimePickerPickup.Value;
+                DateTime endDate = dateTimePickerDropoff.Value;
+                String price = "0";
+                String Customer_ID = comboBox_Customer.SelectedValue.ToString();
+                String Employee_ID = comboBox_Employee.SelectedValue.ToString();
+                String Branch_Pickup_ID = comboBox_Branch.SelectedValue.ToString();
+                String Branch_Dropoff_ID = comboBox_Dropoff.SelectedValue.ToString();
+                String VIN = dataGridView1.SelectedRows[0].Cells[0].Value?.ToString();
+                //String query = "INSERT INTO Reservations (Start_Date, End_Date, TotalPrice, Customer_ID, Employee_ID, Branch_Pickup_ID, Branch_Dropoff_ID, VIN) VALUES ('" + startDate + "', '" + endDate + "', '" + price + "', '" + Customer_ID + "', '" + Employee_ID + "', '" + Branch_Pickup_ID + "', '" + Branch_Dropoff_ID + "', '" + VIN + "')";
+                //new DBConnection().Insert(query);
+                PriceConfirmationForm priceConfirmationForm = new PriceConfirmationForm(startDate, endDate, Customer_ID, Employee_ID, Branch_Pickup_ID, Branch_Dropoff_ID, VIN);
+                priceConfirmationForm.Show();
+                this.Close();
+            }
+            catch (NullReferenceException ex)
+            {
+                MessageBox.Show("Not all selections were made.");
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Something went wrong.");
+            }
         }
     }
 }
