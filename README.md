@@ -54,6 +54,16 @@ This page shows a quote of how much the customer would have to pay for the car. 
 
 ### Reports Page
 Users can select 5 various reports on the tabs from the top of the page, each with more reports on each tab.
+###### Car Usage:
+A report that displays which car makes, models, and transmissions are rented the most
+###### Frequent Flyers
+A report displaying a list of the most frequent renters 
+###### Daily Revenue
+A report showing the top revenue earning branch in daily order
+###### Busy Branch Times
+A report that shows the total amount of reservations per branch for each month
+###### Under-performing Employees
+A report displaying a list of all employees along with a sum of their revenue, counts of their bookings, and the average revenue generated per booking
 ![image](https://github.com/Fishington/CMPT291S2024_Team1/assets/76424114/2c49705c-5a4e-4a20-a7b4-a57cdd3567a1)
 
 # Future Endevors
