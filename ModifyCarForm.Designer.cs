@@ -259,7 +259,7 @@
             this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "ModifyCarForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "ModifyCarForm";
+            this.Text = "Modify Car";
             this.ResumeLayout(false);
             this.PerformLayout();
 
